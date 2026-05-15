@@ -28,7 +28,7 @@ export function NotFound() {
             Kembali ke Beranda
           </button>
           <button
-            onClick={() => navigate('/pencarian')}
+            onClick={() => navigate('/perkara')}
             className="flex items-center justify-center gap-2 bg-white text-[#1E3A2F] border-2 border-[#2E5A45] px-6 py-3 rounded-lg hover:bg-[#E8F2ED] transition-colors font-medium"
           >
             <Search size={20} />

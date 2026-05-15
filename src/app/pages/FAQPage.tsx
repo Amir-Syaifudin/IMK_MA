@@ -31,7 +31,7 @@ const categories: Category[] = [
     faqs: [
       {
         question: 'Bagaimana cara mencari putusan pengadilan?',
-        answer: 'Anda dapat mencari putusan melalui menu "Pencarian Putusan" di halaman utama. Masukkan kata kunci seperti nomor perkara, nama pihak, atau pilih filter jenis perkara dan tahun. Sistem akan menampilkan hasil yang sesuai dengan pencarian Anda.',
+        answer: 'Anda dapat mencari putusan melalui menu "Perkara" di halaman utama. Masukkan kata kunci seperti nomor perkara, nama pihak, atau pilih filter jenis perkara dan tahun. Sistem akan menampilkan hasil yang sesuai dengan pencarian Anda.',
       },
       {
         question: 'Apakah semua putusan tersedia secara online?',

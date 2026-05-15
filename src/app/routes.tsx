@@ -5,7 +5,7 @@ import { SearchPage } from './pages/SearchPage';
 import { FAQPage } from './pages/FAQPage';
 import { NotFound } from './pages/NotFound';
 import { PlaceholderPage } from './pages/PlaceholderPage';
-import { JadwalSidang } from './pages/JadwalSidang';
+import { InformationPage } from './pages/InformationPage';
 
 export const router = createBrowserRouter([
   {
@@ -13,9 +13,20 @@ export const router = createBrowserRouter([
     Component: Layout,
     children: [
       { index: true, Component: Homepage },
-      { path: 'pencarian', Component: SearchPage },
+      { path: 'perkara', Component: SearchPage },
       { path: 'faq', Component: FAQPage },
-      { path: 'jadwal', Component: JadwalSidang },
+
+      // Informasi Sub-pages
+      {
+        path: 'id',
+        children: [
+          { path: 'artikel', Component: InformationPage },
+          { path: 'berita', Component: InformationPage },
+          { path: 'keputusan', Component: InformationPage },
+          { path: 'pengumuman', Component: InformationPage },
+        ]
+      },
+
       {
         path: 'tentang',
         element: (
@@ -56,4 +67,3 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-

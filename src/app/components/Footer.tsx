@@ -19,7 +19,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4 text-[#C9A84C]">Tautan Cepat</h3>
             <ul className="space-y-2">
-              <li><Link to="/pencarian" className="text-white/80 hover:text-[#C9A84C] transition-colors">Pencarian Putusan</Link></li>
+              <li><Link to="/perkara" className="text-white/80 hover:text-[#C9A84C] transition-colors">Perkara</Link></li>
               <li><Link to="/faq" className="text-white/80 hover:text-[#C9A84C] transition-colors">FAQ &amp; Panduan</Link></li>
               <li><Link to="/tentang" className="text-white/80 hover:text-[#C9A84C] transition-colors">Tentang MA</Link></li>
               <li><Link to="/kontak" className="text-white/80 hover:text-[#C9A84C] transition-colors">Kontak</Link></li>

@@ -1,4 +1,4 @@
-import { Search, Menu, X, ExternalLink, ChevronDown, BookOpen, Scale, FileSearch, LayoutGrid, Users } from 'lucide-react';
+import { Search, Menu, X, ExternalLink, ChevronDown, BookOpen, Scale, FileSearch, LayoutGrid, Users, Newspaper, Megaphone, ClipboardList, Bell } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router';
 
@@ -35,15 +35,25 @@ const digitalServices = [
   },
 ];
 
+const informasiItems = [
+  { name: 'Artikel', path: '/id/artikel', icon: Newspaper },
+  { name: 'Berita', path: '/id/berita', icon: Megaphone },
+  { name: 'Kebijakan', path: '/id/keputusan', icon: ClipboardList },
+  { name: 'Pengumuman', path: '/id/pengumuman', icon: Bell },
+];
+
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [layananOpen, setLayananOpen] = useState(false);
+  const [informasiOpen, setInformasiOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
     { name: 'Beranda', path: '/' },
-    { name: 'Pencarian Putusan', path: '/pencarian' },
-    { name: 'Jadwal Sidang', path: '/jadwal' },
+    { name: 'Perkara', path: '/perkara' },
+  ];
+
+  const otherLinks = [
     { name: 'FAQ & Panduan', path: '/faq' },
     { name: 'Tentang MA', path: '/tentang' },
   ];
@@ -78,6 +88,67 @@ export function Navbar() {
               </Link>
             ))}
 
+            {/* Informasi Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setInformasiOpen(true)}
+              onMouseLeave={() => setInformasiOpen(false)}
+            >
+              <button
+                className={`flex items-center gap-1 text-sm transition-colors ${
+                  informasiOpen || informasiItems.some(item => isActive(item.path))
+                    ? 'text-[#C9A84C] font-medium'
+                    : 'text-white hover:text-[#E8C96A]'
+                }`}
+                aria-haspopup="true"
+                aria-expanded={informasiOpen}
+              >
+                Informasi
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform ${informasiOpen ? 'rotate-180' : ''}`}
+                />
+              </button>
+
+              {informasiOpen && (
+                <div className="absolute left-0 top-full mt-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 animate-fadeIn">
+                  <div className="px-4 py-2 bg-[#1E3A2F] text-[#C9A84C] text-xs font-semibold uppercase tracking-wider">
+                    Pusat Informasi
+                  </div>
+                  {informasiItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        className="flex items-center gap-3 px-4 py-3 hover:bg-[#F9F3E3] transition-colors group"
+                      >
+                        <div className="p-1.5 bg-[#C9A84C]/10 rounded-lg group-hover:bg-[#C9A84C]/20 transition-colors">
+                          <Icon size={16} className="text-[#C9A84C]" />
+                        </div>
+                        <span className="text-sm font-medium text-[#1E3A2F] group-hover:text-[#A8852A]">
+                          {item.name}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {otherLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`transition-colors text-sm ${isActive(link.path)
+                    ? 'text-[#C9A84C] font-medium'
+                    : 'text-white hover:text-[#E8C96A]'
+                  }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+
             {/* Layanan Digital Dropdown */}
             <div
               className="relative"
@@ -97,7 +168,7 @@ export function Navbar() {
               </button>
 
               {layananOpen && (
-                <div className="absolute right-0 top-full mt-1 w-72 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50">
+                <div className="absolute right-0 top-full mt-1 w-72 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 animate-fadeIn">
                   <div className="px-4 py-2 bg-[#1E3A2F] text-[#C9A84C] text-xs font-semibold uppercase tracking-wider">
                     Layanan Publik
                   </div>
@@ -140,8 +211,42 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-[#2E5A45]">
+          <div className="lg:hidden py-4 border-t border-[#2E5A45] max-h-[calc(100vh-80px)] overflow-y-auto">
             {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block py-3 px-4 transition-colors ${isActive(link.path)
+                    ? 'text-[#C9A84C] font-medium bg-[#2E5A45]'
+                    : 'text-white hover:bg-[#2E5A45]'
+                  }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            {/* Mobile: Informasi section */}
+            <div className="mt-2 border-t border-[#2E5A45] pt-3">
+              <div className="px-4 pb-2 text-xs font-semibold text-[#C9A84C] uppercase tracking-wider">
+                Informasi
+              </div>
+              {informasiItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center gap-3 py-2.5 px-6 transition-colors ${
+                    isActive(item.path) ? 'text-[#C9A84C]' : 'text-white/80 hover:text-[#C9A84C]'
+                  }`}
+                >
+                  <item.icon size={16} />
+                  <span className="text-sm">{item.name}</span>
+                </Link>
+              ))}
+            </div>
+
+            {otherLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
