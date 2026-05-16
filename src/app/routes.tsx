@@ -28,10 +28,10 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: 'tentang',
+        path: 'profil',
         element: (
           <PlaceholderPage
-            title="Tentang Mahkamah Agung"
+            title="Profil Mahkamah Agung"
             description="Halaman ini sedang dalam pengembangan. Kembali ke beranda untuk mengakses layanan lainnya."
           />
         ),

@@ -1,4 +1,4 @@
-import { Search, Menu, X, ExternalLink, ChevronDown, BookOpen, Scale, FileSearch, LayoutGrid, Users, Newspaper, Megaphone, ClipboardList, Bell } from 'lucide-react';
+import { Menu, X, ExternalLink, ChevronDown, BookOpen, Scale, FileSearch, LayoutGrid, Users, Newspaper, Megaphone, ClipboardList, Bell, Building2 } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router';
 
@@ -36,6 +36,7 @@ const digitalServices = [
 ];
 
 const informasiItems = [
+  { name: 'Profil MA', path: '/profil', icon: Building2 },
   { name: 'Artikel', path: '/id/artikel', icon: Newspaper },
   { name: 'Berita', path: '/id/berita', icon: Megaphone },
   { name: 'Kebijakan', path: '/id/keputusan', icon: ClipboardList },
@@ -55,7 +56,6 @@ export function Navbar() {
 
   const otherLinks = [
     { name: 'FAQ & Panduan', path: '/faq' },
-    { name: 'Tentang MA', path: '/tentang' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
