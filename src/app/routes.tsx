@@ -6,6 +6,9 @@ import { FAQPage } from "./pages/FAQPage";
 import { NotFound } from "./pages/NotFound";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import { InformationPage } from "./pages/InformationPage";
+import { HomepageWF } from "./pages/wireframe/HomepageWF";
+import { SearchPageWF } from "./pages/wireframe/SearchPageWF";
+import { FAQPageWF } from "./pages/wireframe/FAQPageWF";
 
 export const router = createBrowserRouter([
   {
@@ -66,4 +69,10 @@ export const router = createBrowserRouter([
       { path: "*", Component: NotFound },
     ],
   },
+
+  // ── Wireframe Routes (standalone, no Layout wrapper) ──
+  { path: "/wireframe", Component: HomepageWF },
+  { path: "/wireframe/perkara", Component: SearchPageWF },
+  { path: "/wireframe/faq", Component: FAQPageWF },
 ]);
+

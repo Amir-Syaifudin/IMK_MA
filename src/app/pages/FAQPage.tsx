@@ -198,11 +198,10 @@ export function FAQPage() {
                   setActiveCategory(index);
                   setSearchQuery("");
                 }}
-                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  activeCategory === index
+                className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeCategory === index
                     ? "bg-[var(--ma-gold)] text-[var(--ma-green)]"
                     : "bg-[var(--ma-gold-soft)] text-[var(--ma-green)] hover:bg-[var(--ma-gold-light)]"
-                }`}
+                  }`}
               >
                 {category.name}
               </button>

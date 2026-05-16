@@ -1,0 +1,344 @@
+# Laporan UX Research & Outline PPT
+## Redesign Website Mahkamah Agung RI
+### Pendekatan: Design Thinking
+
+---
+
+## STRUKTUR SLIDE PRESENTASI
+
+---
+
+### Slide 1 — Cover
+**Judul:** Redesign UX/UI Website Mahkamah Agung Republik Indonesia  
+**Sub-judul:** Pendekatan Design Thinking untuk Transparansi Peradilan  
+**Nama Kelompok:** [Isi nama anggota]  
+**Tanggal:** Mei 2026
+
+---
+
+### Slide 2 — Profil Website
+- **Logo MA** + screenshot halaman beranda saat ini
+- **Deskripsi Lembaga:** Mahkamah Agung RI adalah lembaga tinggi negara pemegang kekuasaan kehakiman yang merdeka guna menyelenggarakan peradilan demi menegakkan hukum dan keadilan.
+- **Fitur Utama Website:**
+  1. Informasi perkara dan putusan pengadilan
+  2. Direktori putusan (link ke subdomain putusan3.mahkamahagung.go.id)
+  3. Kebijakan dan regulasi (PERMA, SEMA, SKM)
+  4. Layanan kepaniteraan dan e-Court
+
+---
+
+### Slide 3 — Profil & Persona Pengguna
+| Segmen | Kebutuhan Utama |
+|---|---|
+| 🧑‍⚖️ Advokat & Pengacara | Jadwal sidang, nomor perkara, akses putusan cepat |
+| 👨‍👩‍👦 Masyarakat Umum / Pihak Berperkara | Status perkara, kontak pengadilan, FAQ dalam bahasa sederhana |
+| 📰 Jurnalis & Peneliti | Berita resmi, siaran pers, akses terbuka ke opini putusan |
+| 🎓 Mahasiswa Hukum | Yurisprudensi, ringkasan putusan, glosarium hukum |
+| 🏛️ Pegawai Pengadilan | Portal internal (SIKEP, e-LHKPN, dashboard kinerja) |
+
+---
+
+### Slide 4 — Metode: Design Thinking
+
+```
+[Empathize] → [Define] → [Ideate] → [Prototype] → [Test]
+```
+
+| Tahap | Deskripsi | Tools |
+|---|---|---|
+| **Empathize** | Identifikasi masalah pengguna di website eksisting | Heuristic Evaluation (Nielsen), benchmark UKSC & SCOTUS |
+| **Define** | Merumuskan problem statement berbasis temuan | Problem Statement Canvas |
+| **Ideate** | Eksplorasi solusi redesign untuk setiap masalah | Sketsa wireframe, mood board |
+| **Prototype** | Membangun prototipe interaktif | Figma (High-fidelity) |
+| **Test** | Evaluasi dengan pengguna nyata | UEQ (User Experience Questionnaire) |
+
+---
+
+## — EMPATHIZE —
+
+### Slide 5 — Masalah 1: Navigasi Terfragmentasi
+
+**Badge Heuristic:** `H1` `H3` `H4` `H6`
+
+#### Deskripsi Masalah
+Website MA saat ini memiliki menu yang tidak konsisten — beberapa item membawa pengguna keluar ke subdomain berbeda (misalnya `putusan3.mahkamahagung.go.id`) tanpa peringatan, tidak ada breadcrumb untuk orientasi, dan label menu menggunakan istilah kelembagaan yang tidak mencerminkan *task* pengguna (misalnya "Kepaniteraan" alih-alih "Daftarkan Perkara").
+
+#### Referensi Internasional
+- **🇬🇧 UKSC:** Website baru UKSC (diluncurkan Desember 2024) dirancang ulang untuk merevolusi cara pengguna berinteraksi dengan pengadilan. Navigasi dibuat *flat* dan konsisten — semua layanan bisa diakses dari navbar utama tanpa berpindah domain. *(Supreme Court of the United Kingdom)*
+- **🇺🇸 SCOTUS:** Menggunakan navigasi sisi kiri yang konsisten di setiap halaman, dan menyediakan tombol "Home" permanen di pojok kiri atas sehingga pengguna selalu tahu cara kembali ke titik awal. *(Supreme Court of the United States)*
+
+#### Tuntunan Redesign
+- Navbar dengan **5–6 item utama** saja, label dalam bahasa pengguna (bukan bahasa birokrasi)
+- Setiap link eksternal wajib diberi **ikon panah keluar** (↗)
+- **Breadcrumb** muncul di semua halaman selain beranda: *Beranda › Perkara › Cari Putusan*
+
+---
+
+### Slide 6 — Masalah 2: Beranda Terlalu Padat
+
+**Badge Heuristic:** `H2` `H7` `H8`
+
+#### Deskripsi Masalah
+Beranda MA menampilkan terlalu banyak elemen sekaligus — berita, agenda pimpinan, galeri foto, media sosial, majalah elektronik, pengumuman — tanpa hierarki visual yang jelas sehingga pengguna kesulitan menentukan fokus utama.
+
+#### Referensi Internasional
+- **🇬🇧 UKSC:** Beranda hanya menampilkan tiga hal: kasus terbaru, agenda sidang mendatang, dan akses cepat ke layanan utama. Semua konten sekunder dipindah ke halaman masing-masing.
+- **🇺🇸 SCOTUS:** Menampilkan opini terbaru dengan ringkasan singkat per kasus + kalender sidang yang terlihat jelas — tanpa elemen dekoratif yang tidak perlu. *(Supreme Court of the United States)*
+
+#### Tuntunan Redesign
+- **Hero section:** 1 headline + 2 tombol CTA saja
+- **Section Layanan Utama:** 4–8 ikon terkelompok
+- **Berita:** Cukup 3 item terbaru
+- **Hapus dari beranda:** widget sosial media, galeri foto, majalah elektronik, agenda pimpinan → pindah ke halaman tersendiri
+
+---
+
+### Slide 7 — Masalah 3: Terminologi Teknis Tanpa Panduan
+
+**Badge Heuristic:** `H2` `H6` `H10`
+
+#### Deskripsi Masalah
+Website MA menggunakan istilah hukum teknis seperti *kasasi*, *PK*, *kepaniteraan*, *yurisprudensi* tanpa penjelasan apapun. Tidak ada FAQ, tidak ada glosarium, tidak ada panduan alur untuk pengguna baru yang awam hukum.
+
+#### Referensi Internasional
+- **🇬🇧 UKSC:** Berkomitmen membuat teks website sesederhana mungkin, menyediakan panduan aksesibilitas, halaman "Visitors Guide", dan panduan pengajuan perkara dalam bahasa yang mudah dipahami masyarakat umum. *(Mahkamah Konstitusi RI)*
+- **🇺🇸 SCOTUS:** Menyediakan "Visitors' Guide", "Case-handling Guide", dan FAQ lengkap yang dapat diakses langsung. Opini bisa diakses dalam 5 menit setelah diputuskan, disertai ringkasan dalam bahasa publik. *(Supreme Court of the United Kingdom)*
+
+#### Tuntunan Redesign
+- Halaman **FAQ** dengan search bar dan kategori tab
+- **Tooltip** ikon tanda tanya (?) di samping setiap istilah hukum — saat di-hover tampil penjelasan singkat
+- Bagian bawah FAQ: **Glosarium Hukum** format A–Z
+
+---
+
+### Slide 8 — Masalah 4: Pencarian & Error Handling Lemah
+
+**Badge Heuristic:** `H1` `H5` `H9`
+
+#### Deskripsi Masalah
+Pencarian di website MA terfragmentasi ke beberapa sistem berbeda. Tidak ada pencarian global terintegrasi. Halaman error tidak informatif dan tidak memberikan arahan pemulihan. Form tidak memvalidasi input secara *real-time*.
+
+#### Referensi Internasional
+- **🇬🇧 UKSC:** Portal baru UKSC memungkinkan pengguna mengajukan dokumen perkara secara digital dan melacak perkembangannya secara real-time — terhubung langsung ke website utama. *(Supreme Court of the United Kingdom)*
+- **🇺🇸 SCOTUS:** Menyediakan *docket search* terintegrasi (cari via nomor docket, nama kasus, atau kata kunci). Pengguna bisa berlangganan notifikasi email untuk setiap pembaruan kasus. *(Supreme Court of the United Kingdom)*
+
+#### Tuntunan Redesign
+- Satu **search bar global** di navbar yang mencakup semua konten
+- Halaman hasil pencarian kosong: tampilkan pesan membantu + saran kata kunci
+- Halaman **404** dengan tombol "Kembali ke Beranda" dan "Coba Pencarian"
+
+---
+
+### Slide 9 — Masalah 5: Aplikasi Internal & Eksternal Tidak Terorganisir
+
+**Badge Heuristic:** `H3` `H4` `H7`
+
+#### Deskripsi Masalah
+Layanan digital MA (e-Court, SIPP, Direktori Putusan) tersebar di berbagai bagian website tanpa pengelompokan yang jelas. Aplikasi internal pegawai (SIKEP, e-LHKPN) bercampur dengan layanan publik sehingga membingungkan pengguna awam.
+
+#### Referensi Internasional
+- **🇬🇧 UKSC:** Memisahkan dengan tegas antara portal publik dan portal praktisi hukum. Setiap portal memiliki *entry point* tersendiri di navbar dengan label yang langsung menjelaskan untuk siapa layanan tersebut ditujukan.
+- **🇺🇸 SCOTUS:** Mengorganisir semua layanan digital dalam satu halaman tersendiri — opini, docket, kalender, transkrip, jadwal, peraturan, panduan — semuanya terstruktur rapi dalam satu titik akses. *(Supreme Court of the United Kingdom)*
+
+#### Tuntunan Redesign
+- Item **"Layanan Digital"** di navbar → dropdown dua kolom:
+  - **Kiri (Publik):** e-Court, Direktori Putusan, Cek Perkara, Jadwal Sidang
+  - **Kanan (Pegawai):** Login Internal (visual lebih redup)
+- Di **footer**: dua kolom terpisah "Layanan Digital Publik" dan "Portal Pegawai"
+
+---
+
+### Slide 10 — Masalah 6: Tidak Ada Kalender Jadwal Sidang
+
+**Badge Heuristic:** `H1` `H6` `H7`
+
+#### Deskripsi Masalah
+Website MA tidak memiliki kalender visual untuk jadwal sidang. Pengguna — terutama advokat dan pihak berperkara — tidak bisa mengetahui kapan sidang dijadwalkan tanpa menghubungi kepaniteraan secara langsung.
+
+#### Referensi Internasional
+- **🇺🇸 SCOTUS:** Kalender langsung di halaman utama. Tanggal sidang ditandai warna merah — klik tanggal untuk melihat daftar kasus yang akan disidangkan. Tersedia kalender tahunan, *hearing list* per sesi, bahkan *audio livestream* dan transkrip dipublikasikan sore hari yang sama. *(Supreme Court of the United States, US Courts)*
+- **🇬🇧 UKSC:** Jadwal sidang mendatang langsung di beranda dalam format daftar bersih — nama kasus, tanggal, dan ringkasan isu hukum yang dipersidangkan, tanpa perlu masuk ke halaman terpisah.
+
+#### Tuntunan Redesign — Langkah di Figma
+1. Frame baru **1440×900px**, beri nama *"Jadwal Sidang"*
+2. **Filter bar** di atas: dropdown *Jenis Perkara*, dropdown *Kamar/Pengadilan*, input *bulan-tahun*, tombol Cari (emas) — gunakan Auto Layout
+3. **Grid kalender 7 kolom** — tiap sel `40×40px`, `border-radius 8px`. Tandai: dot emas untuk tanggal bersidang, background hijau tua untuk hari ini, background emas untuk tanggal diklik
+4. **Dua state Figma Prototype:**
+   - *Default:* kalender tampil, placeholder di bawah
+   - *Setelah klik tanggal:* daftar sidang muncul (jam, nomor perkara, badge jenis pastel, pokok perkara, tombol "Detail")
+5. **Prototype Link:** Klik tanggal di state 1 → state 2
+6. **Screenshot kedua state** untuk slide PPT — Before/After: kondisi eksisting vs prototipe redesign
+
+---
+
+## — DEFINE —
+
+### Slide 11 — Rumusan Masalah
+
+**Problem Statement:**
+> "Pengguna website Mahkamah Agung RI — terutama masyarakat awam, advokat, dan pihak berperkara — mengalami kesulitan signifikan dalam menemukan informasi perkara, memahami prosedur hukum, dan memantau jadwal sidang, akibat navigasi yang terfragmentasi, terminologi teknis tanpa panduan, tidak adanya kalender visual, dan sistem pencarian yang tidak terintegrasi."
+
+**4 Rumusan Masalah Utama:**
+| # | Masalah | Dampak |
+|---|---|---|
+| 1 | Navigasi tidak konsisten & membingungkan | Pengguna kehilangan orientasi, tingkat bounce tinggi |
+| 2 | Beranda terlalu padat tanpa hierarki | Pengguna kesulitan menemukan layanan prioritas |
+| 3 | Terminologi teknis tanpa penjelasan | Masyarakat awam merasa tidak terlayani |
+| 4 | Tidak ada kalender jadwal sidang | Advokat & pihak berperkara harus menghubungi langsung |
+
+---
+
+## — IDEATE —
+
+### Slide 12 — Ide Solusi
+
+| Masalah | Solusi Redesign |
+|---|---|
+| Navigasi terfragmentasi | Navbar 5–6 item, label pengguna-sentris, breadcrumb wajib, ikon link eksternal |
+| Beranda terlalu padat | Hero ringkas, max 8 layanan, 3 berita, hapus widget dekoratif |
+| Terminologi tanpa panduan | Halaman FAQ + search, tooltip hukum, glosarium A–Z |
+| Pencarian lemah | Search bar global terintegrasi, halaman error informatif + saran |
+| Layanan tidak terorganisir | Dropdown dua kolom (Publik vs Pegawai), footer terstruktur |
+| Tidak ada kalender sidang | Kalender visual interaktif di halaman Perkara, terintegrasi filter |
+
+---
+
+## — PROTOTYPE —
+
+### Slide 13 — Redesign: Wireframe (Low-Fidelity)
+
+Sebelum masuk ke desain visual, kami membangun wireframe *low-fidelity* terlebih dahulu untuk memvalidasi struktur tata letak tanpa gangguan visual (warna, foto, atau brand).
+
+> **Wireframe bisa diakses langsung di:** `http://localhost:5173/wireframe`
+
+---
+
+#### Wireframe — Beranda (Homepage)
+
+Struktur: Navbar grayscale → Hero (Heading + Tagline + Deskripsi + Search bar + 3 CTA) → Section Layanan (8 cards grid 4 kolom) → Section Berita (3 cards) → Footer
+
+![Wireframe Beranda — Portal Mahkamah Agung](C:\Users\amirs\.gemini\antigravity\brain\59de8da2-4a16-4822-87bc-698d1d4499a2\wf_beranda_final_1778913550272.png)
+
+---
+
+#### Wireframe — Perkara & Kalender Sidang
+
+Struktur: Navbar → Breadcrumb → Banner hero → Filter pencarian perkara → Split view (Kalender bulan + Panel daftar agenda) → Hasil pencarian list
+
+![Wireframe Perkara & Kalender](C:\Users\amirs\.gemini\antigravity\brain\59de8da2-4a16-4822-87bc-698d1d4499a2\wf_perkara_1778913465921.png)
+
+---
+
+#### Wireframe — FAQ & Panduan Pengguna
+
+Struktur: Hero + Search → Stats bar → Kategori tabs → Accordion FAQ → Banner Kontak → Glosarium A–Z
+
+![Wireframe FAQ](C:\Users\amirs\.gemini\antigravity\brain\59de8da2-4a16-4822-87bc-698d1d4499a2\wf_faq_1778913474697.png)
+
+---
+
+### Slide 14 — Redesign: Visual Design (High-Fidelity)
+
+Setelah wireframe divalidasi, brand palette MA diterapkan:
+- **Emas:** `#C9A84C` (CTA, border aksen, badge)
+- **Hijau MA:** `#1E3A2F` (Navbar, Footer, Hero overlay)
+- **Tipografi:** Playfair Display (heading) + Source Serif 4 (body)
+- **Efek:** Glassmorphism Hero, hover lift cards, micro-animations
+
+---
+
+#### Visual Design — Beranda: Hero Section
+
+Hero section dengan background foto gedung MA, gradient overlay hijau gelap, badge "Situs Resmi MA RI", tagline emas, search bar glassmorphism, dan 3 CTA button grid.
+
+![Visual Design Beranda — Hero Section](C:\Users\amirs\.gemini\antigravity\brain\59de8da2-4a16-4822-87bc-698d1d4499a2\vd_beranda_1778913492786.png)
+
+---
+
+#### Visual Design — Beranda: Layanan & Berita
+
+Stats bar hijau (5.2 Juta+ Putusan · 870+ Pengadilan · 34 Provinsi) + 8 Service cards grid 4 kolom + 3 News cards dengan foto dan kategori badge emas.
+
+![Visual Design Beranda — Layanan & Berita](C:\Users\amirs\.gemini\antigravity\brain\59de8da2-4a16-4822-87bc-698d1d4499a2\vd_beranda_layanan_1778913508585.png)
+
+---
+
+#### Visual Design — FAQ & Panduan Pengguna
+
+Hero hijau gelap dengan search bar, sidebar kategori sticky, accordion Radix dengan feedback button, dan glosarium istilah hukum premium.
+
+![Visual Design FAQ](C:\Users\amirs\.gemini\antigravity\brain\59de8da2-4a16-4822-87bc-698d1d4499a2\vd_faq_1778913521733.png)
+
+---
+
+#### Visual Design — Perkara & Kalender Sidang
+
+![Visual Design Perkara](C:\Users\amirs\.gemini\antigravity\brain\59de8da2-4a16-4822-87bc-698d1d4499a2\vd_perkara_full_1778913536227.png)
+
+---
+
+### Slide 15 — Perbandingan Before → Wireframe → Visual Design
+
+| Aspek | Website MA Eksisting | Wireframe | Visual Design Prototype |
+|---|---|---|---|
+| **Hero / Banner** | Gambar besar statis, banyak teks | Blok abu-abu, heading + search + 3 CTA | Glassmorphism + foto gedung + gradient hijau |
+| **Layanan** | Terpencar di dua section berbeda | 8 kotak grid 4 kolom + anotasi | 8 cards hover lift + ikon + badge eksternal |
+| **Perkara** | Form pencarian sederhana, tidak ada kalender | Filter bar + Kalender + Agenda panel | Kalender interaktif + panel agenda + hasil search |
+| **FAQ** | Tidak ada halaman FAQ | Hero + tabs + accordion placeholder | Sidebar kategori + Accordion Radix + glosarium |
+| **Navigasi** | Menu kelembagaan, subdomain tidak labeled | Label "Beranda, Perkara, FAQ, Layanan" | Navbar sticky, dropdown dua kolom (Publik / Pegawai) |
+
+---
+
+### Slide 16 — Komponen Design System
+
+| Token | Nilai | Kegunaan |
+|---|---|---|
+| `--ma-gold` | `#C9A84C` | Tombol CTA, border aktif, badge |
+| `--ma-gold-dark` | `#A8852A` | Hover tombol, teks strong |
+| `--ma-gold-light` | `#E8C96A` | Highlight, ikon dekoratif |
+| `--ma-gold-soft` | `#F9F3E3` | Background section aksen emas |
+| `--ma-green` | `#1E3A2F` | Navbar, footer |
+| `--ma-green-dark` | `#162B22` | Footer bawah, hover navbar |
+| `--ma-green-medium` | `#2E5A45` | Tombol sekunder |
+| `--ma-green-soft` | `#E8F2ED` | Background section aksen hijau |
+| Font Heading | Playfair Display | Semua judul H1–H3 |
+| Font Body | Source Serif 4 | Paragraf, deskripsi |
+| Font UI | DM Sans | Tombol, label, badge, nav |
+
+---
+
+## — TEST —
+
+### Slide 17 — Rencana Pengujian: UEQ
+
+**UEQ (User Experience Questionnaire)** adalah instrumen evaluasi UX terstandarisasi dengan 26 pasang kata sifat (*semantic differential*) yang mengukur enam aspek:
+
+| Aspek | Deskripsi | Contoh Pertanyaan |
+|---|---|---|
+| **Attractiveness** | Kesan keseluruhan | Menyenangkan ↔ Tidak menyenangkan |
+| **Perspicuity** | Kemudahan dipelajari | Mudah dipahami ↔ Sulit dipahami |
+| **Efficiency** | Kecepatan penggunaan | Cepat ↔ Lambat |
+| **Dependability** | Prediktabilitas | Dapat diprediksi ↔ Tidak terduga |
+| **Stimulation** | Motivasi penggunaan | Menarik ↔ Membosankan |
+| **Novelty** | Inovatif / kreatif | Inovatif ↔ Konvensional |
+
+**Rencana Distribusi:**
+- **Target responden:** 15–30 orang (mahasiswa hukum, praktisi, masyarakat umum)
+- **Media:** Google Form + Figma Prototype link
+- **Metode:** *Think-aloud* + pengisian UEQ setelah interaksi
+- **Analisis:** Skor rata-rata per aspek, bandingkan prototipe vs website eksisting
+
+---
+
+### Slide 18 — Penutup / Thank You
+
+> "Desain yang baik bukan hanya soal tampilan — ia adalah jembatan antara lembaga negara dan masyarakat yang dilayaninya."
+
+**Ringkasan Capaian:**
+- ✅ 6 masalah UX teridentifikasi dengan heuristic Nielsen
+- ✅ Referensi desain internasional: UKSC & SCOTUS
+- ✅ Wireframe Low-Fidelity (3 halaman) → dapat diakses di `/wireframe`
+- ✅ Prototipe Visual Design High-Fidelity (Homepage, FAQ, Perkara)
+- ✅ Rencana pengujian UEQ siap dieksekusi
+
+**Kontak & Repositori:** [Isi link GitHub / Figma project]
