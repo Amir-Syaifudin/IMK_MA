@@ -1,34 +1,34 @@
-import { createBrowserRouter } from 'react-router';
-import { Layout } from './components/Layout';
-import { Homepage } from './pages/Homepage';
-import { SearchPage } from './pages/SearchPage';
-import { FAQPage } from './pages/FAQPage';
-import { NotFound } from './pages/NotFound';
-import { PlaceholderPage } from './pages/PlaceholderPage';
-import { InformationPage } from './pages/InformationPage';
+import { createBrowserRouter } from "react-router";
+import { Layout } from "./components/Layout";
+import { Homepage } from "./pages/Homepage";
+import { SearchPage } from "./pages/SearchPage";
+import { FAQPage } from "./pages/FAQPage";
+import { NotFound } from "./pages/NotFound";
+import { PlaceholderPage } from "./pages/PlaceholderPage";
+import { InformationPage } from "./pages/InformationPage";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     Component: Layout,
     children: [
       { index: true, Component: Homepage },
-      { path: 'perkara', Component: SearchPage },
-      { path: 'faq', Component: FAQPage },
+      { path: "perkara", Component: SearchPage },
+      { path: "faq", Component: FAQPage },
 
       // Informasi Sub-pages
       {
-        path: 'id',
+        path: "id",
         children: [
-          { path: 'artikel', Component: InformationPage },
-          { path: 'berita', Component: InformationPage },
-          { path: 'keputusan', Component: InformationPage },
-          { path: 'pengumuman', Component: InformationPage },
-        ]
+          { path: "artikel", Component: InformationPage },
+          { path: "berita", Component: InformationPage },
+          { path: "keputusan", Component: InformationPage },
+          { path: "pengumuman", Component: InformationPage },
+        ],
       },
 
       {
-        path: 'profil',
+        path: "profil",
         element: (
           <PlaceholderPage
             title="Profil Mahkamah Agung"
@@ -37,7 +37,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'kontak',
+        path: "kontak",
         element: (
           <PlaceholderPage
             title="Kontak"
@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'kepaniteraan',
+        path: "kepaniteraan",
         element: (
           <PlaceholderPage
             title="Layanan Kepaniteraan"
@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'pengumuman',
+        path: "pengumuman",
         element: (
           <PlaceholderPage
             title="Pengumuman"
@@ -63,7 +63,7 @@ export const router = createBrowserRouter([
           />
         ),
       },
-      { path: '*', Component: NotFound },
+      { path: "*", Component: NotFound },
     ],
   },
 ]);

@@ -1,7 +1,7 @@
-import React from 'react';
-import JadwalFilterBar from '../components/JadwalFilterBar';
-import CalendarGrid from '../components/CalendarGrid';
-import JadwalListItem from '../components/JadwalListItem';
+import React from "react";
+import JadwalFilterBar from "../components/JadwalFilterBar";
+import CalendarGrid from "../components/CalendarGrid";
+import JadwalListItem from "../components/JadwalListItem";
 
 export function JadwalSidang() {
   return (

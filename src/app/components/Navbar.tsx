@@ -1,133 +1,288 @@
-import { Menu, X, ExternalLink, ChevronDown, BookOpen, Scale, FileSearch, LayoutGrid, Users, Newspaper, Megaphone, ClipboardList, Bell, Building2 } from 'lucide-react';
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router';
+import {
+  Menu,
+  X,
+  ExternalLink,
+  ChevronDown,
+  BookOpen,
+  Scale,
+  FileSearch,
+  LayoutGrid,
+  Users,
+  Newspaper,
+  Megaphone,
+  ClipboardList,
+  Bell,
+  Building2,
+  Search,
+} from "lucide-react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router";
 
 const digitalServices = [
   {
-    name: 'Direktori Putusan',
-    desc: 'Akses jutaan putusan di seluruh Indonesia',
-    href: 'https://putusan3.mahkamahagung.go.id',
+    name: "Direktori Putusan",
+    desc: "Akses jutaan putusan di seluruh Indonesia",
+    href: "https://putusan3.mahkamahagung.go.id",
     icon: BookOpen,
   },
   {
-    name: 'e-Court',
-    desc: 'Pendaftaran perkara secara online',
-    href: 'https://ecourt.mahkamahagung.go.id',
+    name: "e-Court",
+    desc: "Pendaftaran perkara secara online",
+    href: "https://ecourt.mahkamahagung.go.id",
     icon: Scale,
   },
   {
-    name: 'Cek Status Perkara',
-    desc: 'Lacak perkembangan perkara Anda',
-    href: 'https://sipp.pn-jakartapusat.go.id',
+    name: "Cek Status Perkara",
+    desc: "Lacak perkembangan perkara Anda",
+    href: "https://sipp.pn-jakartapusat.go.id",
     icon: FileSearch,
   },
   {
-    name: 'SIPP',
-    desc: 'Sistem Informasi Penelusuran Perkara',
-    href: 'https://sipp.mahkamahagung.go.id',
+    name: "SIPP",
+    desc: "Sistem Informasi Penelusuran Perkara",
+    href: "https://sipp.mahkamahagung.go.id",
     icon: LayoutGrid,
   },
   {
-    name: 'e-Berpadu',
-    desc: 'Layanan terintegrasi untuk advokat',
-    href: 'https://eberpadu.mahkamahagung.go.id',
+    name: "e-Berpadu",
+    desc: "Layanan terintegrasi untuk advokat",
+    href: "https://eberpadu.mahkamahagung.go.id",
     icon: Users,
   },
 ];
 
 const informasiItems = [
-  { name: 'Profil MA', path: '/profil', icon: Building2 },
-  { name: 'Artikel', path: '/id/artikel', icon: Newspaper },
-  { name: 'Berita', path: '/id/berita', icon: Megaphone },
-  { name: 'Kebijakan', path: '/id/keputusan', icon: ClipboardList },
-  { name: 'Pengumuman', path: '/id/pengumuman', icon: Bell },
+  { name: "Profil MA", path: "/profil", icon: Building2 },
+  { name: "Artikel", path: "/id/artikel", icon: Newspaper },
+  { name: "Berita", path: "/id/berita", icon: Megaphone },
+  { name: "Kebijakan", path: "/id/keputusan", icon: ClipboardList },
+  { name: "Pengumuman", path: "/id/pengumuman", icon: Bell },
 ];
 
+const tentangItems = [
+  { name: "Profil & Sejarah", path: "/profil" },
+  { name: "Struktur Organisasi", path: "/struktur" },
+  { name: "Pimpinan MA", path: "/pimpinan" },
+  { name: "Hakim Agung", path: "/hakim" },
+  { name: "Visi & Misi", path: "/visi-misi" },
+];
+
+const navStyle = {
+  linkBase: {
+    fontFamily: "'DM Sans', sans-serif" as const,
+    fontSize: "12px",
+    fontWeight: "500" as const,
+    letterSpacing: "0.07em",
+    textTransform: "uppercase" as const,
+    textDecoration: "none",
+    padding: "0 15px",
+    height: "72px",
+    display: "flex",
+    alignItems: "center" as const,
+    borderBottom: "3px solid transparent",
+    marginBottom: "-3px",
+    transition: "all 0.15s",
+  },
+  dropdownMenu: {
+    position: "absolute" as const,
+    top: "100%",
+    background: "var(--ma-green-medium)",
+    border: "1px solid rgba(201,168,76,0.2)",
+    borderTop: "2px solid var(--ma-gold)" as const,
+    minWidth: "220px",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
+    zIndex: 50,
+  },
+  dropdownItem: {
+    display: "flex",
+    alignItems: "center" as const,
+    gap: "10px",
+    padding: "11px 18px",
+    textDecoration: "none",
+    fontFamily: "'DM Sans', sans-serif" as const,
+    fontSize: "12px",
+    color: "rgba(255,255,255,0.7)",
+    borderBottom: "1px solid rgba(255,255,255,0.06)",
+    borderLeft: "3px solid transparent",
+    transition: "all 0.15s",
+  },
+};
+
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [layananOpen, setLayananOpen] = useState(false);
   const [informasiOpen, setInformasiOpen] = useState(false);
+  const [tentangOpen, setTentangOpen] = useState(false);
   const location = useLocation();
-
-  const navLinks = [
-    { name: 'Beranda', path: '/' },
-    { name: 'Perkara', path: '/perkara' },
-  ];
-
-  const otherLinks = [
-    { name: 'FAQ & Panduan', path: '/faq' },
-  ];
-
   const isActive = (path: string) => location.pathname === path;
 
+  const hoverOn = (e: React.MouseEvent<HTMLElement>) => {
+    e.currentTarget.style.background = "rgba(201,168,76,0.1)";
+    e.currentTarget.style.borderLeftColor = "var(--ma-gold)";
+    (e.currentTarget.style as any).color = "#fff";
+  };
+  const hoverOff = (e: React.MouseEvent<HTMLElement>) => {
+    e.currentTarget.style.background = "transparent";
+    e.currentTarget.style.borderLeftColor = "transparent";
+    (e.currentTarget.style as any).color = "rgba(255,255,255,0.7)";
+  };
+
   return (
-    <nav className="bg-[#1E3A2F] shadow-lg sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <>
+
+      {/* Main nav */}
+      <nav
+        style={{
+          background: "var(--ma-green)",
+          position: "sticky",
+          top: 0,
+          zIndex: 100,
+          borderBottom: "3px solid var(--ma-gold)",
+          boxShadow: "0 2px 24px rgba(0,0,0,0.3)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1280px",
+            margin: "0 auto",
+            padding: "0 2rem",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: "72px",
+          }}
+        >
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-4">
-            <img src="/src/imports/image.png" alt="Logo Mahkamah Agung" className="h-14 w-auto" />
-            <div className="hidden md:block">
-              <div className="font-semibold text-[#C9A84C]">MAHKAMAH AGUNG</div>
-              <div className="text-sm text-[#E8C96A]">Republik Indonesia</div>
+          <Link
+            to="/"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "14px",
+              textDecoration: "none",
+            }}
+          >
+            <div
+              style={{
+                width: "48px",
+                height: "48px",
+                borderRadius: "50%",
+                background: "var(--ma-gold-soft)",
+                border: "2px solid var(--ma-gold)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+                overflow: "hidden",
+              }}
+            >
+              <img
+                src="/src/imports/image.png"
+                alt="MA Logo"
+                style={{ width: "36px", height: "36px", objectFit: "contain" }}
+              />
+            </div>
+            <div>
+              <div
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: "13.5px",
+                  fontWeight: "700",
+                  color: "var(--ma-gold-light)",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Mahkamah Agung
+              </div>
+              <div
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "10px",
+                  color: "rgba(255,255,255,0.4)",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  marginTop: "1px",
+                }}
+              >
+                Republik Indonesia
+              </div>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
-            {navLinks.map((link) => (
+          {/* Desktop links */}
+          <div
+            style={{ display: "flex", alignItems: "center", height: "72px" }}
+          >
+            {[
+              { label: "Beranda", path: "/" },
+              { label: "Perkara", path: "/perkara" },
+            ].map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`transition-colors text-sm ${isActive(link.path)
-                  ? 'text-[#C9A84C] font-medium'
-                  : 'text-white hover:text-[#E8C96A]'
-                  }`}
+                style={{
+                  ...navStyle.linkBase,
+                  color: isActive(link.path)
+                    ? "var(--ma-gold-light)"
+                    : "rgba(255,255,255,0.78)",
+                  borderBottomColor: isActive(link.path)
+                    ? "var(--ma-gold)"
+                    : "transparent",
+                }}
               >
-                {link.name}
+                {link.label}
               </Link>
             ))}
 
-            {/* Informasi Dropdown */}
+
+            {/* Informasi */}
             <div
-              className="relative"
+              style={{
+                position: "relative",
+                height: "72px",
+                display: "flex",
+                alignItems: "center",
+              }}
               onMouseEnter={() => setInformasiOpen(true)}
               onMouseLeave={() => setInformasiOpen(false)}
             >
               <button
-                className={`flex items-center gap-1 text-sm transition-colors ${informasiOpen || informasiItems.some(item => isActive(item.path))
-                    ? 'text-[#C9A84C] font-medium'
-                    : 'text-white hover:text-[#E8C96A]'
-                  }`}
-                aria-haspopup="true"
-                aria-expanded={informasiOpen}
+                style={{
+                  ...navStyle.linkBase,
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  color: "rgba(255,255,255,0.78)",
+                  gap: "4px",
+                }}
               >
-                Informasi
+                Informasi{" "}
                 <ChevronDown
-                  size={14}
-                  className={`transition-transform ${informasiOpen ? 'rotate-180' : ''}`}
+                  size={11}
+                  style={{
+                    transform: informasiOpen ? "rotate(180deg)" : "",
+                    transition: "transform 0.2s",
+                  }}
                 />
               </button>
-
               {informasiOpen && (
-                <div className="absolute left-0 top-full mt-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 animate-fadeIn">
-                  <div className="px-4 py-2 bg-[#1E3A2F] text-[#C9A84C] text-xs font-semibold uppercase tracking-wider">
-                    Pusat Informasi
-                  </div>
+                <div style={{ ...navStyle.dropdownMenu, left: 0 }}>
                   {informasiItems.map((item) => {
                     const Icon = item.icon;
                     return (
                       <Link
                         key={item.name}
                         to={item.path}
-                        className="flex items-center gap-3 px-4 py-3 hover:bg-[#F9F3E3] transition-colors group"
+                        style={navStyle.dropdownItem}
+                        onMouseEnter={hoverOn}
+                        onMouseLeave={hoverOff}
                       >
-                        <div className="p-1.5 bg-[#C9A84C]/10 rounded-lg group-hover:bg-[#C9A84C]/20 transition-colors">
-                          <Icon size={16} className="text-[#C9A84C]" />
-                        </div>
-                        <span className="text-sm font-medium text-[#1E3A2F] group-hover:text-[#A8852A]">
-                          {item.name}
-                        </span>
+                        <Icon
+                          size={13}
+                          style={{ color: "var(--ma-gold)", flexShrink: 0 }}
+                        />
+                        {item.name}
                       </Link>
                     );
                   })}
@@ -135,42 +290,59 @@ export function Navbar() {
               )}
             </div>
 
-            {otherLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`transition-colors text-sm ${isActive(link.path)
-                  ? 'text-[#C9A84C] font-medium'
-                  : 'text-white hover:text-[#E8C96A]'
-                  }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            <Link
+              to="/faq"
+              style={{
+                ...navStyle.linkBase,
+                color: isActive("/faq")
+                  ? "var(--ma-gold-light)"
+                  : "rgba(255,255,255,0.78)",
+                borderBottomColor: isActive("/faq")
+                  ? "var(--ma-gold)"
+                  : "transparent",
+              }}
+            >
+              FAQ
+            </Link>
 
-            {/* Layanan Digital Dropdown */}
+            {/* Layanan Digital */}
             <div
-              className="relative"
+              style={{
+                position: "relative",
+                height: "72px",
+                display: "flex",
+                alignItems: "center",
+              }}
               onMouseEnter={() => setLayananOpen(true)}
               onMouseLeave={() => setLayananOpen(false)}
             >
               <button
-                className="flex items-center gap-1 text-sm text-white hover:text-[#E8C96A] transition-colors"
-                aria-haspopup="true"
-                aria-expanded={layananOpen}
+                style={{
+                  ...navStyle.linkBase,
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  color: "rgba(255,255,255,0.78)",
+                  gap: "4px",
+                }}
               >
-                Layanan Digital
+                Layanan Digital{" "}
                 <ChevronDown
-                  size={14}
-                  className={`transition-transform ${layananOpen ? 'rotate-180' : ''}`}
+                  size={11}
+                  style={{
+                    transform: layananOpen ? "rotate(180deg)" : "",
+                    transition: "transform 0.2s",
+                  }}
                 />
               </button>
-
               {layananOpen && (
-                <div className="absolute right-0 top-full mt-1 w-72 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 animate-fadeIn">
-                  <div className="px-4 py-2 bg-[#1E3A2F] text-[#C9A84C] text-xs font-semibold uppercase tracking-wider">
-                    Layanan Publik
-                  </div>
+                <div
+                  style={{
+                    ...navStyle.dropdownMenu,
+                    right: 0,
+                    minWidth: "280px",
+                  }}
+                >
                   {digitalServices.map((s) => {
                     const Icon = s.icon;
                     return (
@@ -179,106 +351,201 @@ export function Navbar() {
                         href={s.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-start gap-3 px-4 py-3 hover:bg-[#F9F3E3] transition-colors group"
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "12px",
+                          padding: "12px 18px",
+                          textDecoration: "none",
+                          borderBottom: "1px solid rgba(255,255,255,0.06)",
+                          borderLeft: "3px solid transparent",
+                          transition: "all 0.15s",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background =
+                            "rgba(201,168,76,0.1)";
+                          e.currentTarget.style.borderLeftColor =
+                            "var(--ma-gold)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = "transparent";
+                          e.currentTarget.style.borderLeftColor = "transparent";
+                        }}
                       >
-                        <div className="mt-0.5 p-1.5 bg-[#C9A84C]/10 rounded-lg group-hover:bg-[#C9A84C]/20 transition-colors">
-                          <Icon size={16} className="text-[#C9A84C]" />
+                        <div
+                          style={{
+                            width: "32px",
+                            height: "32px",
+                            background: "rgba(201,168,76,0.08)",
+                            border: "1px solid rgba(201,168,76,0.2)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            flexShrink: 0,
+                          }}
+                        >
+                          <Icon
+                            size={15}
+                            style={{ color: "var(--ma-gold-light)" }}
+                          />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="text-sm font-medium text-[#1E3A2F] group-hover:text-[#A8852A]">
+                        <div style={{ flex: 1 }}>
+                          <div
+                            style={{
+                              fontFamily: "'DM Sans', sans-serif",
+                              fontSize: "12px",
+                              fontWeight: "500",
+                              color: "rgba(255,255,255,0.85)",
+                            }}
+                          >
                             {s.name}
                           </div>
-                          <div className="text-xs text-gray-500 truncate">{s.desc}</div>
+                          <div
+                            style={{
+                              fontFamily: "'DM Sans', sans-serif",
+                              fontSize: "10px",
+                              color: "rgba(255,255,255,0.35)",
+                              marginTop: "1px",
+                            }}
+                          >
+                            {s.desc}
+                          </div>
                         </div>
-                        <ExternalLink size={12} className="mt-1 text-gray-300 group-hover:text-[#C9A84C] flex-shrink-0" />
+                        <ExternalLink
+                          size={11}
+                          style={{
+                            color: "rgba(255,255,255,0.25)",
+                            flexShrink: 0,
+                          }}
+                        />
                       </a>
                     );
                   })}
                 </div>
               )}
             </div>
+
+            {/* Search CTA */}
+            <button
+              style={{
+                background: "var(--ma-gold)",
+                color: "var(--ma-green-dark)",
+                border: "none",
+                cursor: "pointer",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "11px",
+                fontWeight: "700",
+                letterSpacing: "0.09em",
+                textTransform: "uppercase",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                padding: "0 18px",
+                height: "40px",
+                marginLeft: "10px",
+                transition: "background 0.15s",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "var(--ma-gold-light)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.background = "var(--ma-gold)")
+              }
+            >
+              <Search size={13} /> Cari
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile toggle */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-white hover:text-[#C9A84C]"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            style={{
+              display: "none",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              color: "#fff",
+              padding: "8px",
+            }}
+            className="lg:hidden"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-[#2E5A45] max-h-[calc(100vh-80px)] overflow-y-auto">
-            {navLinks.map((link) => (
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div
+            style={{
+              borderTop: "1px solid rgba(201,168,76,0.2)",
+              maxHeight: "calc(100vh - 72px)",
+              overflowY: "auto",
+            }}
+          >
+            {[
+              { label: "Beranda", path: "/" },
+              { label: "Perkara", path: "/perkara" },
+              { label: "FAQ", path: "/faq" },
+            ].map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block py-3 px-4 transition-colors ${isActive(link.path)
-                  ? 'text-[#C9A84C] font-medium bg-[#2E5A45]'
-                  : 'text-white hover:bg-[#2E5A45]'
-                  }`}
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  display: "block",
+                  padding: "14px 24px",
+                  textDecoration: "none",
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "13px",
+                  color: isActive(link.path)
+                    ? "var(--ma-gold-light)"
+                    : "rgba(255,255,255,0.8)",
+                  borderLeft: `3px solid ${isActive(link.path) ? "var(--ma-gold)" : "transparent"}`,
+                  borderBottom: "1px solid rgba(255,255,255,0.06)",
+                }}
               >
-                {link.name}
+                {link.label}
               </Link>
             ))}
-
-            {/* Mobile: Informasi section */}
-            <div className="mt-2 border-t border-[#2E5A45] pt-3">
-              <div className="px-4 pb-2 text-xs font-semibold text-[#C9A84C] uppercase tracking-wider">
-                Informasi
-              </div>
-              {informasiItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center gap-3 py-2.5 px-6 transition-colors ${isActive(item.path) ? 'text-[#C9A84C]' : 'text-white/80 hover:text-[#C9A84C]'
-                    }`}
-                >
-                  <item.icon size={16} />
-                  <span className="text-sm">{item.name}</span>
-                </Link>
-              ))}
+            <div
+              style={{
+                padding: "10px 24px 5px",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "9px",
+                fontWeight: "700",
+                color: "var(--ma-gold)",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                borderTop: "1px solid rgba(255,255,255,0.06)",
+                marginTop: "4px",
+              }}
+            >
+              Layanan Digital
             </div>
-
-            {otherLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block py-3 px-4 transition-colors ${isActive(link.path)
-                  ? 'text-[#C9A84C] font-medium bg-[#2E5A45]'
-                  : 'text-white hover:bg-[#2E5A45]'
-                  }`}
+            {digitalServices.map((s) => (
+              <a
+                key={s.name}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "12px 24px 12px 28px",
+                  textDecoration: "none",
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "13px",
+                  color: "rgba(255,255,255,0.65)",
+                  borderBottom: "1px solid rgba(255,255,255,0.05)",
+                }}
               >
-                {link.name}
-              </Link>
+                {s.name}{" "}
+                <ExternalLink size={12} style={{ color: "var(--ma-gold)" }} />
+              </a>
             ))}
-
-            {/* Mobile: Layanan Digital section */}
-            <div className="mt-2 border-t border-[#2E5A45] pt-3">
-              <div className="px-4 pb-2 text-xs font-semibold text-[#C9A84C] uppercase tracking-wider">
-                Layanan Digital
-              </div>
-              {digitalServices.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between py-2.5 px-4 text-white/80 hover:text-[#C9A84C] hover:bg-[#2E5A45] transition-colors"
-                >
-                  <span className="text-sm">{s.name}</span>
-                  <ExternalLink size={12} />
-                </a>
-              ))}
-            </div>
           </div>
         )}
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
