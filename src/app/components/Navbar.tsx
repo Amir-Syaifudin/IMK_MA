@@ -14,9 +14,10 @@ import {
   Bell,
   Building2,
   Search,
+  ArrowRight,
 } from "lucide-react";
-import { useState } from "react";
-import { Link, useLocation } from "react-router";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 
 const digitalServices = [
   {
@@ -113,8 +114,39 @@ export function Navbar() {
   const [layananOpen, setLayananOpen] = useState(false);
   const [informasiOpen, setInformasiOpen] = useState(false);
   const [tentangOpen, setTentangOpen] = useState(false);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
   const isActive = (path: string) => location.pathname === path;
+
+  // Keyboard shortcut for Esc to close modal
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSearchModalOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (searchModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [searchModalOpen]);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      setSearchModalOpen(false);
+      navigate(`/perkara?q=${encodeURIComponent(searchQuery)}`);
+    }
+  };
 
   const hoverOn = (e: React.MouseEvent<HTMLElement>) => {
     e.currentTarget.style.background = "rgba(201,168,76,0.1)";
@@ -129,6 +161,145 @@ export function Navbar() {
 
   return (
     <>
+      <style>
+        {`
+          @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+        `}
+      </style>
+
+      {/* Search Popup Dropdown */}
+      {searchModalOpen && (
+        <div 
+          style={{
+            position: "fixed",
+            top: "72px",
+            left: 0,
+            right: 0,
+            background: "rgba(0, 0, 0, 0.4)",
+            backdropFilter: "blur(4px)",
+            zIndex: 90,
+            height: "calc(100vh - 72px)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            animation: "fadeIn 0.2s ease-out",
+          }}
+          onClick={() => setSearchModalOpen(false)}
+        >
+          <div 
+            style={{
+              width: "100%",
+              background: "var(--ma-green)",
+              borderBottom: "3px solid var(--ma-gold)",
+              padding: "30px 20px 40px",
+              boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
+              animation: "slideDown 0.3s ease-out",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ width: "100%", maxWidth: "900px", margin: "0 auto" }}>
+              <form onSubmit={handleSearch}>
+                <div style={{ position: "relative", marginBottom: "20px" }}>
+                  <Search 
+                    size={24} 
+                    style={{
+                      position: "absolute",
+                      left: "20px",
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      color: "var(--ma-gold)",
+                    }}
+                  />
+                  <input 
+                    autoFocus
+                    type="text"
+                    placeholder="Apa yang ingin Anda cari? (Putusan, Jadwal Sidang, Berita...)"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    style={{
+                      width: "100%",
+                      background: "rgba(255,255,255,0.08)",
+                      border: "1px solid rgba(201, 168, 76, 0.4)",
+                      borderRadius: "16px",
+                      padding: "16px 24px 16px 60px",
+                      fontSize: "18px",
+                      fontFamily: "var(--font-ui)",
+                      color: "white",
+                      outline: "none",
+                      transition: "all 0.2s",
+                    }}
+                    onFocus={(e) => (e.currentTarget.style.borderColor = "var(--ma-gold)")}
+                  />
+                  <button 
+                    type="submit"
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      background: "var(--ma-gold)",
+                      color: "var(--ma-green-dark)",
+                      border: "none",
+                      padding: "8px 20px",
+                      borderRadius: "10px",
+                      fontWeight: "700",
+                      fontSize: "13px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    CARI
+                  </button>
+                </div>
+
+                {/* Quick Tags */}
+                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px" }}>
+                  <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                    Populer:
+                  </span>
+                  {["Putusan Kasasi", "SIPP", "Jadwal Sidang", "Berita", "PERMA"].map(tag => (
+                    <button
+                      key={tag}
+                      type="button"
+                      onClick={() => {
+                        setSearchQuery(tag);
+                        navigate(`/perkara?q=${encodeURIComponent(tag)}`);
+                        setSearchModalOpen(false);
+                      }}
+                      style={{
+                        background: "transparent",
+                        border: "1px solid rgba(255,255,255,0.15)",
+                        color: "rgba(255,255,255,0.7)",
+                        padding: "4px 14px",
+                        borderRadius: "8px",
+                        fontSize: "12px",
+                        cursor: "pointer",
+                        transition: "all 0.2s",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = "var(--ma-gold)";
+                        e.currentTarget.style.color = "var(--ma-gold)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+                        e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+                      }}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main nav */}
       <nav
@@ -427,6 +598,7 @@ export function Navbar() {
 
             {/* Search CTA */}
             <button
+              onClick={() => setSearchModalOpen(true)}
               style={{
                 background: "var(--ma-gold)",
                 color: "var(--ma-green-dark)",
@@ -480,8 +652,38 @@ export function Navbar() {
               borderTop: "1px solid rgba(201,168,76,0.2)",
               maxHeight: "calc(100vh - 72px)",
               overflowY: "auto",
+              background: "var(--ma-green)",
+              paddingBottom: "20px",
             }}
           >
+            {/* Mobile Search Button */}
+            <div style={{ padding: "16px 24px" }}>
+              <button
+                onClick={() => {
+                  setSearchModalOpen(true);
+                  setMobileOpen(false);
+                }}
+                style={{
+                  width: "100%",
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(201,168,76,0.3)",
+                  borderRadius: "12px",
+                  padding: "12px 16px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  color: "rgba(255,255,255,0.6)",
+                  fontFamily: "var(--font-ui)",
+                  fontSize: "14px",
+                  cursor: "pointer",
+                  textAlign: "left",
+                }}
+              >
+                <Search size={18} style={{ color: "var(--ma-gold)" }} />
+                Cari informasi...
+              </button>
+            </div>
+
             {[
               { label: "Beranda", path: "/" },
               { label: "Perkara", path: "/perkara" },

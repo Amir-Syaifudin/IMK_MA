@@ -1,5 +1,4 @@
 import {
-  Search,
   FileSearch,
   ClipboardList,
   Phone,
@@ -12,7 +11,6 @@ import {
   LayoutGrid,
   Users,
 } from "lucide-react";
-import { useState } from "react";
 import { useNavigate } from "react-router";
 
 import { ServiceCard } from "../components/ServiceCard";
@@ -20,15 +18,6 @@ import { NewsCard } from "../components/NewsCard";
 
 export function Homepage() {
   const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!searchQuery.trim()) return;
-
-    navigate(`/perkara?q=${encodeURIComponent(searchQuery)}`);
-  };
 
   const heroButtons = [
     {
@@ -153,7 +142,7 @@ export function Homepage() {
             {/* Heading */}
             <div className="mx-auto mb-20 flex max-w-5xl flex-col items-center text-center">
               <h1 className="ma-display mb-6 text-center text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
-                Portal Mahkamah Agung
+                Mahkamah Agung
               </h1>
 
               <p className="mb-8 text-center text-xl font-black uppercase tracking-[0.25em] text-[var(--ma-gold)] md:text-3xl">
@@ -197,41 +186,6 @@ export function Homepage() {
               })}
             </div>
 
-            {/* Search */}
-            <div className="mx-auto flex w-full max-w-5xl justify-center">
-              <div className="group relative w-full">
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[var(--ma-gold)] to-[var(--ma-gold-light)] opacity-25 blur transition duration-1000 group-hover:opacity-50" />
-
-                <form
-                  onSubmit={handleSearch}
-                  className="relative rounded-2xl border border-white/20 bg-white/10 p-2 shadow-2xl backdrop-blur-xl"
-                >
-                  <div className="flex flex-col gap-2 rounded-xl bg-white/95 p-2 md:flex-row md:items-center">
-                    <div className="relative flex-1">
-                      <Search
-                        size={24}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ma-text-muted)]"
-                      />
-
-                      <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder="Cari putusan, berita, atau informasi lainnya..."
-                        className="w-full rounded-lg border-none bg-transparent py-5 pl-14 pr-4 text-lg text-[var(--ma-title)] placeholder:text-[var(--ma-text-muted)] focus:outline-none"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="min-w-[180px] rounded-xl bg-[var(--ma-gold)] px-10 py-5 text-lg font-bold uppercase tracking-widest text-[var(--ma-green-dark)] shadow-lg transition-all duration-300 hover:bg-[var(--ma-gold-light)] hover:shadow-[0_0_20px_rgba(201,168,76,0.6)]"
-                    >
-                      Cari
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
           </div>
         </div>
       </section>
