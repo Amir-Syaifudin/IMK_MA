@@ -80,8 +80,8 @@ export function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={`transition-colors text-sm ${isActive(link.path)
-                    ? 'text-[#C9A84C] font-medium'
-                    : 'text-white hover:text-[#E8C96A]'
+                  ? 'text-[#C9A84C] font-medium'
+                  : 'text-white hover:text-[#E8C96A]'
                   }`}
               >
                 {link.name}
@@ -95,11 +95,10 @@ export function Navbar() {
               onMouseLeave={() => setInformasiOpen(false)}
             >
               <button
-                className={`flex items-center gap-1 text-sm transition-colors ${
-                  informasiOpen || informasiItems.some(item => isActive(item.path))
+                className={`flex items-center gap-1 text-sm transition-colors ${informasiOpen || informasiItems.some(item => isActive(item.path))
                     ? 'text-[#C9A84C] font-medium'
                     : 'text-white hover:text-[#E8C96A]'
-                }`}
+                  }`}
                 aria-haspopup="true"
                 aria-expanded={informasiOpen}
               >
@@ -141,8 +140,8 @@ export function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={`transition-colors text-sm ${isActive(link.path)
-                    ? 'text-[#C9A84C] font-medium'
-                    : 'text-white hover:text-[#E8C96A]'
+                  ? 'text-[#C9A84C] font-medium'
+                  : 'text-white hover:text-[#E8C96A]'
                   }`}
               >
                 {link.name}
@@ -218,8 +217,8 @@ export function Navbar() {
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block py-3 px-4 transition-colors ${isActive(link.path)
-                    ? 'text-[#C9A84C] font-medium bg-[#2E5A45]'
-                    : 'text-white hover:bg-[#2E5A45]'
+                  ? 'text-[#C9A84C] font-medium bg-[#2E5A45]'
+                  : 'text-white hover:bg-[#2E5A45]'
                   }`}
               >
                 {link.name}
@@ -236,9 +235,8 @@ export function Navbar() {
                   key={item.name}
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center gap-3 py-2.5 px-6 transition-colors ${
-                    isActive(item.path) ? 'text-[#C9A84C]' : 'text-white/80 hover:text-[#C9A84C]'
-                  }`}
+                  className={`flex items-center gap-3 py-2.5 px-6 transition-colors ${isActive(item.path) ? 'text-[#C9A84C]' : 'text-white/80 hover:text-[#C9A84C]'
+                    }`}
                 >
                   <item.icon size={16} />
                   <span className="text-sm">{item.name}</span>
@@ -252,8 +250,8 @@ export function Navbar() {
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block py-3 px-4 transition-colors ${isActive(link.path)
-                    ? 'text-[#C9A84C] font-medium bg-[#2E5A45]'
-                    : 'text-white hover:bg-[#2E5A45]'
+                  ? 'text-[#C9A84C] font-medium bg-[#2E5A45]'
+                  : 'text-white hover:bg-[#2E5A45]'
                   }`}
               >
                 {link.name}

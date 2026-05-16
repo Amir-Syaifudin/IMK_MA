@@ -20,9 +20,9 @@ export function Homepage() {
       {/* 1. Portal & Search Section with Gold Background Theme */}
       <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image with Gold-Toned Overlay */}
-        <div 
+        <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
+          style={{
             backgroundImage: "url('/src/imports/ma-bg.jpg')",
             backgroundAttachment: 'fixed'
           }}
