@@ -9,6 +9,7 @@ import { InformationPage } from "./pages/InformationPage";
 import { HomepageWF } from "./pages/wireframe/HomepageWF";
 import { SearchPageWF } from "./pages/wireframe/SearchPageWF";
 import { FAQPageWF } from "./pages/wireframe/FAQPageWF";
+import { InformationPageWF } from "./pages/wireframe/InformationPageWF";
 
 export const router = createBrowserRouter([
   {
@@ -74,5 +75,6 @@ export const router = createBrowserRouter([
   { path: "/wireframe", Component: HomepageWF },
   { path: "/wireframe/perkara", Component: SearchPageWF },
   { path: "/wireframe/faq", Component: FAQPageWF },
+  { path: "/wireframe/informasi/:category", Component: InformationPageWF },
 ]);
 

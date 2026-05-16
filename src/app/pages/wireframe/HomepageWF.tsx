@@ -9,6 +9,7 @@ function WFTopBar() {
       <Link to="/wireframe" className={`wf-topbar-link ${loc.pathname === "/wireframe" ? "active" : ""}`}>Beranda</Link>
       <Link to="/wireframe/perkara" className={`wf-topbar-link ${loc.pathname === "/wireframe/perkara" ? "active" : ""}`}>Perkara</Link>
       <Link to="/wireframe/faq" className={`wf-topbar-link ${loc.pathname === "/wireframe/faq" ? "active" : ""}`}>FAQ</Link>
+      <Link to="/wireframe/informasi/berita" className={`wf-topbar-link ${loc.pathname.includes("informasi") ? "active" : ""}`}>Informasi</Link>
       <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
         <Link to="/" className="wf-topbar-link"> Lihat Visual Design</Link>
       </div>
@@ -37,7 +38,7 @@ export function HomepageWF() {
         <span className="wf-hero-bg-label">bg: foto gedung MA + overlay gelap</span>
         <div className="wf-hero-inner">
           <span className="wf-label">H1 — Judul Utama</span>
-          <div className="wf-h1" style={{ color: "#555" }}>Portal Mahkamah Agung</div>
+          <div className="wf-h1" style={{ color: "#555" }}>Mahkamah Agung</div>
 
           <div className="wf-block" style={{ height: 24, maxWidth: 400, margin: "12px auto" }}>
             TAGLINE — "Pengadilan Bermartabat, Negara Berdaulat"
