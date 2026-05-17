@@ -6,12 +6,12 @@ function WFTopBar() {
   const loc = useLocation();
   return (
     <div className="wf-topbar">
-      <span className="wf-topbar-label">📐 Wireframe Mode</span>
+      <span className="wf-topbar-label"> Wireframe Mode</span>
       <Link to="/wireframe" className={`wf-topbar-link ${loc.pathname === "/wireframe" ? "active" : ""}`}>Beranda</Link>
       <Link to="/wireframe/perkara" className={`wf-topbar-link ${loc.pathname === "/wireframe/perkara" ? "active" : ""}`}>Perkara</Link>
       <Link to="/wireframe/faq" className={`wf-topbar-link ${loc.pathname === "/wireframe/faq" ? "active" : ""}`}>FAQ</Link>
       <div style={{ marginLeft: "auto" }}>
-        <Link to="/faq" className="wf-topbar-link">→ Lihat Visual Design</Link>
+        <Link to="/faq" className="wf-topbar-link"> Lihat Visual Design</Link>
       </div>
     </div>
   );
@@ -53,16 +53,16 @@ export function FAQPageWF() {
       <div className="wf-navbar">
         <div className="wf-navbar-logo">[ Logo MA ]</div>
         <div className="wf-navbar-links">
-          {["Beranda", "Perkara", "Informasi ▾", "FAQ", "Layanan Digital ▾"].map(l => (
+          {["Beranda", "Perkara", "Informasi ", "FAQ", "Layanan Digital "].map(l => (
             <div key={l} className="wf-navbar-link" style={l === "FAQ" ? { background: "#9E9E9E", color: "#fff" } : {}}>{l}</div>
           ))}
         </div>
-        <div className="wf-navbar-cta">🔍 Cari</div>
+        <div className="wf-navbar-cta"> Cari</div>
       </div>
 
       {/* ─── BREADCRUMB ─── */}
       <div style={{ background: "#E0E0E0", borderBottom: "1px solid #CCCCCC", padding: "8px 32px" }}>
-        <span style={{ fontSize: 11, color: "#888" }}>Beranda › FAQ & Panduan Pengguna</span>
+        <span style={{ fontSize: 11, color: "#888" }}>Beranda  FAQ & Panduan Pengguna</span>
       </div>
 
       {/* ─── HERO FAQ ─── */}
@@ -121,16 +121,16 @@ export function FAQPageWF() {
                   <div className="wf-badge">{faq.cat}</div>
                   <span style={{ fontSize: 13, fontWeight: 600, color: "#444" }}>{faq.q}</span>
                 </div>
-                <span style={{ fontSize: 16, color: "#888", marginLeft: 12 }}>{openFaq === i ? "▲" : "▼"}</span>
+                <span style={{ fontSize: 16, color: "#888", marginLeft: 12 }}>{openFaq === i ? "" : ""}</span>
               </div>
               {openFaq === i && (
                 <div style={{ background: "#CFCFCF", border: "1px solid #BBBBBB", borderTop: "none", borderRadius: "0 0 8px 8px", padding: "16px 20px" }}>
                   <div className="wf-label">Jawaban:</div>
                   <div className="wf-block" style={{ height: 60, fontSize: 9 }}>Teks jawaban lengkap akan ditampilkan di sini. Bisa berisi langkah-langkah, tautan, atau penjelasan prosedur.</div>
                   <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
-                    <div className="wf-btn-sm">👍 Membantu</div>
-                    <div className="wf-btn-sm">👎 Tidak Membantu</div>
-                    <div className="wf-btn-sm" style={{ marginLeft: "auto" }}>Laporkan →</div>
+                    <div className="wf-btn-sm"> Membantu</div>
+                    <div className="wf-btn-sm"> Tidak Membantu</div>
+                    <div className="wf-btn-sm" style={{ marginLeft: "auto" }}>Laporkan </div>
                   </div>
                 </div>
               )}
@@ -195,7 +195,7 @@ export function FAQPageWF() {
         <div className="wf-footer">
           <div><div className="wf-label">Tentang MA</div><div className="wf-block" style={{ height: 60, fontSize: 9 }}>Logo + Deskripsi</div></div>
           <div><div className="wf-label">Tautan Cepat</div>{["Beranda", "Perkara", "FAQ"].map(l => <div key={l} className="wf-block" style={{ height: 22, marginBottom: 4, fontSize: 10, justifyContent: "flex-start", paddingLeft: 8 }}>{l}</div>)}</div>
-          <div><div className="wf-label">Layanan Digital</div>{["Direktori Putusan", "e-Court", "SIPP"].map(l => <div key={l} className="wf-block" style={{ height: 22, marginBottom: 4, fontSize: 10, justifyContent: "flex-start", paddingLeft: 8 }}>{l} ↗</div>)}</div>
+          <div><div className="wf-label">Layanan Digital</div>{["Direktori Putusan", "e-Court", "SIPP"].map(l => <div key={l} className="wf-block" style={{ height: 22, marginBottom: 4, fontSize: 10, justifyContent: "flex-start", paddingLeft: 8 }}>{l} </div>)}</div>
           <div><div className="wf-label">Kontak</div><div className="wf-block" style={{ height: 60, fontSize: 9 }}>Alamat, Telepon, Email</div></div>
         </div>
         <div className="wf-footer-copy">© 2026 Mahkamah Agung Republik Indonesia</div>

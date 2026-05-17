@@ -1,4 +1,4 @@
-import { Calendar } from "lucide-react";
+import { CalendarBlank } from "@phosphor-icons/react";
 
 interface NewsCardProps {
   image: string;
@@ -13,7 +13,7 @@ export function NewsCard({ image, title, date, excerpt }: NewsCardProps) {
       <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="p-6">
         <div className="flex items-center gap-2 text-sm text-[var(--ma-text-muted)] mb-3">
-          <Calendar size={16} className="text-[var(--ma-gold)]" />
+          <CalendarBlank size={16} className="text-[var(--ma-gold)]" />
           <span>{date}</span>
         </div>
         <h3 className="font-semibold text-[var(--ma-title)] mb-2 line-clamp-2">

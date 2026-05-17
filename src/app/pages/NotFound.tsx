@@ -1,4 +1,4 @@
-import { Home, Search, HelpCircle } from "lucide-react";
+import { House, MagnifyingGlass, Question } from "@phosphor-icons/react";
 import { useNavigate } from "react-router";
 
 export function NotFound() {
@@ -25,21 +25,21 @@ export function NotFound() {
             onClick={() => navigate("/")}
             className="flex items-center justify-center gap-2 bg-[var(--ma-gold)] text-[var(--ma-green)] px-6 py-3 rounded-lg hover:bg-[var(--ma-gold-dark)] transition-colors font-medium"
           >
-            <Home size={20} />
+            <House size={20} />
             Kembali ke Beranda
           </button>
           <button
             onClick={() => navigate("/perkara")}
             className="flex items-center justify-center gap-2 bg-white text-[var(--ma-green)] border-2 border-[var(--ma-green-medium)] px-6 py-3 rounded-lg hover:bg-[var(--ma-green-soft)] transition-colors font-medium"
           >
-            <Search size={20} />
+            <MagnifyingGlass size={20} />
             Cari Putusan
           </button>
           <button
             onClick={() => navigate("/faq")}
             className="flex items-center justify-center gap-2 bg-white text-[var(--ma-green)] border-2 border-[var(--ma-green-medium)] px-6 py-3 rounded-lg hover:bg-[var(--ma-green-soft)] transition-colors font-medium"
           >
-            <HelpCircle size={20} />
+            <Question size={20} />
             Bantuan & FAQ
           </button>
         </div>

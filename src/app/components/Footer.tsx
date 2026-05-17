@@ -1,13 +1,13 @@
 import {
-  Mail,
+  Envelope,
   Phone,
   MapPin,
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-  ExternalLink,
-} from "lucide-react";
+  FacebookLogo,
+  TwitterLogo,
+  InstagramLogo,
+  YoutubeLogo,
+  ArrowSquareOut,
+} from "@phosphor-icons/react";
 import { Link } from "react-router";
 
 export function Footer() {
@@ -31,25 +31,25 @@ export function Footer() {
                 href="#"
                 className="bg-white/5 hover:bg-[var(--ma-gold)] p-2.5 rounded-lg transition-all duration-300 hover:text-[var(--ma-green-dark)]"
               >
-                <Facebook size={18} />
+                <FacebookLogo size={18} />
               </a>
               <a
                 href="#"
                 className="bg-white/5 hover:bg-[var(--ma-gold)] p-2.5 rounded-lg transition-all duration-300 hover:text-[var(--ma-green-dark)]"
               >
-                <Twitter size={18} />
+                <TwitterLogo size={18} />
               </a>
               <a
                 href="#"
                 className="bg-white/5 hover:bg-[var(--ma-gold)] p-2.5 rounded-lg transition-all duration-300 hover:text-[var(--ma-green-dark)]"
               >
-                <Instagram size={18} />
+                <InstagramLogo size={18} />
               </a>
               <a
                 href="#"
                 className="bg-white/5 hover:bg-[var(--ma-gold)] p-2.5 rounded-lg transition-all duration-300 hover:text-[var(--ma-green-dark)]"
               >
-                <Youtube size={18} />
+                <YoutubeLogo size={18} />
               </a>
             </div>
           </div>
@@ -108,7 +108,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center text-sm text-white/80 hover:text-[var(--ma-gold)] transition-colors"
                 >
-                  <ExternalLink
+                  <ArrowSquareOut
                     size={14}
                     className="mr-2.5 text-[var(--ma-gold)]/60"
                   />{" "}
@@ -122,7 +122,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center text-sm text-white/80 hover:text-[var(--ma-gold)] transition-colors"
                 >
-                  <ExternalLink
+                  <ArrowSquareOut
                     size={14}
                     className="mr-2.5 text-[var(--ma-gold)]/60"
                   />{" "}
@@ -136,7 +136,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center text-sm text-white/80 hover:text-[var(--ma-gold)] transition-colors"
                 >
-                  <ExternalLink
+                  <ArrowSquareOut
                     size={14}
                     className="mr-2.5 text-[var(--ma-gold)]/60"
                   />{" "}
@@ -150,7 +150,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center text-sm text-white/80 hover:text-[var(--ma-gold)] transition-colors"
                 >
-                  <ExternalLink
+                  <ArrowSquareOut
                     size={14}
                     className="mr-2.5 text-[var(--ma-gold)]/60"
                   />{" "}
@@ -164,7 +164,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center text-sm text-white/80 hover:text-[var(--ma-gold)] transition-colors"
                 >
-                  <ExternalLink
+                  <ArrowSquareOut
                     size={14}
                     className="mr-2.5 text-[var(--ma-gold)]/60"
                   />{" "}
@@ -200,7 +200,7 @@ export function Footer() {
                   <span className="text-white/80 text-sm">(021) 384 3348</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Mail
+                  <Envelope
                     size={18}
                     className="flex-shrink-0 text-[var(--ma-gold)]"
                   />
@@ -209,33 +209,6 @@ export function Footer() {
                   </span>
                 </li>
               </ul>
-            </div>
-
-            {/* Portal Internal grouped here to save horizontal space */}
-            <div>
-              <h3 className="ma-display font-semibold text-lg mb-4 text-[var(--ma-gold)]">
-                Portal Internal
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                <a
-                  href="#"
-                  className="bg-white/5 hover:bg-white/15 px-3 py-1.5 rounded text-xs text-white/80 transition-colors"
-                >
-                  Sistem Manajemen Kasus
-                </a>
-                <a
-                  href="#"
-                  className="bg-white/5 hover:bg-white/15 px-3 py-1.5 rounded text-xs text-white/80 transition-colors"
-                >
-                  Dashboard Kinerja
-                </a>
-                <a
-                  href="#"
-                  className="bg-white/5 hover:bg-white/15 px-3 py-1.5 rounded text-xs text-white/80 transition-colors"
-                >
-                  Repositori Dokumen
-                </a>
-              </div>
             </div>
           </div>
         </div>

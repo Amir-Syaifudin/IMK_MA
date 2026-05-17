@@ -19,11 +19,17 @@
 ### Slide 2 — Profil Website
 - **Logo MA** + screenshot halaman beranda saat ini
 - **Deskripsi Lembaga:** Mahkamah Agung RI adalah lembaga tinggi negara pemegang kekuasaan kehakiman yang merdeka guna menyelenggarakan peradilan demi menegakkan hukum dan keadilan.
-- **Fitur Utama Website:**
+- **Fitur Utama Website (Eksisting):**
   1. Informasi perkara dan putusan pengadilan
   2. Direktori putusan (link ke subdomain putusan3.mahkamahagung.go.id)
   3. Kebijakan dan regulasi (PERMA, SEMA, SKM)
   4. Layanan kepaniteraan dan e-Court
+- **Fitur Esensial Web Asli yang Dipertahankan (Di-keep) pada Redesign:**
+  1. **Fitur Pencarian Perkara** (ditingkatkan dengan filter kalender & list yang interaktif)
+  2. **Informasi Detail Perkara** (ditingkatkan menjadi *full-size pop-up modal* dengan layout 2 kolom yang mudah dibaca)
+  3. **Fitur Cetak / Print Halaman** (dioptimalkan menjadi *print-ready*, menyembunyikan navigasi web agar hasil cetak bersih)
+  4. **Akses Layanan Digital** (dikelompokkan lebih rapi di *dropdown* navigasi)
+  5. **Portal Berita & Pengumuman** (dibuatkan komponen kartu khusus agar lebih elegan)
 
 ---
 
@@ -56,7 +62,16 @@
 
 ## — EMPATHIZE —
 
-### Slide 5 — Masalah 1: Navigasi Terfragmentasi
+### Slide 5 — Empathy Map: Fitur Eksisting yang Dipertahankan
+Sebelum membongkar desain lama, tahap *Empathize* juga mengharuskan kita memahami apa yang sudah berjalan baik dan esensial bagi pengguna (*user needs*). Berdasarkan evaluasi, berikut adalah **fitur inti web asli Mahkamah Agung yang WAJIB dipertahankan (di-keep) pada redesign**:
+- 🔍 **Fitur Pencarian Perkara:** Kebutuhan absolut bagi advokat dan masyarakat pencari keadilan. Pada redesign, fitur ini disempurnakan dengan *Filter Bar* interaktif dan terintegrasi langsung dengan Kalender.
+- 📋 **Informasi Detail Perkara:** Esensi dari transparansi peradilan. Pada redesign, tampilan detail yang kaku diubah menjadi *Pop-Up Modal* lebar (2 kolom) bergaya "Info Perkara MA-RI" modern.
+- 🖨️ **Fitur Print / Cetak Halaman:** Kebutuhan pragmatis lapangan (advokat butuh bukti fisik jadwal/status). Pada redesign, fitur ini dioptimalkan dengan mode *Print-Ready* yang membuang semua elemen web (navigasi, tombol) agar hasil cetak sebersih dokumen resmi.
+- 🌐 **Akses Layanan Digital Utama:** Tautan ke e-Court, SIPP, dan Direktori Putusan adalah jembatan vital. Pada redesign, tautan ini dikelompokkan secara elegan dalam menu *dropdown* dan komponen kartu *ServiceCard*.
+
+---
+
+### Slide 6 — Masalah 1: Navigasi Terfragmentasi
 
 **Badge Heuristic:** `H1` `H3` `H4` `H6`
 
@@ -342,3 +357,21 @@ Hero hijau gelap dengan search bar, sidebar kategori sticky, accordion Radix den
 - ✅ Rencana pengujian UEQ siap dieksekusi
 
 **Kontak & Repositori:** [Isi link GitHub / Figma project]
+
+---
+
+### Slide 19 — Rasionalisasi: Pilihan Visual & Struktural
+- 🎨 **Color Palette (Tema Warna):** Menggunakan kombinasi **Hijau Tua dan Emas**, secara langsung mengadopsi identitas dari Logo Mahkamah Agung RI serta seragam resmi kehakiman untuk memberikan kesan *premium*, berwibawa, dan representatif.
+- 🏛️ **Referensi Internasional:** Struktur hierarki informasi dan antarmuka beranda terinspirasi dari standar *best-practice* peradilan global, khususnya **Supreme Court of the United States (SCOTUS)** dan **United Kingdom Supreme Court (UKSC)**.
+- 📱 **Responsivitas (Mobile-First):** Navigasi web secara otomatis diadaptasi menjadi **Burger Menu** pada tampilan *mobile* agar antarmuka tidak sesak dan tetap nyaman diakses.
+
+---
+
+### Slide 20 — Rasionalisasi: Transformasi UI Jadwal Sidang
+- 📅 **Transisi dari Tabel ke Kalender Visual:** Desain diubah untuk mengurangi kebingungan kognitif (*cognitive load*). Pengguna awam terbukti lebih mudah memindai titik tanggal berwarna di kalender dibandingkan harus menelusuri ratusan baris data dalam tabel yang kaku.
+- 🖨️ **Prioritas Tombol "Cetak Halaman" di Detail Perkara:** Dirancang untuk merespons kebutuhan lapangan di mana advokat membutuhkan bukti fisik cetak jadwal. Mode *Print-Ready* ini akan otomatis menyembunyikan semua tombol website, menjadikan hasil cetak di kertas A4 rapi dan resmi layaknya dokumen pengadilan.
+
+---
+
+### Slide 21 — Rasionalisasi: Restrukturisasi Arsitektur Informasi
+- 🏢 **Pemisahan Layanan Publik vs Portal Internal:** Portal khusus pegawai pengadilan (seperti SIKEP dan e-BIMA) secara sengaja dipindahkan jauh ke bagian bawah (*Footer*). Langkah ini memperpendek waktu pencarian (*search time*) bagi masyarakat umum dan mencegah mereka tersesat di halaman yang salah.

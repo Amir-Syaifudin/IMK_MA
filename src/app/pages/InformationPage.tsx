@@ -1,12 +1,12 @@
 import {
   Newspaper,
   Megaphone,
-  ClipboardList,
+  ClipboardText,
   Bell,
-  Calendar,
+  CalendarBlank,
   User,
   ArrowRight,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 import { useLocation } from "react-router";
 
 interface InfoItem {
@@ -73,7 +73,7 @@ const dummyData: Record<
   },
   keputusan: {
     title: "Kebijakan & Peraturan",
-    icon: ClipboardList,
+    icon: ClipboardText,
     items: [
       {
         id: 1,
@@ -163,7 +163,7 @@ export function InformationPage() {
                       {item.category}
                     </span>
                     <div className="flex items-center gap-1.5 text-gray-400 text-sm">
-                      <Calendar size={14} />
+                      <CalendarBlank size={14} />
                       {item.date}
                     </div>
                     {item.author && (

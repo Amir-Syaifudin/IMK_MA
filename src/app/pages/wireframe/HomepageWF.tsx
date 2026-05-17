@@ -5,12 +5,12 @@ function WFTopBar() {
   const loc = useLocation();
   return (
     <div className="wf-topbar">
-      <span className="wf-topbar-label">📐 Wireframe Mode</span>
+      <span className="wf-topbar-label"> Wireframe Mode</span>
       <Link to="/wireframe" className={`wf-topbar-link ${loc.pathname === "/wireframe" ? "active" : ""}`}>Beranda</Link>
       <Link to="/wireframe/perkara" className={`wf-topbar-link ${loc.pathname === "/wireframe/perkara" ? "active" : ""}`}>Perkara</Link>
       <Link to="/wireframe/faq" className={`wf-topbar-link ${loc.pathname === "/wireframe/faq" ? "active" : ""}`}>FAQ</Link>
       <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
-        <Link to="/" className="wf-topbar-link">→ Lihat Visual Design</Link>
+        <Link to="/" className="wf-topbar-link"> Lihat Visual Design</Link>
       </div>
     </div>
   );
@@ -25,11 +25,11 @@ export function HomepageWF() {
       <div className="wf-navbar">
         <div className="wf-navbar-logo">[ Logo MA ]</div>
         <div className="wf-navbar-links">
-          {["Beranda", "Perkara", "Informasi ▾", "FAQ", "Layanan Digital ▾"].map(l => (
+          {["Beranda", "Perkara", "Informasi ", "FAQ", "Layanan Digital "].map(l => (
             <div key={l} className="wf-navbar-link">{l}</div>
           ))}
         </div>
-        <div className="wf-navbar-cta">🔍 Cari</div>
+        <div className="wf-navbar-cta"> Cari</div>
       </div>
 
       {/* ─── HERO ─── */}
@@ -102,7 +102,7 @@ export function HomepageWF() {
               <div className="wf-h2">Berita Terbaru</div>
               <div className="wf-divider" style={{ margin: "8px 0 0" }} />
             </div>
-            <div className="wf-btn-outline">Lihat Semua →</div>
+            <div className="wf-btn-outline">Lihat Semua </div>
           </div>
           <div className="wf-grid-3">
             {["Berita 1", "Berita 2", "Berita 3"].map(n => (
@@ -112,7 +112,7 @@ export function HomepageWF() {
                   <div className="wf-badge" style={{ marginBottom: 8 }}>15 Mei 2026</div>
                   <div className="wf-h3" style={{ marginBottom: 6 }}>{n} — Judul berita singkat yang relevan</div>
                   <div className="wf-block" style={{ height: 40, marginBottom: 12, fontSize: 9 }}>Ringkasan/excerpt berita...</div>
-                  <div className="wf-btn-sm">Baca →</div>
+                  <div className="wf-btn-sm">Baca </div>
                 </div>
               </div>
             ))}
@@ -142,12 +142,12 @@ export function HomepageWF() {
           <div>
             <div className="wf-label">Layanan Digital</div>
             {["Direktori Putusan", "e-Court", "SIPP", "Cek Perkara", "e-Berpadu"].map(l => (
-              <div key={l} className="wf-block" style={{ height: 24, marginBottom: 4, justifyContent: "flex-start", paddingLeft: 8, fontSize: 10 }}>{l} ↗</div>
+              <div key={l} className="wf-block" style={{ height: 24, marginBottom: 4, justifyContent: "flex-start", paddingLeft: 8, fontSize: 10 }}>{l} </div>
             ))}
           </div>
           <div>
             <div className="wf-label">Kontak & Portal Internal</div>
-            <div className="wf-block" style={{ height: 72, marginBottom: 12, fontSize: 9 }}>📍 Alamat + ☎ Telepon + ✉ Email</div>
+            <div className="wf-block" style={{ height: 72, marginBottom: 12, fontSize: 9 }}> Alamat +  Telepon +  Email</div>
             <div className="wf-label">Portal Pegawai</div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
               {["Sistem Manajemen Kasus", "Dashboard Kinerja", "Repositori Dok."].map(p => (

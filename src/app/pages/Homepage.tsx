@@ -1,17 +1,17 @@
 import {
-  Search,
-  FileSearch,
-  ClipboardList,
+  MagnifyingGlass,
+  FileMagnifyingGlass,
+  ClipboardText,
   Phone,
-  Calendar,
+  CalendarBlank,
   FileText,
   Bell,
-  ExternalLink,
+  ArrowSquareOut,
   BookOpen,
-  Scale,
-  LayoutGrid,
+  Scales,
+  SquaresFour,
   Users,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -32,13 +32,13 @@ export function Homepage() {
 
   const heroButtons = [
     {
-      icon: FileSearch,
+      icon: FileMagnifyingGlass,
       title: "Cari Putusan",
       description: "Temukan putusan pengadilan dengan mudah",
       action: () => navigate("/perkara"),
     },
     {
-      icon: ClipboardList,
+      icon: ClipboardText,
       title: "Cek Status Perkara",
       description: "Lacak perkembangan perkara Anda",
       action: () => navigate("/perkara?tab=status"),
@@ -59,25 +59,25 @@ export function Homepage() {
       link: "https://putusan3.mahkamahagung.go.id",
     },
     {
-      icon: Scale,
+      icon: Scales,
       title: "e-Court",
       description: "Pendaftaran perkara secara online",
       link: "https://ecourt.mahkamahagung.go.id",
     },
     {
-      icon: FileSearch,
+      icon: FileMagnifyingGlass,
       title: "Cek Status Perkara",
       description: "Lacak perkembangan perkara Anda",
       link: "https://sipp.pn-jakartapusat.go.id",
     },
     {
-      icon: LayoutGrid,
+      icon: SquaresFour,
       title: "SIPP",
       description: "Sistem Informasi Penelusuran Perkara",
       link: "https://sipp.mahkamahagung.go.id",
     },
     {
-      icon: Calendar,
+      icon: CalendarBlank,
       title: "Jadwal Sidang",
       description: "Pantau jadwal sidang dan agenda pengadilan",
       link: "/perkara",
@@ -133,7 +133,7 @@ export function Homepage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[var(--ma-bg)]">
       {/* HERO SECTION */}
-      <section className="relative min-h-[700px] overflow-hidden">
+      <section className="relative flex min-h-screen flex-col overflow-hidden">
         {/* Background */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -142,25 +142,28 @@ export function Homepage() {
             backgroundAttachment: "fixed",
           }}
         >
-          <div className="absolute inset-0 bg-[var(--ma-green-dark)]/80" />
-
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--ma-gold)]/20 via-[var(--ma-green-dark)]/70 to-[var(--ma-bg)]" />
+          {/* Layer 1: dark green base */}
+          <div className="absolute inset-0 bg-[var(--ma-green-dark)]/85" />
+          {/* Layer 2: gold shimmer top, fade to page bg bottom */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--ma-gold)]/15 via-transparent to-[var(--ma-bg)]" />
+          {/* Layer 3: vignette edges */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,30,10,0.5)_100%)]" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 flex min-h-[700px] items-center justify-center">
-          <div className="w-full max-w-7xl px-6 py-24 lg:px-8">
+        <div className="relative z-10 flex flex-1 items-center justify-center">
+          <div className="w-full max-w-7xl px-6 py-6 lg:px-8">
             {/* Heading */}
-            <div className="mx-auto mb-20 flex max-w-5xl flex-col items-center text-center">
-              <h1 className="ma-display mb-6 text-center text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
+            <div className="mx-auto mb-6 flex max-w-4xl flex-col items-center text-center">
+              <h1 className="ma-display mb-3 text-center text-3xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
                 Portal Mahkamah Agung
               </h1>
 
-              <p className="mb-8 text-center text-xl font-black uppercase tracking-[0.25em] text-[var(--ma-gold)] md:text-3xl">
-                “Pengadilan Bermartabat, Negara Berdaulat”
+              <p className="mb-3 text-center text-base font-black uppercase tracking-[0.2em] text-[var(--ma-gold)] md:text-xl">
+                "Menuju Badan Peradilan yang Agung dan Modern"
               </p>
 
-              <p className="ma-serif max-w-4xl text-center text-lg leading-relaxed text-white/90 md:text-2xl">
+              <p className="ma-serif max-w-3xl text-center text-sm leading-relaxed text-white/85 md:text-base">
                 Lembaga tinggi negara yang memegang kekuasaan kehakiman
                 sebagai kekuasaan yang merdeka untuk menyelenggarakan
                 peradilan guna menegakkan hukum dan keadilan.
@@ -168,7 +171,7 @@ export function Homepage() {
             </div>
 
             {/* Hero Buttons */}
-            <div className="mx-auto mb-20 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="mx-auto mb-6 grid w-full max-w-5xl grid-cols-1 gap-4 md:grid-cols-3">
               {heroButtons.map((item) => {
                 const Icon = item.icon;
 
@@ -176,20 +179,20 @@ export function Homepage() {
                   <button
                     key={item.title}
                     onClick={item.action}
-                    className="group flex h-full flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-8 text-center backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[var(--ma-gold)]/60 hover:bg-white/15 hover:shadow-[0_8px_32px_rgba(201,168,76,0.3)]"
+                    className="group flex h-full flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-5 text-center backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[var(--ma-gold)]/60 hover:bg-white/15 hover:shadow-[0_8px_32px_rgba(201,168,76,0.3)]"
                   >
-                    <div className="mb-5 rounded-2xl border border-white/10 bg-white/10 p-5 shadow-lg transition-all duration-300 group-hover:bg-[var(--ma-gold)]">
+                    <div className="mb-3 rounded-xl border border-white/10 bg-white/10 p-4 shadow-lg transition-all duration-300 group-hover:bg-[var(--ma-gold)]">
                       <Icon
-                        size={44}
+                        size={32}
                         className="text-[var(--ma-gold)] transition-colors group-hover:text-[var(--ma-green-dark)]"
                       />
                     </div>
 
-                    <h3 className="ma-display mb-2 text-center text-xl font-bold text-white">
+                    <h3 className="ma-display mb-1 text-center text-base font-bold text-white">
                       {item.title}
                     </h3>
 
-                    <p className="max-w-xs text-center text-sm font-medium leading-relaxed text-white/80">
+                    <p className="max-w-xs text-center text-xs font-medium leading-relaxed text-white/80">
                       {item.description}
                     </p>
                   </button>
@@ -198,7 +201,7 @@ export function Homepage() {
             </div>
 
             {/* Search */}
-            <div className="mx-auto flex w-full max-w-5xl justify-center">
+            <div className="mx-auto flex w-full max-w-4xl justify-center">
               <div className="group relative w-full">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[var(--ma-gold)] to-[var(--ma-gold-light)] opacity-25 blur transition duration-1000 group-hover:opacity-50" />
 
@@ -206,10 +209,10 @@ export function Homepage() {
                   onSubmit={handleSearch}
                   className="relative rounded-2xl border border-white/20 bg-white/10 p-2 shadow-2xl backdrop-blur-xl"
                 >
-                  <div className="flex flex-col gap-2 rounded-xl bg-white/95 p-2 md:flex-row md:items-center">
+                  <div className="flex flex-col gap-2 rounded-xl bg-white/95 p-1.5 md:flex-row md:items-center">
                     <div className="relative flex-1">
-                      <Search
-                        size={24}
+                      <MagnifyingGlass
+                        size={20}
                         className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ma-text-muted)]"
                       />
 
@@ -218,13 +221,13 @@ export function Homepage() {
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Cari putusan, berita, atau informasi lainnya..."
-                        className="w-full rounded-lg border-none bg-transparent py-5 pl-14 pr-4 text-lg text-[var(--ma-title)] placeholder:text-[var(--ma-text-muted)] focus:outline-none"
+                        className="w-full rounded-lg border-none bg-transparent py-3.5 pl-12 pr-4 text-base text-[var(--ma-title)] placeholder:text-[var(--ma-text-muted)] focus:outline-none"
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="min-w-[180px] rounded-xl bg-[var(--ma-gold)] px-10 py-5 text-lg font-bold uppercase tracking-widest text-[var(--ma-green-dark)] shadow-lg transition-all duration-300 hover:bg-[var(--ma-gold-light)] hover:shadow-[0_0_20px_rgba(201,168,76,0.6)]"
+                      className="min-w-[140px] rounded-xl bg-[var(--ma-gold)] px-8 py-3.5 text-base font-bold uppercase tracking-widest text-[var(--ma-green-dark)] shadow-lg transition-all duration-300 hover:bg-[var(--ma-gold-light)] hover:shadow-[0_0_20px_rgba(201,168,76,0.6)]"
                     >
                       Cari
                     </button>
@@ -260,7 +263,7 @@ export function Homepage() {
           <button className="group flex items-center gap-3 text-xl font-bold text-[var(--ma-gold)] transition-all hover:text-[var(--ma-gold-dark)]">
             Lihat Semua Berita
 
-            <ExternalLink
+            <ArrowSquareOut
               size={24}
               className="transition-transform group-hover:translate-x-1"
             />

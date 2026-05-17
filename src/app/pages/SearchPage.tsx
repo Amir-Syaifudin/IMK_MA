@@ -1,19 +1,19 @@
 import {
-  Search,
-  Filter,
+  MagnifyingGlass,
+  Funnel,
   X,
   FileText,
-  Calendar,
+  CalendarBlank,
   MapPin,
   Info,
-  ChevronLeft,
-  ChevronRight,
-  Scale,
+  CaretLeft,
+  CaretRight,
+  Scales,
   BookOpen,
   Gavel,
   Bell,
   Megaphone,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router";
 
@@ -278,6 +278,109 @@ const mockEvents: CalendarEvent[] = [
     type: "pengumuman",
     title: "Laporan Kinerja Bulanan Dirilis",
   },
+  {
+    id: "e26",
+    tanggal: "20/05/2026",
+    type: "sidang",
+    jam: "13:00",
+    nomorPerkara: "123 K/TUN/2026",
+    jenis: "TUN",
+    title: "Sidang Kasasi — Sengketa Izin Lingkungan",
+    hakim: "Majelis Hakim Kamar TUN",
+    lokasi: "Ruang Sidang III",
+  },
+  {
+    id: "e27",
+    tanggal: "20/05/2026",
+    type: "putusan",
+    jam: "15:00",
+    nomorPerkara: "456 K/Pid/2026",
+    jenis: "Pidana",
+    title: "Pengucapan Putusan — Kasus Penipuan",
+    hakim: "Majelis Hakim Kamar Pidana",
+    lokasi: "Ruang Pleno",
+  },
+  {
+    id: "e28",
+    tanggal: "05/05/2026",
+    type: "pengumuman",
+    title: "Rilis Laporan Kinerja Mingguan",
+  },
+  {
+    id: "e29",
+    tanggal: "01/06/2026",
+    type: "libur",
+    title: "Hari Lahir Pancasila — Pengadilan Libur",
+  },
+  {
+    id: "e30",
+    tanggal: "02/06/2026",
+    type: "sidang",
+    jam: "09:00",
+    nomorPerkara: "555/Pid.Sus/2026/PN Jkt.Pst",
+    jenis: "Pidana",
+    title: "Sidang Perdana — Kasus Korupsi",
+    hakim: "Dr. Budi Santoso, S.H., M.H.",
+    lokasi: "Ruang Sidang Utama",
+  },
+  {
+    id: "e31",
+    tanggal: "05/06/2026",
+    type: "putusan",
+    jam: "10:00",
+    nomorPerkara: "111 K/Pdt/2026",
+    jenis: "Perdata",
+    title: "Pengucapan Putusan — Sengketa Bisnis",
+    hakim: "Majelis Hakim Kamar Perdata",
+    lokasi: "Ruang Pleno",
+  },
+  {
+    id: "e32",
+    tanggal: "05/06/2026",
+    type: "agenda",
+    jam: "13:00",
+    title: "Rapat Koordinasi Pengawasan",
+    lokasi: "Ruang Rapat Pimpinan",
+  },
+  {
+    id: "e33",
+    tanggal: "10/06/2026",
+    type: "pengumuman",
+    title: "Pembaruan Pedoman Eksekusi Putusan",
+  },
+  {
+    id: "e34",
+    tanggal: "15/06/2026",
+    type: "sidang",
+    jam: "10:30",
+    nomorPerkara: "777 K/Ag/2026",
+    jenis: "Agama",
+    title: "Sidang Kasasi — Hak Asuh Anak",
+    hakim: "Dr. Hj. Ratna Dewi, S.H.",
+    lokasi: "Ruang Sidang Agama",
+  },
+  {
+    id: "e35",
+    tanggal: "20/06/2026",
+    type: "putusan",
+    jam: "14:00",
+    nomorPerkara: "888 K/TUN/2026",
+    jenis: "TUN",
+    title: "Pengucapan Putusan — Sengketa Pemilu",
+    hakim: "Majelis Hakim Kamar TUN",
+    lokasi: "Ruang Pleno",
+  },
+  {
+    id: "e36",
+    tanggal: "25/06/2026",
+    type: "sidang",
+    jam: "09:00",
+    nomorPerkara: "999/Pid.Mil/2026/Dilmiltama",
+    jenis: "Militer",
+    title: "Sidang Kasasi — Pelanggaran Disiplin",
+    hakim: "Kol. Chk. Ahmad Yani, S.H., M.H.",
+    lokasi: "Ruang Sidang Militer",
+  },
 ];
 
 // ── Mock data pencarian ──────────────────────────────────────────────────────
@@ -360,28 +463,16 @@ const DAYS = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
 
 const caseTypes = [
   { value: "", label: "Semua Jenis" },
-  {
-    value: "perdata",
-    label: "Perdata",
-    tooltip: "Sengketa antar individu atau badan hukum",
-  },
-  { value: "pidana", label: "Pidana", tooltip: "Tindak pidana/kejahatan" },
-  {
-    value: "tun",
-    label: "Tata Usaha Negara",
-    tooltip: "Sengketa keputusan pemerintah",
-  },
-  {
-    value: "agama",
-    label: "Agama",
-    tooltip: "Perkara perkawinan, waris, dll (Islam)",
-  },
-  { value: "militer", label: "Militer", tooltip: "Perkara anggota TNI" },
+  { value: "perdata", label: "Perdata" },
+  { value: "pidana", label: "Pidana" },
+  { value: "tun", label: "Tata Usaha Negara" },
+  { value: "agama", label: "Agama" },
+  { value: "militer", label: "Militer" },
 ];
 
 const eventDotColor: Record<EventType, string> = {
   sidang: "var(--ma-gold)",
-  putusan: "var(--ma-green)",
+  putusan: "var(--ma-green-light)",
   pengumuman: "#E8862A",
   agenda: "#6366F1",
   libur: "#EF4444",
@@ -396,11 +487,11 @@ const perkaraBadge: Record<JenisPerkara, { bg: string; text: string }> = {
 };
 
 const eventIcon: Record<EventType, React.ElementType> = {
-  sidang: Scale,
+  sidang: Scales,
   putusan: Gavel,
   pengumuman: Bell,
   agenda: Megaphone,
-  libur: Calendar,
+  libur: CalendarBlank,
 };
 
 const typeLabel: Record<EventType, string> = {
@@ -493,7 +584,7 @@ function CalendarPicker({
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center gap-3 px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--ma-gold)] focus:border-[var(--ma-gold)] bg-white text-left hover:border-[var(--ma-gold)] transition-colors"
       >
-        <Calendar size={20} className="text-[var(--ma-gold)] flex-shrink-0" />
+        <CalendarBlank size={20} className="text-[var(--ma-gold)] flex-shrink-0" />
         <span
           className={
             value ? "text-[var(--ma-title)]" : "text-[var(--ma-text-muted)]"
@@ -522,7 +613,7 @@ function CalendarPicker({
               onClick={prevMonth}
               className="p-1.5 rounded-lg hover:bg-[var(--ma-gold-soft)]"
             >
-              <ChevronLeft size={16} className="text-[var(--ma-green)]" />
+              <CaretLeft size={16} className="text-[var(--ma-green)]" />
             </button>
             <span className="font-semibold text-sm text-[var(--ma-title)]">
               {MONTHS[viewMonth]} {viewYear}
@@ -532,7 +623,7 @@ function CalendarPicker({
               onClick={nextMonth}
               className="p-1.5 rounded-lg hover:bg-[var(--ma-gold-soft)]"
             >
-              <ChevronRight size={16} className="text-[var(--ma-green)]" />
+              <CaretRight size={16} className="text-[var(--ma-green)]" />
             </button>
           </div>
           <div className="grid grid-cols-7 gap-1 mb-1">
@@ -586,78 +677,252 @@ function CalendarPicker({
 }
 
 // ── EventCard ────────────────────────────────────────────────────────────────
+// ── EventDetailModal ─────────────────────────────────────────────────────────
 
-function EventCard({
+function EventDetailModal({
   event,
+  onClose,
   onSearchCase,
 }: {
   event: CalendarEvent;
-  onSearchCase?: (nomor: string) => void;
+  onClose: () => void;
+  onSearchCase?: (n: string) => void;
+}) {
+  const isPerkara = !!event.nomorPerkara;
+  
+  // Dummy data helpers untuk melengkapi field agar menyerupai referensi
+  const dummyPengadilan = isPerkara ? "PENGADILAN NEGERI JAKARTA SELATAN" : "-";
+  const dummyNoTk1 = isPerkara ? "123/Pid.B/2025/PN Jkt.Sel" : "-";
+  const dummySurat = isPerkara ? "094/PAN.PN.W2-U20/HK.01.10/ V /2026" : "-";
+  const dummyPemohon = isPerkara ? "Kejaksaan Negeri Jakarta Selatan" : "-";
+  const dummyTerdakwa = isPerkara ? "Budi Santoso bin Maman" : "-";
+  
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity print:bg-transparent print:p-0">
+      <div className="bg-white rounded-2xl w-full max-w-5xl shadow-2xl relative flex flex-col max-h-[90vh] print:max-h-none print:shadow-none print:rounded-none animate-in fade-in zoom-in duration-200 overflow-hidden">
+        
+        {/* Header Biru / Hijau Gradient (Mengikuti Tema MA) */}
+        <div className="bg-gradient-to-r from-[var(--ma-green-dark)] to-[var(--ma-green-medium)] p-6 md:p-8 text-white flex flex-col gap-6 print:text-black print:bg-none print:border-b print:border-gray-200">
+          
+          {/* Top Bar: Navigasi & Print (Sembunyi saat cetak) */}
+          <div className="flex items-center justify-between print:hidden">
+            <button
+              onClick={onClose}
+              className="flex items-center gap-2 text-white/90 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-lg transition-colors text-sm font-medium"
+            >
+              <CaretLeft size={16} weight="bold" />
+              Kembali
+            </button>
+            <button
+              onClick={() => window.print()}
+              className="bg-white text-[var(--ma-green-dark)] px-4 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-gray-50 transition-colors"
+            >
+              Cetak Halaman
+            </button>
+          </div>
+
+          {/* Title Area */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">
+              {event.nomorPerkara ? event.nomorPerkara : event.title}
+            </h2>
+            <div className="flex flex-wrap items-center gap-4">
+              <p className="text-white/80 print:text-gray-600 text-sm md:text-base">
+                Status: <span className="font-semibold text-white print:text-black">Telah Terjadwal ({typeLabel[event.type]})</span>
+              </p>
+              <span className="px-3 py-1 bg-white/20 print:bg-gray-100 print:border print:border-gray-300 rounded-full text-xs font-bold tracking-wider uppercase border border-white/10 backdrop-blur-sm">
+                PROSES
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Body Modal: 2 Column Grid */}
+        <div className="p-6 md:p-8 overflow-y-auto bg-gray-50 flex-1 print:overflow-visible print:bg-white">
+          <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm mb-6 print:shadow-none print:border-none print:p-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+              
+              {/* Kolom 1 */}
+              <div className="space-y-6">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Pengadilan Pengaju</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{dummyPengadilan}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">No Surat Pengantar</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{dummySurat}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Jenis Perkara</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{event.jenis || "-"}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Tanggal Sidang / Agenda</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{event.tanggal} {event.jam ? `- ${event.jam} WIB` : ""}</p>
+                </div>
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Pemohon</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{dummyPemohon}</p>
+                </div>
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Ketua Majelis / Pejabat</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{event.hakim || "-"}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Anggota Majelis 2</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">-</p>
+                </div>
+              </div>
+
+              {/* Kolom 2 */}
+              <div className="space-y-6">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Nomor Perkara Pengadilan Tk. 1</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{dummyNoTk1}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Jenis Permohonan</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{isPerkara ? "KASASI / PK" : "-"}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Klasifikasi</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{event.title}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Lokasi Sidang</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{event.lokasi || "-"}</p>
+                </div>
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Terdakwa / Termohon</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">{dummyTerdakwa}</p>
+                </div>
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Anggota Majelis 1</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">-</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Panitera Pengganti</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">-</p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Baris Keterangan Penuh (Full Width) */}
+            <div className="mt-6 pt-6 border-t border-gray-100 grid grid-cols-1 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Tanggal Putus</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">-</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Amar Putusan</p>
+                  <p className="text-sm font-bold text-[var(--ma-title)]">-</p>
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Detail Amar Putusan</p>
+                <p className="text-sm font-bold text-[var(--ma-title)]">-</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Keterangan / Pokok Perkara Singkat</p>
+                <p className="text-sm text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-100 print:border-none print:p-0 print:bg-transparent">
+                  {isPerkara 
+                    ? `Pemeriksaan pokok perkara terkait ${event.title.split("—")[1]?.trim() || "sengketa hukum ini"} yang diajukan pada tingkat kasasi/peninjauan kembali.` 
+                    : "Agenda internal kelembagaan atau pemberitahuan layanan Mahkamah Agung."}
+                </p>
+              </div>
+            </div>
+          </div>
+          
+
+
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── EventCard ────────────────────────────────────────────────────────────────
+
+function EventCard({
+  event,
+  onShowDetail,
+}: {
+  event: CalendarEvent;
+  onShowDetail: (ev: CalendarEvent) => void;
 }) {
   const Icon = eventIcon[event.type];
   const dot = eventDotColor[event.type];
   const badge = event.jenis ? perkaraBadge[event.jenis] : null;
 
+  const getPokokPerkara = () => {
+    if (event.type === "sidang" || event.type === "putusan") {
+      return `Pemeriksaan pokok perkara terkait ${event.title.split("—")[1]?.trim() || "sengketa hukum"} yang diregistrasi pada Mahkamah Agung.`;
+    }
+    if (event.type === "libur") {
+      return "Hari libur nasional / cuti bersama instansi pemerintah dan pengadilan.";
+    }
+    if (event.type === "pengumuman") {
+      return "Pemberitahuan resmi dari Mahkamah Agung terkait kebijakan atau sistem layanan.";
+    }
+    return "Agenda kegiatan internal atau layanan publik Mahkamah Agung.";
+  };
+
   return (
-    <div className="bg-white rounded-xl border-2 border-gray-100 p-4 hover:border-[var(--ma-gold)] hover:shadow-md transition-all">
-      <div className="flex items-start gap-3">
-        <div
-          className="mt-0.5 p-2 rounded-lg flex-shrink-0"
-          style={{ background: dot + "18" }}
+    <div className="bg-white rounded-xl border-2 border-gray-100 p-5 hover:border-[var(--ma-gold)] hover:shadow-md transition-all flex flex-col h-full">
+      {/* Baris 1: Tipe & Tanggal */}
+      <div className="flex flex-wrap items-center gap-2 mb-3">
+        <span
+          className="px-3 py-1 rounded-md text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5"
+          style={{ background: dot }}
         >
-          <Icon size={16} style={{ color: dot }} />
-        </div>
-        <div className="flex-1 min-w-0 space-y-1.5">
-          <div className="flex items-center gap-2 flex-wrap">
+          <Icon size={14} weight="bold" />
+          {typeLabel[event.type]}
+        </span>
+        <span className="text-sm font-medium text-[var(--ma-text)]">
+          {event.tanggal.split("/")[0]} {MONTHS[parseInt(event.tanggal.split("/")[1], 10) - 1]} {event.tanggal.split("/")[2]}
+          {event.jam ? ` - ${event.jam} WIB` : ""}
+        </span>
+      </div>
+
+      {/* Baris 2: Nomor Perkara & Judul */}
+      <div className="mb-4 flex-1">
+        {badge && (
+          <div className="mb-2">
             <span
-              className="text-xs font-semibold px-2 py-0.5 rounded-full text-white"
-              style={{ background: dot }}
+              className="text-xs font-semibold px-2.5 py-0.5 rounded-full inline-block"
+              style={{ background: badge.bg, color: badge.text }}
             >
-              {typeLabel[event.type]}
+              {event.jenis}
             </span>
-            {event.jam && (
-              <span className="text-xs font-medium text-[var(--ma-green)]">
-                {event.jam} WIB
-              </span>
-            )}
-            {badge && (
-              <span
-                className="text-xs font-medium px-2 py-0.5 rounded-full"
-                style={{ background: badge.bg, color: badge.text }}
-              >
-                {event.jenis}
-              </span>
-            )}
           </div>
-          <p className="text-sm font-semibold text-[var(--ma-title)] leading-snug">
+        )}
+        <h4 className="text-base font-bold text-[var(--ma-title)] mb-1 leading-tight">
+          {event.nomorPerkara ? `No. ${event.nomorPerkara}` : event.title}
+        </h4>
+        {event.nomorPerkara && (
+          <p className="text-sm text-[var(--ma-text-muted)] line-clamp-2">
             {event.title}
           </p>
-          {event.nomorPerkara && (
-            <p className="text-xs text-[var(--ma-text-muted)]">
-              No. Perkara: {event.nomorPerkara}
-            </p>
-          )}
-          {event.hakim && (
-            <p className="text-xs text-[var(--ma-text-muted)]">
-              Hakim: {event.hakim}
-            </p>
-          )}
-          {event.lokasi && (
-            <p className="text-xs text-[var(--ma-text-muted)] flex items-center gap-1">
-              <MapPin size={10} />
-              {event.lokasi}
-            </p>
-          )}
-        </div>
-        {(event.type === "sidang" || event.type === "putusan") &&
-          event.nomorPerkara && (
-            <button
-              onClick={() => onSearchCase?.(event.nomorPerkara!)}
-              className="flex-shrink-0 text-xs font-medium text-[var(--ma-gold)] hover:text-[var(--ma-gold-dark)] underline transition-colors"
-            >
-              Cari Info Perkara
-            </button>
-          )}
+        )}
+      </div>
+
+      {/* Baris 3: Pokok Perkara Singkat */}
+      <div className="bg-[#FAFAFA] border-2 border-dashed border-gray-200 rounded-lg p-3 mb-4">
+        <p className="text-sm text-gray-500 italic line-clamp-2">
+          {getPokokPerkara()}
+        </p>
+      </div>
+
+      {/* Baris 4: Detail Button */}
+      <div className="mt-auto">
+        <button
+          onClick={() => onShowDetail(event)}
+          className="px-6 py-2 rounded-lg text-sm font-bold uppercase tracking-wide transition-all bg-gray-100 text-[var(--ma-text)] hover:bg-[var(--ma-gold)] hover:text-[var(--ma-green-dark)] shadow-sm border border-gray-200"
+        >
+          Detail
+        </button>
       </div>
     </div>
   );
@@ -677,6 +942,7 @@ function FullCalendar({
   const [viewMonth, setViewMonth] = useState(today.getMonth());
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [filterType, setFilterType] = useState<EventType | "">("");
+  const [selectedEventDetail, setSelectedEventDetail] = useState<CalendarEvent | null>(null);
 
   useEffect(() => {
     if (activeCase) {
@@ -735,184 +1001,205 @@ function FullCalendar({
   ];
 
   return (
-    <div className="space-y-6">
-      {/* 1. Kalender (Full Width) */}
-      <div className="bg-white rounded-xl border-2 border-gray-100 p-5 md:p-8">
-        <div className="flex items-center justify-between mb-6">
-          <button
-            onClick={prevMonth}
-            className="p-2 rounded-lg hover:bg-[var(--ma-gold-soft)] transition-colors"
-          >
-            <ChevronLeft size={20} className="text-[var(--ma-green)]" />
-          </button>
-          <div className="text-center">
-            <h3 className="text-xl font-bold text-[var(--ma-title)]">
-              {MONTHS[viewMonth]}
-            </h3>
-            <p className="text-sm font-medium text-[var(--ma-text-muted)]">
-              {viewYear}
-            </p>
-          </div>
-          <button
-            onClick={nextMonth}
-            className="p-2 rounded-lg hover:bg-[var(--ma-gold-soft)] transition-colors"
-          >
-            <ChevronRight size={20} className="text-[var(--ma-green)]" />
-          </button>
-        </div>
-
-        <div className="grid grid-cols-7 gap-2 mb-2">
-          {DAYS.map((d) => (
-            <div
-              key={d}
-              className="text-center text-sm font-semibold text-[var(--ma-text-muted)] py-2 bg-gray-50 rounded-lg"
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      {/* ── Kolom Kiri: Kalender Mini & Keterangan ── */}
+      <div className="lg:col-span-4 xl:col-span-4 space-y-6">
+        <div className="bg-white rounded-xl border-2 border-gray-100 p-5 md:p-6 shadow-sm sticky top-8">
+          {/* Header Kalender */}
+          <div className="flex items-center justify-between mb-6">
+            <button
+              onClick={prevMonth}
+              className="p-1.5 rounded-lg hover:bg-[var(--ma-gold-soft)] transition-colors"
             >
-              {d}
+              <CaretLeft size={20} className="text-[var(--ma-green)]" />
+            </button>
+            <div className="text-center">
+              <h3 className="text-base font-bold text-[var(--ma-title)]">
+                {MONTHS[viewMonth]}
+              </h3>
+              <p className="text-xs font-medium text-[var(--ma-text-muted)]">
+                {viewYear}
+              </p>
             </div>
-          ))}
-        </div>
+            <button
+              onClick={nextMonth}
+              className="p-1.5 rounded-lg hover:bg-[var(--ma-gold-soft)] transition-colors"
+            >
+              <CaretRight size={20} className="text-[var(--ma-green)]" />
+            </button>
+          </div>
 
-        <div className="grid grid-cols-7 gap-1 md:gap-2">
-          {Array.from({ length: firstDay }).map((_, i) => (
-            <div
-              key={`e${i}`}
-              className="min-h-[48px] md:min-h-[60px] bg-transparent"
-            />
-          ))}
-          {Array.from({ length: daysInMonth }, (_, i) => i + 1).map((day) => {
-            const key = makeKey(day, viewMonth, viewYear);
-            const events = eventsByDate[key] || [];
-            const isSelected = selectedDate === key;
-            const isTodayDate =
-              today.getDate() === day &&
-              today.getMonth() === viewMonth &&
-              today.getFullYear() === viewYear;
-            const dots = [
-              ...new Set(events.map((ev) => eventDotColor[ev.type])),
-            ].slice(0, 4);
+          {/* Grid Hari */}
+          <div className="grid grid-cols-7 gap-1 mb-2">
+            {DAYS.map((d) => (
+              <div
+                key={d}
+                className="text-center text-xs font-semibold text-[var(--ma-text-muted)] py-1.5 bg-gray-50 rounded-md"
+              >
+                {d}
+              </div>
+            ))}
+          </div>
 
-            return (
-              <button
-                key={day}
-                onClick={() => setSelectedDate(isSelected ? null : key)}
-                className={`relative w-full min-h-[48px] md:min-h-[60px] rounded-lg text-sm md:text-base font-medium transition-all flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2 p-1 border-2
-                  ${
-                    isSelected
+          {/* Grid Tanggal */}
+          <div className="grid grid-cols-7 gap-1 md:gap-1.5">
+            {Array.from({ length: firstDay }).map((_, i) => (
+              <div
+                key={`e${i}`}
+                className="min-h-[40px] bg-transparent"
+              />
+            ))}
+            {Array.from({ length: daysInMonth }, (_, i) => i + 1).map((day) => {
+              const key = makeKey(day, viewMonth, viewYear);
+              const events = eventsByDate[key] || [];
+              const isSelected = selectedDate === key;
+              const isTodayDate =
+                today.getDate() === day &&
+                today.getMonth() === viewMonth &&
+                today.getFullYear() === viewYear;
+              const dots = [
+                ...new Set(events.map((ev) => eventDotColor[ev.type])),
+              ].slice(0, 4);
+
+              return (
+                <button
+                  key={day}
+                  onClick={() => setSelectedDate(isSelected ? null : key)}
+                  className={`relative w-full h-10 rounded-lg text-sm font-medium transition-all flex flex-col items-center justify-center gap-0.5 border-2
+                    ${isSelected
                       ? "bg-[var(--ma-gold-soft)] text-[var(--ma-green)] border-[var(--ma-gold)] shadow-sm"
                       : isTodayDate
                         ? "bg-[var(--ma-green-soft)] text-[var(--ma-green)] border-[var(--ma-green-medium)]/40"
                         : events.length
                           ? "text-[var(--ma-title)] border-gray-100 hover:border-[var(--ma-gold)] hover:bg-gray-50"
                           : "text-[var(--ma-text-muted)] border-transparent hover:bg-gray-50"
-                  }`}
+                    }`}
+                >
+                  <span className={isSelected || isTodayDate ? "font-bold" : ""}>
+                    {day}
+                  </span>
+                  {dots.length > 0 && (
+                    <div className="flex gap-0.5 flex-wrap justify-center px-1">
+                      {dots.map((c, i) => (
+                        <span
+                          key={i}
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{ background: c }}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {selectedDate && (
+            <div className="mt-4 pt-4 border-t border-gray-100 text-center">
+              <button
+                onClick={() => setSelectedDate(null)}
+                className="text-xs font-medium text-[var(--ma-gold)] hover:text-[var(--ma-gold-dark)] transition-colors flex items-center justify-center gap-1 mx-auto"
               >
-                <span className={isSelected || isTodayDate ? "font-bold" : ""}>
-                  {day}
-                </span>
-                {dots.length > 0 && (
-                  <div className="flex gap-1 flex-wrap justify-center">
-                    {dots.map((c, i) => (
-                      <span
-                        key={i}
-                        className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full"
-                        style={{ background: c }}
-                      />
-                    ))}
-                  </div>
-                )}
+                <X size={14} /> Hapus pilihan tanggal
               </button>
-            );
-          })}
-        </div>
-
-        {selectedDate && (
-          <div className="mt-6 pt-4 border-t border-gray-100 text-center">
-            <button
-              onClick={() => setSelectedDate(null)}
-              className="text-sm font-medium text-[var(--ma-gold)] hover:text-[var(--ma-gold-dark)] transition-colors flex items-center justify-center gap-2 mx-auto"
-            >
-              <X size={16} /> Hapus pilihan tanggal (Tampilkan semua)
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* 2. Filter & Legend */}
-      <div className="bg-white rounded-xl border-2 border-gray-100 p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center justify-between">
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <span className="text-sm font-semibold text-[var(--ma-title)] mr-2">
-            Keterangan:
-          </span>
-          {(Object.entries(eventDotColor) as [EventType, string][]).map(
-            ([type, color]) => (
-              <div
-                key={type}
-                className="flex items-center gap-2 text-xs md:text-sm text-[var(--ma-text)]"
-              >
-                <span
-                  className="w-3 h-3 rounded-full"
-                  style={{ background: color }}
-                />
-                {typeLabel[type]}
-              </div>
-            ),
+            </div>
           )}
-        </div>
 
-        <div className="flex flex-wrap gap-2 justify-center md:justify-end border-t md:border-t-0 md:border-l border-gray-200 pt-4 md:pt-0 md:pl-6">
-          {typeFilterOptions.map((opt) => (
-            <button
-              key={opt.value}
-              onClick={() => setFilterType(opt.value)}
-              className={`text-xs md:text-sm px-4 py-2 rounded-full font-medium transition-all border-2
-                ${filterType === opt.value ? "bg-[var(--ma-green)] text-[var(--ma-gold)] border-[var(--ma-green)] shadow-sm" : "bg-white text-[var(--ma-text)] border-gray-200 hover:border-[var(--ma-gold)]"}`}
-            >
-              {opt.label}
-            </button>
-          ))}
+          {/* Keterangan / Legend (Sesuai gaya saat ini) */}
+          <div className="mt-6 pt-5 border-t border-gray-100">
+            <span className="text-xs font-bold text-[var(--ma-text-muted)] tracking-widest uppercase mb-3 block">
+              Keterangan:
+            </span>
+            <div className="flex flex-col gap-2.5">
+              {(Object.entries(eventDotColor) as [EventType, string][]).map(
+                ([type, color]) => (
+                  <div
+                    key={type}
+                    className="flex items-center gap-3 text-sm text-[var(--ma-text)] font-medium"
+                  >
+                    <span
+                      className="w-3 h-3 rounded-full shadow-sm"
+                      style={{ background: color }}
+                    />
+                    {typeLabel[type]}
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* 3. Daftar Agenda (Full Width) */}
-      <div className="bg-white rounded-xl border-2 border-gray-100 p-5 md:p-8">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-gray-100 pb-4">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-[var(--ma-gold-soft)] rounded-lg">
-              <Calendar size={20} className="text-[var(--ma-gold)]" />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-[var(--ma-title)]">
-                {selectedDate
-                  ? `Agenda pada ${selectedDate}`
-                  : `Semua Agenda di ${MONTHS[viewMonth]} ${viewYear}`}
-              </h3>
-              <p className="text-sm text-[var(--ma-text-muted)]">
-                Menampilkan {filteredEvents.length} kegiatan
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {filteredEvents.length === 0 ? (
-          <div className="py-12 text-center">
-            <div className="bg-[var(--ma-gold-soft)] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Calendar size={32} className="text-[var(--ma-gold-dark)]" />
-            </div>
-            <p className="text-lg font-medium text-[var(--ma-text)] mb-1">
-              Tidak ada agenda
-            </p>
-            <p className="text-sm text-[var(--ma-text-muted)]">
-              Coba pilih bulan, tanggal, atau filter keterangan lain
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredEvents.map((ev) => (
-              <EventCard key={ev.id} event={ev} onSearchCase={onSearchCase} />
+      {/* ── Kolom Kanan: Filter & Daftar Agenda ── */}
+      <div className="lg:col-span-8 xl:col-span-8 space-y-6">
+        {/* Filter Kategori */}
+        <div className="bg-white rounded-xl border-2 border-gray-100 p-5 md:p-6 shadow-sm">
+          <h4 className="text-xs font-bold text-[var(--ma-text-muted)] tracking-widest uppercase mb-4 border-b border-gray-100 pb-2">
+            Filter Kategori Agenda
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {typeFilterOptions.map((opt) => (
+              <button
+                key={opt.value}
+                onClick={() => setFilterType(opt.value)}
+                className={`text-sm px-5 py-2.5 rounded-lg font-semibold transition-all border-2
+                  ${filterType === opt.value
+                    ? "bg-[var(--ma-green)] text-[var(--ma-gold)] border-[var(--ma-green)] shadow-md"
+                    : "bg-white text-[var(--ma-text)] border-gray-200 hover:border-[var(--ma-gold)] hover:bg-gray-50"}`}
+              >
+                {opt.label}
+              </button>
             ))}
           </div>
-        )}
+        </div>
+
+        {/* Daftar Agenda */}
+        <div className="bg-white rounded-xl border-2 border-gray-100 p-5 md:p-6 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-gray-100 pb-4">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-[var(--ma-gold-soft)] rounded-lg">
+                <CalendarBlank size={20} className="text-[var(--ma-gold)]" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-[var(--ma-title)] uppercase tracking-wide">
+                  {selectedDate
+                    ? `Agenda — ${selectedDate}`
+                    : `Semua Agenda — ${MONTHS[viewMonth]} ${viewYear}`}
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          {filteredEvents.length === 0 ? (
+            <div className="py-12 text-center">
+              <div className="bg-[var(--ma-gold-soft)] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CalendarBlank size={32} className="text-[var(--ma-gold-dark)]" />
+              </div>
+              <p className="text-lg font-medium text-[var(--ma-text)] mb-1">
+                Tidak ada agenda
+              </p>
+              <p className="text-sm text-[var(--ma-text-muted)]">
+                Coba pilih bulan, tanggal, atau filter keterangan lain
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {filteredEvents.map((ev) => (
+                <EventCard key={ev.id} event={ev} onShowDetail={setSelectedEventDetail} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* ── Modal Detail Agenda ── */}
+      {selectedEventDetail && (
+        <EventDetailModal
+          event={selectedEventDetail}
+          onClose={() => setSelectedEventDetail(null)}
+          onSearchCase={onSearchCase}
+        />
+      )}
     </div>
   );
 }
@@ -929,6 +1216,7 @@ export function SearchPage() {
   const [searched, setSearched] = useState(false);
 
   const [activeCase, setActiveCase] = useState<string>("");
+  const [selectedEventDetail, setSelectedEventDetail] = useState<CalendarEvent | null>(null);
   const calendarRef = useRef<HTMLElement>(null);
   const searchRef = useRef<HTMLElement>(null);
 
@@ -976,7 +1264,7 @@ export function SearchPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* ── Page Header / Menu Petunjuk ── */}
         <div className="bg-gradient-to-br from-[var(--ma-green-dark)] via-[var(--ma-green)] to-[var(--ma-green-medium)] rounded-2xl p-8 md:p-10 text-white relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_8px_30px_rgba(30,58,47,0.3)] border border-[var(--ma-gold)]/20">
-          <Scale className="absolute -right-10 -bottom-10 text-[var(--ma-gold)]/5 w-64 h-64 transform -rotate-12 pointer-events-none" />
+          <Scales className="absolute -right-10 -bottom-10 text-[var(--ma-gold)]/5 w-64 h-64 transform -rotate-12 pointer-events-none" />
           <div className="relative z-10 max-w-2xl">
             <h1 className="ma-display text-3xl md:text-4xl font-bold text-[var(--ma-gold)] mb-4 drop-shadow-md">
               Informasi Perkara & Jadwal Sidang
@@ -993,7 +1281,7 @@ export function SearchPage() {
                 }
                 className="px-6 py-3 bg-[var(--ma-gold)] text-[var(--ma-green)] rounded-lg font-bold hover:bg-[var(--ma-gold-dark)] transition-colors flex items-center gap-2 shadow-sm"
               >
-                <Search size={18} /> Pencarian Perkara
+                <MagnifyingGlass size={18} /> Pencarian Perkara
               </button>
               <button
                 onClick={() =>
@@ -1001,12 +1289,12 @@ export function SearchPage() {
                 }
                 className="px-6 py-3 bg-white/10 text-white border border-white/20 rounded-lg font-bold hover:bg-white/20 transition-colors flex items-center gap-2"
               >
-                <Calendar size={18} /> Kalender Agenda
+                <CalendarBlank size={18} /> Kalender Agenda
               </button>
             </div>
           </div>
           <div className="hidden md:flex relative z-10 opacity-20">
-            <Scale size={160} />
+            <Scales size={160} />
           </div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--ma-gold)] opacity-5 rounded-full blur-3xl -mr-10 -mt-10" />
         </div>
@@ -1018,10 +1306,6 @@ export function SearchPage() {
               Pencarian Perkara
             </h2>
             <div className="h-1 w-24 bg-[var(--ma-gold)] mb-4 rounded-full" />
-            <p className="text-[var(--ma-text)]">
-              Cari putusan & informasi perkara dari pengadilan di seluruh
-              Indonesia
-            </p>
           </div>
 
           <div className="bg-white rounded-xl shadow-sm p-6 border-2 border-gray-100">
@@ -1031,7 +1315,7 @@ export function SearchPage() {
                   Kata Kunci
                 </label>
                 <div className="relative">
-                  <Search
+                  <MagnifyingGlass
                     className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ma-text-muted)]"
                     size={20}
                   />
@@ -1063,22 +1347,11 @@ export function SearchPage() {
                         </option>
                       ))}
                     </select>
-                    <Filter
+                    <Funnel
                       className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--ma-text-muted)] pointer-events-none"
                       size={18}
                     />
                   </div>
-                  {caseType && (
-                    <div className="mt-2 p-3 bg-[var(--ma-green-soft)] rounded-lg flex items-start gap-2 border border-[var(--ma-green-medium)]/20">
-                      <Info
-                        size={15}
-                        className="text-[var(--ma-green-medium)] mt-0.5 flex-shrink-0"
-                      />
-                      <p className="text-xs text-[var(--ma-green)]">
-                        {caseTypes.find((t) => t.value === caseType)?.tooltip}
-                      </p>
-                    </div>
-                  )}
                 </div>
                 <CalendarPicker
                   label="Tanggal Dari"
@@ -1096,7 +1369,7 @@ export function SearchPage() {
 
               {(dateFrom || dateTo) && (
                 <div className="flex items-center gap-2 p-3 bg-[var(--ma-gold-soft)] rounded-lg border border-[var(--ma-gold)]/30">
-                  <Calendar
+                  <CalendarBlank
                     size={15}
                     className="text-[var(--ma-gold-dark)] flex-shrink-0"
                   />
@@ -1121,7 +1394,7 @@ export function SearchPage() {
                   onClick={handleSearch}
                   className="flex-1 bg-[var(--ma-gold)] text-[var(--ma-green)] py-3 px-6 rounded-lg hover:bg-[var(--ma-gold-dark)] transition-colors font-medium flex items-center justify-center gap-2"
                 >
-                  <Search size={18} /> Cari Sekarang
+                  <MagnifyingGlass size={18} /> Cari Sekarang
                 </button>
                 <button
                   onClick={handleReset}
@@ -1180,7 +1453,7 @@ export function SearchPage() {
                                   </span>
                                 </div>
                                 <div className="flex items-center gap-1.5">
-                                  <Calendar
+                                  <CalendarBlank
                                     size={13}
                                     className="text-[var(--ma-gold)]"
                                   />
@@ -1205,12 +1478,27 @@ export function SearchPage() {
                                 </div>
                               </div>
                             </div>
-                            <button
-                              onClick={() => jumpToCalendar(r.nomorPerkara)}
-                              className="bg-[var(--ma-gold)] text-[var(--ma-green)] px-5 py-2 rounded-lg hover:bg-[var(--ma-gold-dark)] transition-colors text-sm font-medium self-start whitespace-nowrap"
-                            >
-                              Lihat Jadwal di Kalender
-                            </button>
+                            <div className="flex items-center gap-3 self-start mt-4 sm:mt-0">
+                              <button
+                                onClick={() => jumpToCalendar(r.nomorPerkara)}
+                                className="bg-[var(--ma-gold)] text-[var(--ma-green)] px-5 py-2 rounded-lg hover:bg-[var(--ma-gold-dark)] transition-colors text-sm font-bold tracking-wide whitespace-nowrap shadow-sm"
+                              >
+                                Lihat Jadwal di Kalender
+                              </button>
+                              <button
+                                onClick={() => {
+                                  const caseEvent = mockEvents.find((e) => e.nomorPerkara === r.nomorPerkara);
+                                  if (caseEvent) {
+                                    setSelectedEventDetail(caseEvent);
+                                  } else {
+                                    alert("Jadwal detail untuk perkara ini belum tersedia di kalender.");
+                                  }
+                                }}
+                                className="bg-white text-[var(--ma-text)] border-2 border-gray-200 px-6 py-1.5 rounded-lg hover:border-[var(--ma-gold)] hover:text-[var(--ma-green-dark)] transition-colors text-sm font-bold tracking-wide whitespace-nowrap shadow-sm"
+                              >
+                                Detail
+                              </button>
+                            </div>
                           </div>
                           <div className="bg-[#FAFAFA] rounded-lg p-4 border border-gray-100">
                             <p className="text-sm text-[var(--ma-text)] leading-relaxed italic">
@@ -1225,7 +1513,7 @@ export function SearchPage() {
               ) : (
                 <div className="text-center py-10">
                   <div className="bg-[var(--ma-gold-soft)] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Search size={32} className="text-[var(--ma-gold-dark)]" />
+                    <MagnifyingGlass size={32} className="text-[var(--ma-gold-dark)]" />
                   </div>
                   <h3 className="text-lg font-semibold text-[var(--ma-title)] mb-1">
                     Tidak ditemukan hasil
@@ -1252,10 +1540,6 @@ export function SearchPage() {
               Kalender Mahkamah Agung
             </h2>
             <div className="h-1 w-20 bg-[var(--ma-gold)] mb-4 rounded-full" />
-            <p className="text-[var(--ma-text)]">
-              Jadwal sidang, pengucapan putusan, agenda kelembagaan, dan hari
-              libur dalam satu tampilan
-            </p>
           </div>
           <FullCalendar
             activeCase={activeCase}
@@ -1263,6 +1547,15 @@ export function SearchPage() {
           />
         </section>
       </div>
+
+      {/* ── Modal Detail Agenda (Dari Hasil Pencarian) ── */}
+      {selectedEventDetail && (
+        <EventDetailModal
+          event={selectedEventDetail}
+          onClose={() => setSelectedEventDetail(null)}
+          onSearchCase={handleSearchCase}
+        />
+      )}
     </div>
   );
 }

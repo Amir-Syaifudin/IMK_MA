@@ -6,12 +6,12 @@ function WFTopBar() {
   const loc = useLocation();
   return (
     <div className="wf-topbar">
-      <span className="wf-topbar-label">📐 Wireframe Mode</span>
+      <span className="wf-topbar-label"> Wireframe Mode</span>
       <Link to="/wireframe" className={`wf-topbar-link ${loc.pathname === "/wireframe" ? "active" : ""}`}>Beranda</Link>
       <Link to="/wireframe/perkara" className={`wf-topbar-link ${loc.pathname === "/wireframe/perkara" ? "active" : ""}`}>Perkara</Link>
       <Link to="/wireframe/faq" className={`wf-topbar-link ${loc.pathname === "/wireframe/faq" ? "active" : ""}`}>FAQ</Link>
       <div style={{ marginLeft: "auto" }}>
-        <Link to="/perkara" className="wf-topbar-link">→ Lihat Visual Design</Link>
+        <Link to="/perkara" className="wf-topbar-link"> Lihat Visual Design</Link>
       </div>
     </div>
   );
@@ -39,16 +39,16 @@ export function SearchPageWF() {
       <div className="wf-navbar">
         <div className="wf-navbar-logo">[ Logo MA ]</div>
         <div className="wf-navbar-links">
-          {["Beranda", "Perkara", "Informasi ▾", "FAQ", "Layanan Digital ▾"].map(l => (
+          {["Beranda", "Perkara", "Informasi ", "FAQ", "Layanan Digital "].map(l => (
             <div key={l} className="wf-navbar-link" style={l === "Perkara" ? { background: "#9E9E9E", color: "#fff" } : {}}>{l}</div>
           ))}
         </div>
-        <div className="wf-navbar-cta">🔍 Cari</div>
+        <div className="wf-navbar-cta"> Cari</div>
       </div>
 
       {/* ─── BREADCRUMB ─── */}
       <div style={{ background: "#E0E0E0", borderBottom: "1px solid #CCCCCC", padding: "8px 32px" }}>
-        <span style={{ fontSize: 11, color: "#888" }}>Beranda › Perkara & Jadwal Sidang</span>
+        <span style={{ fontSize: 11, color: "#888" }}>Beranda  Perkara & Jadwal Sidang</span>
       </div>
 
       {/* ─── BANNER HERO ─── */}
@@ -77,19 +77,19 @@ export function SearchPageWF() {
         <div className="wf-card" style={{ flexDirection: "row", flexWrap: "wrap", gap: 12, marginBottom: 28, alignItems: "flex-end" }}>
           <div style={{ flex: 2, minWidth: 200 }}>
             <div className="wf-label">Kata Kunci / Nomor Perkara</div>
-            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}>🔍 Masukkan nomor atau kata kunci...</div>
+            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}> Masukkan nomor atau kata kunci...</div>
           </div>
           <div style={{ flex: 1, minWidth: 140 }}>
             <div className="wf-label">Jenis Perkara</div>
-            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}>Pilih jenis ▾</div>
+            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}>Pilih jenis </div>
           </div>
           <div style={{ flex: 1, minWidth: 140 }}>
             <div className="wf-label">Tanggal Dari</div>
-            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}>📅 dd/mm/yyyy</div>
+            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}> dd/mm/yyyy</div>
           </div>
           <div style={{ flex: 1, minWidth: 140 }}>
             <div className="wf-label">Tanggal Sampai</div>
-            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}>📅 dd/mm/yyyy</div>
+            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}> dd/mm/yyyy</div>
           </div>
           <div className="wf-btn">Cari Perkara</div>
           <div className="wf-btn-outline" style={{ fontSize: 10 }}>Reset</div>
@@ -102,9 +102,9 @@ export function SearchPageWF() {
           {/* Calendar */}
           <div className="wf-calendar">
             <div className="wf-calendar-header">
-              <div className="wf-btn-sm">◀</div>
+              <div className="wf-btn-sm"></div>
               <div className="wf-h3" style={{ fontSize: 13 }}>Mei 2026</div>
-              <div className="wf-btn-sm">▶</div>
+              <div className="wf-btn-sm"></div>
             </div>
             <div className="wf-calendar-grid" style={{ marginBottom: 8 }}>
               {DAYS.map(d => (
@@ -134,7 +134,7 @@ export function SearchPageWF() {
               })}
             </div>
             <div style={{ marginTop: 12, display: "flex", gap: 8, fontSize: 9, color: "#888" }}>
-              <span>● = Ada agenda</span>
+              <span> = Ada agenda</span>
               <span style={{ background: "#A0A0A0", color: "#fff", padding: "1px 5px", borderRadius: 3 }}>Hari ini</span>
               <span style={{ background: "#888", color: "#fff", padding: "1px 5px", borderRadius: 3 }}>Dipilih</span>
             </div>
@@ -193,8 +193,8 @@ export function SearchPageWF() {
               </div>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 <div className="wf-badge">Pidana</div>
-                <span style={{ fontSize: 10, color: "#888" }}>📅 15 Mei 2026</span>
-                <span style={{ fontSize: 10, color: "#888" }}>📍 PN Jakarta Pusat</span>
+                <span style={{ fontSize: 10, color: "#888" }}> 15 Mei 2026</span>
+                <span style={{ fontSize: 10, color: "#888" }}> PN Jakarta Pusat</span>
                 <div className="wf-badge">Sedang disidangkan</div>
               </div>
               <div className="wf-block" style={{ height: 28, marginTop: 8, fontSize: 9 }}>Ringkasan / cuplikan putusan...</div>
@@ -209,7 +209,7 @@ export function SearchPageWF() {
         <div className="wf-footer">
           <div><div className="wf-label">Tentang MA</div><div className="wf-block" style={{ height: 60, fontSize: 9 }}>Logo + Deskripsi</div></div>
           <div><div className="wf-label">Tautan Cepat</div>{["Beranda", "Perkara", "FAQ"].map(l => <div key={l} className="wf-block" style={{ height: 22, marginBottom: 4, fontSize: 10, justifyContent: "flex-start", paddingLeft: 8 }}>{l}</div>)}</div>
-          <div><div className="wf-label">Layanan Digital</div>{["Direktori Putusan", "e-Court", "SIPP"].map(l => <div key={l} className="wf-block" style={{ height: 22, marginBottom: 4, fontSize: 10, justifyContent: "flex-start", paddingLeft: 8 }}>{l} ↗</div>)}</div>
+          <div><div className="wf-label">Layanan Digital</div>{["Direktori Putusan", "e-Court", "SIPP"].map(l => <div key={l} className="wf-block" style={{ height: 22, marginBottom: 4, fontSize: 10, justifyContent: "flex-start", paddingLeft: 8 }}>{l} </div>)}</div>
           <div><div className="wf-label">Kontak</div><div className="wf-block" style={{ height: 60, fontSize: 9 }}>Alamat, Telepon, Email</div></div>
         </div>
         <div className="wf-footer-copy">© 2026 Mahkamah Agung Republik Indonesia</div>

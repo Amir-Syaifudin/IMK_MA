@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ExternalLink } from "lucide-react";
+import { ArrowSquareOut } from "@phosphor-icons/react";
 
 interface ServiceItem {
   name: string;
@@ -13,31 +13,31 @@ const services: ServiceItem[] = [
     name: "Direktori Putusan",
     description: "Akses jutaan putusan di seluruh Indonesia",
     href: "https://putusan.mahkamahagung.go.id",
-    icon: <ExternalLink size={16} />,
+    icon: <ArrowSquareOut size={16} />,
   },
   {
     name: "e‑Court (Pendaftaran Perkara Online)",
     description: "Daftar perkara secara digital",
     href: "https://ecourt.mahkamahagung.go.id",
-    icon: <ExternalLink size={16} />,
+    icon: <ArrowSquareOut size={16} />,
   },
   {
     name: "Cek Status Perkara",
     description: "Lacak perkembangan perkara Anda",
     href: "https://status.mahkamahagung.go.id",
-    icon: <ExternalLink size={16} />,
+    icon: <ArrowSquareOut size={16} />,
   },
   {
     name: "SIPP (Sistem Informasi Penelusuran Perkara)",
     description: "Penelusuran detail perkara",
     href: "https://sipp.mahkamahagung.go.id",
-    icon: <ExternalLink size={16} />,
+    icon: <ArrowSquareOut size={16} />,
   },
   {
     name: "e‑Berpadu",
     description: "Layanan terintegrasi untuk advokat",
     href: "https://eberpadu.mahkamahagung.go.id",
-    icon: <ExternalLink size={16} />,
+    icon: <ArrowSquareOut size={16} />,
   },
 ];
 
@@ -62,7 +62,7 @@ export function DigitalMenuDropdown() {
               </a>
               <p className="text-xs text-gray-500">{s.description}</p>
             </div>
-            <ExternalLink size={14} className="text-gray-400" />
+            <ArrowSquareOut size={14} className="text-gray-400" />
           </li>
         ))}
       </ul>

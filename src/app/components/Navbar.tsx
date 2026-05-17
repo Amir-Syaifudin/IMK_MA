@@ -1,20 +1,20 @@
 import {
-  Menu,
+  List,
   X,
-  ExternalLink,
-  ChevronDown,
+  ArrowSquareOut,
+  CaretDown,
   BookOpen,
-  Scale,
-  FileSearch,
-  LayoutGrid,
+  Scales,
+  FileMagnifyingGlass,
+  SquaresFour,
   Users,
   Newspaper,
   Megaphone,
-  ClipboardList,
+  ClipboardText,
   Bell,
-  Building2,
-  Search,
-} from "lucide-react";
+  Buildings,
+  MagnifyingGlass,
+} from "@phosphor-icons/react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
 
@@ -29,19 +29,19 @@ const digitalServices = [
     name: "e-Court",
     desc: "Pendaftaran perkara secara online",
     href: "https://ecourt.mahkamahagung.go.id",
-    icon: Scale,
+    icon: Scales,
   },
   {
     name: "Cek Status Perkara",
     desc: "Lacak perkembangan perkara Anda",
     href: "https://sipp.pn-jakartapusat.go.id",
-    icon: FileSearch,
+    icon: FileMagnifyingGlass,
   },
   {
     name: "SIPP",
     desc: "Sistem Informasi Penelusuran Perkara",
     href: "https://sipp.mahkamahagung.go.id",
-    icon: LayoutGrid,
+    icon: SquaresFour,
   },
   {
     name: "e-Berpadu",
@@ -52,10 +52,10 @@ const digitalServices = [
 ];
 
 const informasiItems = [
-  { name: "Profil MA", path: "/profil", icon: Building2 },
+  { name: "Profil MA", path: "/profil", icon: Buildings },
   { name: "Artikel", path: "/id/artikel", icon: Newspaper },
   { name: "Berita", path: "/id/berita", icon: Megaphone },
-  { name: "Kebijakan", path: "/id/keputusan", icon: ClipboardList },
+  { name: "Kebijakan", path: "/id/keputusan", icon: ClipboardText },
   { name: "Pengumuman", path: "/id/pengumuman", icon: Bell },
 ];
 
@@ -212,7 +212,8 @@ export function Navbar() {
 
           {/* Desktop links */}
           <div
-            style={{ display: "flex", alignItems: "center", height: "72px" }}
+            className="hidden lg:flex"
+            style={{ alignItems: "center", height: "72px" }}
           >
             {[
               { label: "Beranda", path: "/" },
@@ -258,7 +259,7 @@ export function Navbar() {
                 }}
               >
                 Informasi{" "}
-                <ChevronDown
+                <CaretDown
                   size={11}
                   style={{
                     transform: informasiOpen ? "rotate(180deg)" : "",
@@ -327,7 +328,7 @@ export function Navbar() {
                 }}
               >
                 Layanan Digital{" "}
-                <ChevronDown
+                <CaretDown
                   size={11}
                   style={{
                     transform: layananOpen ? "rotate(180deg)" : "",
@@ -411,7 +412,7 @@ export function Navbar() {
                             {s.desc}
                           </div>
                         </div>
-                        <ExternalLink
+                        <ArrowSquareOut
                           size={11}
                           style={{
                             color: "rgba(255,255,255,0.25)",
@@ -452,7 +453,7 @@ export function Navbar() {
                 (e.currentTarget.style.background = "var(--ma-gold)")
               }
             >
-              <Search size={13} /> Cari
+              <MagnifyingGlass size={13} /> Cari
             </button>
           </div>
 
@@ -460,16 +461,15 @@ export function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             style={{
-              display: "none",
               background: "none",
               border: "none",
               cursor: "pointer",
               color: "#fff",
               padding: "8px",
             }}
-            className="lg:hidden"
+            className="flex lg:hidden"
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={22} /> : <List size={22} />}
           </button>
         </div>
 
@@ -540,7 +540,7 @@ export function Navbar() {
                 }}
               >
                 {s.name}{" "}
-                <ExternalLink size={12} style={{ color: "var(--ma-gold)" }} />
+                <ArrowSquareOut size={12} style={{ color: "var(--ma-gold)" }} />
               </a>
             ))}
           </div>

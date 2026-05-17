@@ -1,4 +1,4 @@
-import { Search, ChevronDown, BookOpen } from "lucide-react";
+import { MagnifyingGlass, CaretDown, BookOpen } from "@phosphor-icons/react";
 import { useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 
@@ -174,7 +174,7 @@ export function FAQPage() {
             Cari Pertanyaan
           </label>
           <div className="relative">
-            <Search
+            <MagnifyingGlass
               className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ma-text-muted)]"
               size={20}
             />
@@ -221,7 +221,7 @@ export function FAQPage() {
                     <span className="font-medium text-[var(--ma-title)] text-left">
                       {faq.question}
                     </span>
-                    <ChevronDown
+                    <CaretDown
                       size={20}
                       className="text-[var(--ma-gold)] transition-transform group-data-[state=open]:rotate-180"
                     />
@@ -239,7 +239,7 @@ export function FAQPage() {
           {filteredFAQs.length === 0 && (
             <div className="text-center py-12">
               <div className="bg-[var(--ma-gold-soft)] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search size={40} className="text-[var(--ma-gold-dark)]" />
+                <MagnifyingGlass size={40} className="text-[var(--ma-gold-dark)]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--ma-title)] mb-2">
                 Tidak ditemukan pertanyaan

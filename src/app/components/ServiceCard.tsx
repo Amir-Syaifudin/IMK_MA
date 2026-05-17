@@ -1,8 +1,8 @@
-import { LucideIcon } from "lucide-react";
+import { Icon } from "@phosphor-icons/react";
 import { Link } from "react-router";
 
 interface ServiceCardProps {
-  icon: LucideIcon;
+  icon: Icon;
   title: string;
   description: string;
   link: string;
