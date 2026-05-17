@@ -6,6 +6,8 @@ import {
   CalendarBlank,
   User,
   ArrowRight,
+  X,
+  Funnel,
 } from "@phosphor-icons/react";
 import { useLocation } from "react-router";
 import { useState, useMemo } from "react";
@@ -317,26 +319,86 @@ export function InformationPage() {
 
   const Icon = content.icon;
 
+  const filteredItems = useMemo(() => {
+    return content.items.filter((item) => {
+      const itemDate = new Date(item.date);
+      const isAfterStart = startDate ? itemDate >= new Date(startDate) : true;
+      const isBeforeEnd = endDate ? itemDate <= new Date(endDate) : true;
+      return isAfterStart && isBeforeEnd;
+    });
+  }, [content.items, startDate, endDate]);
+
+  const clearFilters = () => {
+    setStartDate("");
+    setEndDate("");
+  };
+
   return (
     <div className="min-h-screen bg-[var(--ma-bg)] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-10 flex items-center gap-4">
-          <div className="bg-[var(--ma-gold)] p-4 rounded-2xl shadow-lg">
-            <Icon size={32} className="text-[var(--ma-green)]" />
+        <div className="mb-10 flex flex-col md:flex-row md:items-start justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="bg-[var(--ma-gold)] p-4 rounded-2xl shadow-lg">
+              <Icon size={32} className="text-[var(--ma-green)]" />
+            </div>
+            <div>
+              <h1 className="text-3xl font-bold text-[var(--ma-title)]">
+                {content.title}
+              </h1>
+              <div className="h-1 w-20 bg-[var(--ma-gold)] mt-2 rounded-full"></div>
+            </div>
           </div>
-          <div>
-            <h1 className="text-3xl font-bold text-[var(--ma-title)]">
-              {content.title}
-            </h1>
-            <div className="h-1 w-20 bg-[var(--ma-gold)] mt-2 rounded-full"></div>
+
+          {/* Filter Bar */}
+          <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-bold text-gray-700 hidden sm:block">Filter Tanggal:</span>
+              <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-xl border border-gray-100">
+                <CalendarBlank size={16} className="text-[var(--ma-gold)]" />
+                <input 
+                  type="date" 
+                  className="bg-transparent border-none outline-none text-xs text-gray-600 cursor-pointer"
+                  value={startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+              </div>
+              <span className="text-gray-400 text-xs">s/d</span>
+              <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-xl border border-gray-100">
+                <CalendarBlank size={16} className="text-[var(--ma-gold)]" />
+                <input 
+                  type="date" 
+                  className="bg-transparent border-none outline-none text-xs text-gray-600 cursor-pointer"
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {(startDate || endDate) && (
+              <button 
+                onClick={clearFilters}
+                className="p-2 bg-red-50 hover:bg-red-100 rounded-xl text-red-500 transition-colors"
+                title="Hapus Filter"
+              >
+                <X size={18} />
+              </button>
+            )}
           </div>
         </div>
 
+        {/* Results Info */}
+        {(startDate || endDate) && (
+          <div className="mb-6 flex items-center gap-2 text-sm text-gray-500 italic">
+            <Funnel size={14} />
+            Menampilkan {filteredItems.length} hasil untuk rentang tanggal yang dipilih.
+          </div>
+        )}
+
         {/* Content List */}
         <div className="grid grid-cols-1 gap-8">
-          {content.items.length > 0 ? (
-            content.items.map((item) => (
+          {filteredItems.length > 0 ? (
+            filteredItems.map((item) => (
               <div
                 key={item.id}
                 className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col md:flex-row"

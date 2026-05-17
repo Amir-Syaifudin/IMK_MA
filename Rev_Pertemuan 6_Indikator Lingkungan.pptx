@@ -44,25 +44,55 @@
 
 ---
 
-### Slide 4 — Metode: Design Thinking
+### Slide 4 — Pendekatan & Metodologi: Design Thinking (Referensi Tim 9)
 
-```
-[Empathize] → [Define] → [Ideate] → [Prototype] → [Test]
+Pendekatan penyelesaian masalah menggunakan metode **Design Thinking** yang berfokus pada kebutuhan pengguna secara iteratif:
+
+```text
+[1. Empathize] → [2. Define] → [3. Ideate] → [4. Prototype] → [5. Test]
 ```
 
-| Tahap | Deskripsi | Tools |
+| Tahap | Aktivitas Utama | Output / Tools |
 |---|---|---|
-| **Empathize** | Identifikasi masalah pengguna di website eksisting | Heuristic Evaluation (Nielsen), benchmark UKSC & SCOTUS |
-| **Define** | Merumuskan problem statement berbasis temuan | Problem Statement Canvas |
-| **Ideate** | Eksplorasi solusi redesign untuk setiap masalah | Sketsa wireframe, mood board |
-| **Prototype** | Membangun prototipe interaktif | Figma (High-fidelity) |
-| **Test** | Evaluasi dengan pengguna nyata | UEQ (User Experience Questionnaire) |
+| **1. Empathize** | Membangun empati dan memahami kendala pengguna di website MA eksisting secara mendalam. | Heuristic Evaluation (Nielsen), Golden Rules, Benchmark UKSC/SCOTUS |
+| **2. Define** | Mensintesis temuan masalah menjadi *Problem Statement* yang jelas dan terarah. | Rumusan Masalah, Identifikasi *Pain Points* |
+| **3. Ideate** | Mencetuskan ide solusi desain yang inovatif untuk memecahkan *pain points*. | Sketsa Low-Fidelity (Wireframe), Arsitektur Informasi Baru |
+| **4. Prototype** | Mewujudkan ide ke dalam rancangan antarmuka yang nyata dan interaktif. | Visual Design High-Fidelity (Figma), UI Components |
+| **5. Test** | Menguji kelayakan solusi desain langsung kepada target pengguna akhir. | Usability Testing, Kuesioner UEQ |
+
+---
+
+### Slide 5 — Landasan Evaluasi Antarmuka (Referensi Tim 7)
+
+Dalam tahap *Empathize*, kami mengaudit desain web MA eksisting menggunakan dua pilar teori Interaksi Manusia-Komputer (IMK):
+
+**10 Heuristik Usability (Jakob Nielsen):**
+*   **H1:** *Visibility of system status* (Status sistem terlihat)
+*   **H2:** *Match between system and real world* (Bahasa sesuai dunia nyata)
+*   **H3:** *User control and freedom* (Kendali bebas pengguna)
+*   **H4:** *Consistency and standards* (Konsistensi desain)
+*   **H5:** *Error prevention* (Pencegahan kesalahan)
+*   **H6:** *Recognition rather than recall* (Mengenali lebih baik dari mengingat)
+*   **H7:** *Flexibility and efficiency of use* (Fleksibilitas dan efisiensi)
+*   **H8:** *Aesthetic and minimalist design* (Desain estetis & minimalis)
+*   **H9:** *Help users recognize, diagnose, and recover from errors* (Bantuan pemulihan error)
+*   **H10:** *Help and documentation* (Bantuan & dokumentasi)
+
+**8 Golden Rules of Interface Design (Ben Shneiderman):**
+*   **G1:** *Strive for consistency* (Konsistensi antarmuka)
+*   **G2:** *Seek universal usability* (Dapat digunakan semua kalangan)
+*   **G3:** *Offer informative feedback* (Umpan balik yang informatif)
+*   **G4:** *Design dialogs to yield closure* (Alur tugas yang tuntas)
+*   **G5:** *Prevent errors* (Cegah kesalahan fatal)
+*   **G6:** *Permit easy reversal of actions* (Mudah membatalkan aksi / *Undo*)
+*   **G7:** *Keep users in control* (Pengguna merasa memegang kendali)
+*   **G8:** *Reduce short-term memory load* (Kurangi beban ingatan jangka pendek)
 
 ---
 
 ## — EMPATHIZE —
 
-### Slide 5 — Empathy Map: Fitur Eksisting yang Dipertahankan
+### Slide 6 — Empathy Map: Fitur Eksisting yang Dipertahankan
 Sebelum membongkar desain lama, tahap *Empathize* juga mengharuskan kita memahami apa yang sudah berjalan baik dan esensial bagi pengguna (*user needs*). Berdasarkan evaluasi, berikut adalah **fitur inti web asli Mahkamah Agung yang WAJIB dipertahankan (di-keep) pada redesign**:
 - 🔍 **Fitur Pencarian Perkara:** Kebutuhan absolut bagi advokat dan masyarakat pencari keadilan. Pada redesign, fitur ini disempurnakan dengan *Filter Bar* interaktif dan terintegrasi langsung dengan Kalender.
 - 📋 **Informasi Detail Perkara:** Esensi dari transparansi peradilan. Pada redesign, tampilan detail yang kaku diubah menjadi *Pop-Up Modal* lebar (2 kolom) bergaya "Info Perkara MA-RI" modern.
@@ -71,7 +101,7 @@ Sebelum membongkar desain lama, tahap *Empathize* juga mengharuskan kita memaham
 
 ---
 
-### Slide 6 — Masalah 1: Navigasi Terfragmentasi
+### Slide 7 — Masalah 1: Navigasi Terfragmentasi
 
 **Badge Heuristic:** `H1` `H3` `H4` `H6`
 
@@ -89,7 +119,7 @@ Website MA saat ini memiliki menu yang tidak konsisten — beberapa item membawa
 
 ---
 
-### Slide 6 — Masalah 2: Beranda Terlalu Padat
+### Slide 8 — Masalah 2: Beranda Terlalu Padat
 
 **Badge Heuristic:** `H2` `H7` `H8`
 
@@ -108,7 +138,7 @@ Beranda MA menampilkan terlalu banyak elemen sekaligus — berita, agenda pimpin
 
 ---
 
-### Slide 7 — Masalah 3: Terminologi Teknis Tanpa Panduan
+### Slide 9 — Masalah 3: Terminologi Teknis Tanpa Panduan
 
 **Badge Heuristic:** `H2` `H6` `H10`
 
@@ -126,7 +156,7 @@ Website MA menggunakan istilah hukum teknis seperti *kasasi*, *PK*, *kepaniteraa
 
 ---
 
-### Slide 8 — Masalah 4: Pencarian & Error Handling Lemah
+### Slide 10 — Masalah 4: Pencarian & Error Handling Lemah
 
 **Badge Heuristic:** `H1` `H5` `H9`
 
@@ -144,7 +174,7 @@ Pencarian di website MA terfragmentasi ke beberapa sistem berbeda. Tidak ada pen
 
 ---
 
-### Slide 9 — Masalah 5: Aplikasi Internal & Eksternal Tidak Terorganisir
+### Slide 11 — Masalah 5: Aplikasi Internal & Eksternal Tidak Terorganisir
 
 **Badge Heuristic:** `H3` `H4` `H7`
 
@@ -163,7 +193,7 @@ Layanan digital MA (e-Court, SIPP, Direktori Putusan) tersebar di berbagai bagia
 
 ---
 
-### Slide 10 — Masalah 6: Tidak Ada Kalender Jadwal Sidang
+### Slide 12 — Masalah 6: Tidak Ada Kalender Jadwal Sidang
 
 **Badge Heuristic:** `H1` `H6` `H7`
 

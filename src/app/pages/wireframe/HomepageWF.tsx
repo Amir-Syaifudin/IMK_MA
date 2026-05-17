@@ -47,12 +47,7 @@ export function HomepageWF() {
             Deskripsi singkat lembaga (2–3 kalimat)
           </div>
 
-          {/* Search */}
-          <div className="wf-search-bar" style={{ maxWidth: 640 }}>
-            <div style={{ width: 20, height: 20, background: "#B0B0B0", borderRadius: 4 }} />
-            <div className="wf-search-input" />
-            <div className="wf-btn">Cari</div>
-          </div>
+
 
           {/* CTA Buttons */}
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 28, flexWrap: "wrap" }}>
