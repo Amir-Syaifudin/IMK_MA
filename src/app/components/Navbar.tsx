@@ -15,8 +15,8 @@ import {
   Buildings,
   MagnifyingGlass,
 } from "@phosphor-icons/react";
-import { useState } from "react";
-import { Link, useLocation } from "react-router";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 
 const digitalServices = [
   {
@@ -206,7 +206,7 @@ export function Navbar() {
             <div style={{ width: "100%", maxWidth: "900px", margin: "0 auto" }}>
               <form onSubmit={handleSearch}>
                 <div style={{ position: "relative", marginBottom: "20px" }}>
-                  <Search
+                  <MagnifyingGlass
                     size={24}
                     style={{
                       position: "absolute",
@@ -678,7 +678,7 @@ export function Navbar() {
                   textAlign: "left",
                 }}
               >
-                <Search size={18} style={{ color: "var(--ma-gold)" }} />
+                <MagnifyingGlass size={18} style={{ color: "var(--ma-gold)" }} />
                 Cari informasi...
               </button>
             </div>

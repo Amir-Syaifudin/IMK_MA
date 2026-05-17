@@ -20,6 +20,14 @@ import { NewsCard } from "../components/NewsCard";
 
 export function Homepage() {
   const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/perkara?q=${encodeURIComponent(searchQuery)}`);
+    }
+  };
 
   const heroButtons = [
     {
@@ -202,7 +210,7 @@ export function Homepage() {
                 >
                   <div className="flex flex-col gap-2 rounded-xl bg-white/95 p-2 md:flex-row md:items-center">
                     <div className="relative flex-1">
-                      <Search
+                      <MagnifyingGlass
                         size={24}
                         className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ma-text-muted)]"
                       />

@@ -335,8 +335,8 @@ export function InformationPage() {
 
         {/* Content List */}
         <div className="grid grid-cols-1 gap-8">
-          {filteredItems.length > 0 ? (
-            filteredItems.map((item) => (
+          {content.items.length > 0 ? (
+            content.items.map((item) => (
               <div
                 key={item.id}
                 className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col md:flex-row"
