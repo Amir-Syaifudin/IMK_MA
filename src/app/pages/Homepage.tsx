@@ -135,8 +135,8 @@ export function Homepage() {
         >
           {/* Layer 1: dark green base */}
           <div className="absolute inset-0 bg-[var(--ma-green-dark)]/85" />
-          {/* Layer 2: gold shimmer top, fade to page bg bottom */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--ma-gold)]/15 via-transparent to-[var(--ma-bg)]" />
+          {/* Layer 2: gold shimmer top, fade to light yellow bottom */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--ma-gold)]/15 via-transparent to-[var(--ma-gold-soft)]/80" />
           {/* Layer 3: vignette edges */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,30,10,0.5)_100%)]" />
         </div>
@@ -147,7 +147,8 @@ export function Homepage() {
             {/* Heading */}
             <div className="mx-auto mb-20 flex max-w-5xl flex-col items-center text-center">
               <h1 className="ma-display mb-6 text-center text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
-                Portal Mahkamah Agung
+                Mahkamah Agung
+                <br /> Republik Indonesia
               </h1>
 
               <p className="mb-3 text-center text-base font-black uppercase tracking-[0.2em] text-[var(--ma-gold)] md:text-xl">

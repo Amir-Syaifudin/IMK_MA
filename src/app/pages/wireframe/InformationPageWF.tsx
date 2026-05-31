@@ -1,5 +1,4 @@
 import "../../../styles/wireframe.css";
-import { useState } from "react";
 import { Link, useLocation, useParams } from "react-router";
 
 function WFTopBar() {
@@ -11,6 +10,7 @@ function WFTopBar() {
       <Link to="/wireframe/perkara" className={`wf-topbar-link ${loc.pathname === "/wireframe/perkara" ? "active" : ""}`}>Perkara</Link>
       <Link to="/wireframe/faq" className={`wf-topbar-link ${loc.pathname === "/wireframe/faq" ? "active" : ""}`}>FAQ</Link>
       <Link to="/wireframe/informasi/berita" className={`wf-topbar-link ${loc.pathname.includes("informasi") ? "active" : ""}`}>Informasi</Link>
+      <Link to="/wireframe/navbar" className={`wf-topbar-link ${loc.pathname === "/wireframe/navbar" ? "active" : ""}`}>Subbab Navigasi</Link>
       <div style={{ marginLeft: "auto" }}>
         <Link to="/" className="wf-topbar-link">→ Lihat Visual Design</Link>
       </div>
@@ -20,15 +20,12 @@ function WFTopBar() {
 
 export function InformationPageWF() {
   const { category = "berita" } = useParams();
-  const [searchTerm, setSearchTerm] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
 
   const categories = [
-    { id: "artikel", label: "Artikel" },
-    { id: "berita", label: "Berita" },
-    { id: "keputusan", label: "Kebijakan" },
-    { id: "pengumuman", label: "Pengumuman" },
+    { id: "artikel", label: "Artikel Hukum" },
+    { id: "berita", label: "Berita Terkini" },
+    { id: "keputusan", label: "Kebijakan & Peraturan" },
+    { id: "pengumuman", label: "Pengumuman Resmi" },
   ];
 
   const currentCategory = categories.find(c => c.id === category) || categories[1];
@@ -53,79 +50,63 @@ export function InformationPageWF() {
         <span style={{ fontSize: 11, color: "#888" }}>Beranda › Informasi › {currentCategory.label}</span>
       </div>
 
-      {/* ─── PAGE HEADER ─── */}
-      <div style={{ background: "#C0C0C0", borderBottom: "2px solid #AAAAAA", padding: "40px 32px" }}>
-        <div className="wf-section-label-box">Section 1 — Header Informasi</div>
-        <div className="wf-h1">{currentCategory.label} Terbaru</div>
-        <div className="wf-block" style={{ height: 24, maxWidth: 600, marginTop: 12, fontSize: 10 }}>
-          Pusat informasi resmi {currentCategory.label.toLowerCase()} Mahkamah Agung Republik Indonesia.
-        </div>
-      </div>
+      <div className="wf-section" style={{ paddingBottom: 40 }}>
 
-      <div className="wf-section">
-        {/* TABS / CATEGORY SWITCHER */}
-        <div className="wf-tabs" style={{ marginBottom: 28 }}>
-          {categories.map(cat => (
-            <Link 
-              key={cat.id} 
-              to={`/wireframe/informasi/${cat.id}`}
-              className={`wf-tab ${category === cat.id ? "wf-tab-active" : ""}`}
-              style={{ textDecoration: "none" }}
-            >
-              {cat.label}
-            </Link>
-          ))}
-        </div>
+        {/* HEADER & FILTER */}
+        <div className="wf-section-label-box">Section 1 — Header & Filter</div>
+        <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 20, marginBottom: 40, alignItems: "flex-start" }}>
 
-        {/* SEARCH & FILTER BAR */}
-        <div className="wf-section-label-box">Section 2 — Filter & Pencarian</div>
-        <div className="wf-card" style={{ flexDirection: "row", flexWrap: "wrap", gap: 12, marginBottom: 32, alignItems: "flex-end" }}>
-          <div style={{ flex: 2, minWidth: 200 }}>
-            <div className="wf-label">Cari {currentCategory.label}</div>
-            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12 }}>
-              <span style={{ color: "#888", fontSize: 11 }}>🔍 Masukkan kata kunci...</span>
+          <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+            <div className="wf-block" style={{ width: 64, height: 64, borderRadius: 16, fontSize: 24, flexShrink: 0 }}>
+
+            </div>
+            <div>
+              <div className="wf-h1" style={{ margin: 0, padding: 0, fontSize: "1.8rem" }}>{currentCategory.label}</div>
+              <div style={{ width: 80, height: 4, background: "#888", marginTop: 8, borderRadius: 2 }} />
             </div>
           </div>
-          <div style={{ flex: 1, minWidth: 140 }}>
-            <div className="wf-label">Dari Tanggal</div>
-            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}>📅 dd/mm/yyyy</div>
+
+          <div className="wf-card" style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: "16px 20px", marginTop: 0 }}>
+            <div className="wf-label" style={{ margin: 0 }}>Filter Tanggal:</div>
+            <div className="wf-block" style={{ height: 36, padding: "0 12px", width: 140, fontSize: 11, justifyContent: "flex-start" }}>dd/mm/yyyy</div>
+            <span style={{ fontSize: 11, color: "#888" }}>s/d</span>
+            <div className="wf-block" style={{ height: 36, padding: "0 12px", width: 140, fontSize: 11, justifyContent: "flex-start" }}> dd/mm/yyyy</div>
           </div>
-          <div style={{ flex: 1, minWidth: 140 }}>
-            <div className="wf-label">Sampai Tanggal</div>
-            <div className="wf-block" style={{ height: 40, justifyContent: "flex-start", paddingLeft: 12, fontSize: 10 }}>📅 dd/mm/yyyy</div>
-          </div>
-          <div className="wf-btn">Terapkan Filter</div>
         </div>
 
         {/* CONTENT LIST */}
-        <div className="wf-section-label-box">Section 3 — Daftar {currentCategory.label}</div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <div key={i} className="wf-card" style={{ flexDirection: "row", gap: 20, padding: "20px" }}>
-              <div className="wf-block-img" style={{ width: 240, height: 160, flexShrink: 0 }}>[ Image / Thumbnail ]</div>
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 8 }}>
-                <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                  <div className="wf-badge">{currentCategory.label}</div>
-                  <span style={{ fontSize: 11, color: "#888" }}>📅 {i + 10} Mei 2026</span>
+        <div className="wf-section-label-box">Section 2 — Daftar {currentCategory.label}</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+          {[1].map(i => (
+            <div key={i} className="wf-card" style={{ padding: "32px", alignItems: "flex-start", flexDirection: "column", gap: 0 }}>
+
+              <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 16, width: "100%" }}>
+                <div className="wf-badge" style={{ textTransform: "uppercase" }}>KATEGORI</div>
+                <div style={{ fontSize: 12, color: "#888", display: "flex", gap: 6, alignItems: "center" }}>
+                  {i + 10} Mei 2026
                 </div>
-                <div className="wf-h3" style={{ fontSize: "1.2rem" }}>Judul {currentCategory.label} ke-{i} yang Sangat Penting dan Informatif</div>
-                <div className="wf-block" style={{ height: 48, fontSize: 10 }}>
-                  Ringkasan isi {currentCategory.label.toLowerCase()} yang memberikan gambaran singkat tentang topik yang dibahas. Ini adalah cuplikan teks untuk membantu pengguna memahami konten sebelum membaca selengkapnya.
-                </div>
-                <div style={{ marginTop: "auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <div className="wf-btn-sm">Baca Selengkapnya →</div>
-                  <div style={{ display: "flex", gap: 10 }}>
-                    <div className="wf-card-icon" style={{ width: 24, height: 24 }} />
-                    <div className="wf-card-icon" style={{ width: 24, height: 24 }} />
+                {i % 2 === 0 && (
+                  <div style={{ fontSize: 12, color: "#888", display: "flex", gap: 6, alignItems: "center", marginLeft: "auto" }}>
+                    Nama Penulis
                   </div>
-                </div>
+                )}
               </div>
+
+              <div className="wf-h3" style={{ fontSize: "1.5rem", marginBottom: 16 }}>Judul {currentCategory.label} </div>
+
+              <div className="wf-block" style={{ height: 48, fontSize: 11, marginBottom: 24, justifyContent: "flex-start", padding: "12px", width: "100%", boxSizing: "border-box" }}>
+                Ringkasan isi {currentCategory.label.toLowerCase()} yang memberikan gambaran singkat tentang topik yang dibahas. Ini adalah cuplikan teks untuk membantu pengguna memahami konten sebelum membaca selengkapnya...
+              </div>
+
+              <div className="wf-btn-sm" style={{ fontWeight: "bold" }}>Baca Selengkapnya →</div>
+
             </div>
           ))}
         </div>
 
         {/* PAGINATION */}
-        <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 40 }}>
+        <div className="wf-section-label-box" style={{ marginTop: 40 }}>Section 3 — Navigasi Halaman</div>
+        <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 16 }}>
           <div className="wf-btn-sm">«</div>
           <div className="wf-btn-sm" style={{ background: "#888", color: "#fff" }}>1</div>
           <div className="wf-btn-sm">2</div>

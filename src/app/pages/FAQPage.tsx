@@ -12,7 +12,7 @@ interface Category {
   faqs: FAQ[];
 }
 
-const categories: Category[] = [
+const baseCategories: Category[] = [
   {
     name: "Tentang Mahkamah Agung",
     faqs: [
@@ -100,6 +100,15 @@ const categories: Category[] = [
   },
 ];
 
+const categories: Category[] = [
+  {
+    name: "Semua",
+    faqs: baseCategories.flatMap((c) => c.faqs),
+  },
+  ...baseCategories,
+];
+
+
 const glossary = [
   {
     term: "Kasasi",
@@ -159,7 +168,7 @@ export function FAQPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-[var(--ma-title)] mb-2">
-            FAQ & Panduan Pengguna
+            Pusat Bantuan & Tanya Jawab
           </h1>
           <div className="h-1 w-24 bg-[var(--ma-gold)] mb-4 rounded-full"></div>
           <p className="text-[var(--ma-text)]">

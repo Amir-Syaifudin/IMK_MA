@@ -11,6 +11,7 @@ function WFTopBar() {
       <Link to="/wireframe/perkara" className={`wf-topbar-link ${loc.pathname === "/wireframe/perkara" ? "active" : ""}`}>Perkara</Link>
       <Link to="/wireframe/faq" className={`wf-topbar-link ${loc.pathname === "/wireframe/faq" ? "active" : ""}`}>FAQ</Link>
       <Link to="/wireframe/informasi/berita" className={`wf-topbar-link ${loc.pathname.includes("informasi") ? "active" : ""}`}>Informasi</Link>
+      <Link to="/wireframe/navbar" className={`wf-topbar-link ${loc.pathname === "/wireframe/navbar" ? "active" : ""}`}>Subbab Navigasi</Link>
       <div style={{ marginLeft: "auto" }}>
         <Link to="/faq" className="wf-topbar-link"> Lihat Visual Design</Link>
       </div>
@@ -80,19 +81,7 @@ export function FAQPageWF() {
           <div className="wf-btn">Cari</div>
         </div>
       </div>
-
       <div className="wf-section">
-
-        {/* STATS BAR */}
-        <div style={{ display: "flex", gap: 16, marginBottom: 32 }}>
-          {[["12", "Kategori Topik"], ["84", "Pertanyaan Tersedia"], ["5 menit", "Rata-rata waktu respons"]].map(([num, label]) => (
-            <div key={label} className="wf-card" style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 12, padding: "14px 16px" }}>
-              <div className="wf-h2" style={{ fontSize: "1.5rem", margin: 0 }}>{num}</div>
-              <div style={{ fontSize: 11, color: "#777" }}>{label}</div>
-            </div>
-          ))}
-        </div>
-
         {/* KATEGORI TABS */}
         <div className="wf-section-label-box">Section 2 — Kategori & Filter</div>
         <div className="wf-tabs" style={{ marginBottom: 24 }}>
@@ -167,7 +156,7 @@ export function FAQPageWF() {
               {letter}
             </div>
           ))}
-          {["C","D","E","F","H","I","J","L","M","N","O","Q","R","S","T","U","V","W","X","Z"].map(l => (
+          {["C", "D", "E", "F", "H", "I", "J", "L", "M", "N", "O", "Q", "R", "S", "T", "U", "V", "W", "X", "Z"].map(l => (
             <div key={l} className="wf-tab" style={{ width: 36, height: 36, justifyContent: "center", display: "flex", alignItems: "center", padding: 0, opacity: 0.5, cursor: "not-allowed" }}>{l}</div>
           ))}
         </div>

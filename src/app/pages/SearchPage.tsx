@@ -1264,7 +1264,7 @@ export function SearchPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* ── Page Header / Menu Petunjuk ── */}
         <div className="bg-gradient-to-br from-[var(--ma-green-dark)] via-[var(--ma-green)] to-[var(--ma-green-medium)] rounded-2xl p-8 md:p-10 text-white relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_8px_30px_rgba(30,58,47,0.3)] border border-[var(--ma-gold)]/20">
-          <Scales className="absolute -right-10 -bottom-10 text-[var(--ma-gold)]/5 w-64 h-64 transform -rotate-12 pointer-events-none" />
+          {/* removed decorative scales icon */}
           <div className="relative z-10 max-w-2xl">
             <h1 className="ma-display text-3xl md:text-4xl font-bold text-[var(--ma-gold)] mb-4 drop-shadow-md">
               Informasi Perkara & Jadwal Sidang
@@ -1293,9 +1293,7 @@ export function SearchPage() {
               </button>
             </div>
           </div>
-          <div className="hidden md:flex relative z-10 opacity-20">
-            <Scales size={160} />
-          </div>
+
           <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--ma-gold)] opacity-5 rounded-full blur-3xl -mr-10 -mt-10" />
         </div>
 

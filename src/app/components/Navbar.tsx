@@ -420,11 +420,12 @@ export function Navbar() {
             >
               <button
                 style={{
-                  ...navStyle.linkBase,
                   background: "none",
                   border: "none",
+                  ...navStyle.linkBase,
                   cursor: "pointer",
-                  color: "rgba(255,255,255,0.78)",
+                  color: informasiItems.some(item => location.pathname.startsWith(item.path)) ? "var(--ma-gold-light)" : "rgba(255,255,255,0.78)",
+                  borderBottomColor: informasiItems.some(item => location.pathname.startsWith(item.path)) ? "var(--ma-gold)" : "transparent",
                   gap: "4px",
                 }}
               >
@@ -473,7 +474,7 @@ export function Navbar() {
                   : "transparent",
               }}
             >
-              FAQ
+              Bantuan
             </Link>
 
             {/* Layanan Digital */}
@@ -489,9 +490,9 @@ export function Navbar() {
             >
               <button
                 style={{
-                  ...navStyle.linkBase,
                   background: "none",
                   border: "none",
+                  ...navStyle.linkBase,
                   cursor: "pointer",
                   color: "rgba(255,255,255,0.78)",
                   gap: "4px",
@@ -686,7 +687,7 @@ export function Navbar() {
             {[
               { label: "Beranda", path: "/" },
               { label: "Perkara", path: "/perkara" },
-              { label: "FAQ", path: "/faq" },
+              { label: "Bantuan", path: "/faq" },
             ].map((link) => (
               <Link
                 key={link.path}

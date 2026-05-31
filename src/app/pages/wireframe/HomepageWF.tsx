@@ -8,8 +8,9 @@ function WFTopBar() {
       <span className="wf-topbar-label"> Wireframe Mode</span>
       <Link to="/wireframe" className={`wf-topbar-link ${loc.pathname === "/wireframe" ? "active" : ""}`}>Beranda</Link>
       <Link to="/wireframe/perkara" className={`wf-topbar-link ${loc.pathname === "/wireframe/perkara" ? "active" : ""}`}>Perkara</Link>
-      <Link to="/wireframe/faq" className={`wf-topbar-link ${loc.pathname === "/wireframe/faq" ? "active" : ""}`}>FAQ</Link>
+      <Link to="/wireframe/faq" className={`wf-topbar-link ${loc.pathname === "/wireframe/faq" ? "active" : ""}`}>Bantuan</Link>
       <Link to="/wireframe/informasi/berita" className={`wf-topbar-link ${loc.pathname.includes("informasi") ? "active" : ""}`}>Informasi</Link>
+      <Link to="/wireframe/navbar" className={`wf-topbar-link ${loc.pathname === "/wireframe/navbar" ? "active" : ""}`}>Subbab Navigasi</Link>
       <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
         <Link to="/" className="wf-topbar-link"> Lihat Visual Design</Link>
       </div>
@@ -26,7 +27,7 @@ export function HomepageWF() {
       <div className="wf-navbar">
         <div className="wf-navbar-logo">[ Logo MA ]</div>
         <div className="wf-navbar-links">
-          {["Beranda", "Perkara", "Informasi ", "FAQ", "Layanan Digital "].map(l => (
+          {["Beranda", "Perkara", "Informasi ", "Bantuan", "Layanan Digital "].map(l => (
             <div key={l} className="wf-navbar-link">{l}</div>
           ))}
         </div>
