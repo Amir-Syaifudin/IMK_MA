@@ -6,6 +6,7 @@ import { FAQPage } from "./pages/FAQPage";
 import { NotFound } from "./pages/NotFound";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import { InformationPage } from "./pages/InformationPage";
+import { PengaduanPage } from "./pages/PengaduanPage";
 import { HomepageWF } from "./pages/wireframe/HomepageWF";
 import { SearchPageWF } from "./pages/wireframe/SearchPageWF";
 import { FAQPageWF } from "./pages/wireframe/FAQPageWF";
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { index: true, Component: Homepage },
       { path: "perkara", Component: SearchPage },
       { path: "faq", Component: FAQPage },
+      { path: "pengaduan", Component: PengaduanPage },
 
       // Informasi Sub-pages
       {

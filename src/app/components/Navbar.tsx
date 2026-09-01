@@ -14,6 +14,7 @@ import {
   Bell,
   Buildings,
   MagnifyingGlass,
+  Flag,
 } from "@phosphor-icons/react";
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
@@ -597,6 +598,21 @@ export function Navbar() {
               )}
             </div>
 
+            <Link
+              to="/pengaduan"
+              style={{
+                ...navStyle.linkBase,
+                color: isActive("/pengaduan")
+                  ? "var(--ma-gold-light)"
+                  : "rgba(255,255,255,0.78)",
+                borderBottomColor: isActive("/pengaduan")
+                  ? "var(--ma-gold)"
+                  : "transparent",
+              }}
+            >
+              Pengaduan
+            </Link>
+
             {/* Search CTA */}
             <button
               onClick={() => setSearchModalOpen(true)}
@@ -722,6 +738,48 @@ export function Navbar() {
                 marginTop: "4px",
               }}
             >
+              Informasi
+            </div>
+            {informasiItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setMobileOpen(false)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    padding: "12px 24px 12px 28px",
+                    textDecoration: "none",
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "13px",
+                    color: isActive(item.path)
+                      ? "var(--ma-gold-light)"
+                      : "rgba(255,255,255,0.8)",
+                    borderLeft: `3px solid ${isActive(item.path) ? "var(--ma-gold)" : "transparent"}`,
+                    borderBottom: "1px solid rgba(255,255,255,0.05)",
+                  }}
+                >
+                  <Icon size={14} style={{ color: "var(--ma-gold)", flexShrink: 0 }} />
+                  {item.name}
+                </Link>
+              );
+            })}
+            <div
+              style={{
+                padding: "10px 24px 5px",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "9px",
+                fontWeight: "700",
+                color: "var(--ma-gold)",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                borderTop: "1px solid rgba(255,255,255,0.06)",
+                marginTop: "4px",
+              }}
+            >
               Layanan Digital
             </div>
             {digitalServices.map((s) => (
@@ -745,6 +803,27 @@ export function Navbar() {
                 <ArrowSquareOut size={12} style={{ color: "var(--ma-gold)" }} />
               </a>
             ))}
+            <Link
+              to="/pengaduan"
+              onClick={() => setMobileOpen(false)}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "14px 24px",
+                textDecoration: "none",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "13px",
+                color: isActive("/pengaduan")
+                  ? "var(--ma-gold-light)"
+                  : "rgba(255,255,255,0.8)",
+                borderLeft: `3px solid ${isActive("/pengaduan") ? "var(--ma-gold)" : "transparent"}`,
+                borderTop: "1px solid rgba(255,255,255,0.06)",
+              }}
+            >
+              <Flag size={14} style={{ color: "var(--ma-gold)", flexShrink: 0 }} />
+              Pengaduan
+            </Link>
           </div>
         )}
       </nav>
