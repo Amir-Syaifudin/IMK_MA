@@ -1,0 +1,211 @@
+- generic [ref=f4e3]:
+  - navigation [ref=f4e4]:
+    - generic [ref=f4e5]:
+      - link "MA Logo Mahkamah Agung Republik Indonesia" [ref=f4e6] [cursor=pointer]:
+        - /url: /
+        - img "MA Logo" [ref=f4e8]
+        - generic [ref=f4e9]:
+          - generic [ref=f4e10]: Mahkamah Agung
+          - generic [ref=f4e11]: Republik Indonesia
+      - generic [ref=f4e12]:
+        - link "Beranda" [ref=f4e13] [cursor=pointer]:
+          - /url: /
+        - link "Perkara" [ref=f4e14] [cursor=pointer]:
+          - /url: /perkara
+        - button "Informasi" [ref=f4e16] [cursor=pointer]
+        - link "Bantuan" [ref=f4e19] [cursor=pointer]:
+          - /url: /faq
+        - button "Layanan Digital" [ref=f4e21] [cursor=pointer]
+        - link "Pengaduan" [ref=f4e24] [cursor=pointer]:
+          - /url: /pengaduan
+        - button "Cari" [ref=f4e25] [cursor=pointer]
+  - main [ref=f4e28]:
+    - generic [ref=f4e30]:
+      - generic [ref=f4e32]:
+        - heading "Informasi Perkara & Jadwal Sidang" [level=1] [ref=f4e33]
+        - paragraph [ref=f4e34]: Layanan terpadu Mahkamah Agung untuk mencari detail putusan perkara serta memantau jadwal sidang dan agenda kelembagaan secara transparan.
+        - generic [ref=f4e35]:
+          - button "Pencarian Perkara" [ref=f4e36]
+          - button "Kalender Agenda" [ref=f4e39]
+      - generic [ref=f4e43]:
+        - heading "Pencarian Perkara" [level=2] [ref=f4e45]
+        - generic [ref=f4e48]:
+          - generic [ref=f4e49]:
+            - generic [ref=f4e50]: Kata Kunci
+            - textbox "Nomor perkara, nama pihak, atau kata kunci..." [active] [ref=f4e54]: zzz999
+          - generic [ref=f4e55]:
+            - generic [ref=f4e56]:
+              - generic [ref=f4e57]: Jenis Perkara
+              - combobox [ref=f4e59]:
+                - option "Semua Jenis" [selected]
+                - option "Perdata"
+                - option "Pidana"
+                - option "Tata Usaha Negara"
+                - option "Agama"
+                - option "Militer"
+            - generic [ref=f4e60]:
+              - generic [ref=f4e61]: Tanggal Dari
+              - button "Pilih tanggal awal" [ref=f4e62]
+            - generic [ref=f4e66]:
+              - generic [ref=f4e67]: Tanggal Sampai
+              - button "Pilih tanggal akhir" [ref=f4e68]
+          - generic [ref=f4e72]:
+            - button "Cari Sekarang" [ref=f4e73]
+            - button "Reset" [ref=f4e76]
+        - generic [ref=f4e278]:
+          - generic [ref=f4e279]:
+            - heading "Hasil Pencarian" [level=2] [ref=f4e280]
+            - paragraph [ref=f4e281]: 1 hasil untuk "zzz999"
+          - generic [ref=f4e336]:
+            - generic [ref=f4e337]:
+              - generic [ref=f4e338]:
+                - heading "123/Pdt.G/2025/PN Jkt.Sel" [level=3] [ref=f4e342]
+                - generic [ref=f4e343]:
+                  - generic [ref=f4e344]:
+                    - generic [ref=f4e345]: "Jenis:"
+                    - generic [ref=f4e346]: Perdata
+                  - generic [ref=f4e347]: 15 Januari 2025
+                  - generic [ref=f4e350]: PN Jakarta Selatan
+                  - generic [ref=f4e353]:
+                    - generic [ref=f4e354]: "Status:"
+                    - generic [ref=f4e355]: Telah diputus
+              - generic [ref=f4e356]:
+                - button "Lihat Jadwal di Kalender" [ref=f4e357]
+                - button "Detail" [ref=f4e358]
+            - paragraph [ref=f4e360]: "\"Menimbang bahwa gugatan Penggugat telah memenuhi syarat formil dan materiil. Majelis Hakim memutuskan mengabulkan gugatan Penggugat untuk sebagian dan menghukum Tergugat untuk membayar ganti rugi...\""
+      - generic [ref=f4e79]:
+        - heading "Kalender Mahkamah Agung" [level=2] [ref=f4e81]
+        - generic [ref=f4e83]:
+          - generic [ref=f4e85]:
+            - generic [ref=f4e86]:
+              - button [ref=f4e87]
+              - generic [ref=f4e90]:
+                - heading "September" [level=3] [ref=f4e91]
+                - paragraph [ref=f4e92]: "2026"
+              - button [ref=f4e93]
+            - generic [ref=f4e96]:
+              - generic [ref=f4e97]: Min
+              - generic [ref=f4e98]: Sen
+              - generic [ref=f4e99]: Sel
+              - generic [ref=f4e100]: Rab
+              - generic [ref=f4e101]: Kam
+              - generic [ref=f4e102]: Jum
+              - generic [ref=f4e103]: Sab
+            - generic [ref=f4e104]:
+              - button "1" [ref=f4e107]
+              - button "2" [ref=f4e109]
+              - button "3" [ref=f4e111]
+              - button "4" [ref=f4e113]
+              - button "5" [ref=f4e115]
+              - button "6" [ref=f4e117]
+              - button "7" [ref=f4e119]
+              - button "8" [ref=f4e121]
+              - button "9" [ref=f4e123]
+              - button "10" [ref=f4e125]
+              - button "11" [ref=f4e127]
+              - button "12" [ref=f4e129]
+              - button "13" [ref=f4e131]
+              - button "14" [ref=f4e133]
+              - button "15" [ref=f4e135]
+              - button "16" [ref=f4e137]
+              - button "17" [ref=f4e139]
+              - button "18" [ref=f4e141]
+              - button "19" [ref=f4e143]
+              - button "20" [ref=f4e145]
+              - button "21" [ref=f4e147]
+              - button "22" [ref=f4e149]
+              - button "23" [ref=f4e151]
+              - button "24" [ref=f4e153]
+              - button "25" [ref=f4e155]
+              - button "26" [ref=f4e157]
+              - button "27" [ref=f4e159]
+              - button "28" [ref=f4e161]
+              - button "29" [ref=f4e163]
+              - button "30" [ref=f4e165]
+            - generic [ref=f4e167]:
+              - generic [ref=f4e168]: "Keterangan:"
+              - generic [ref=f4e169]:
+                - generic [ref=f4e170]: Sidang
+                - generic [ref=f4e172]: Putusan
+                - generic [ref=f4e174]: Pengumuman
+                - generic [ref=f4e176]: Agenda
+                - generic [ref=f4e178]: Libur
+          - generic [ref=f4e180]:
+            - generic [ref=f4e181]:
+              - heading "Filter Kategori Agenda" [level=4] [ref=f4e182]
+              - generic [ref=f4e183]:
+                - button "Semua" [ref=f4e184]
+                - button "Sidang" [ref=f4e185]
+                - button "Putusan" [ref=f4e186]
+                - button "Pengumuman" [ref=f4e187]
+                - button "Agenda" [ref=f4e188]
+                - button "Libur" [ref=f4e189]
+            - generic [ref=f4e190]:
+              - heading "Semua Agenda — September 2026" [level=3] [ref=f4e197]
+              - generic [ref=f4e198]:
+                - paragraph [ref=f4e202]: Tidak ada agenda
+                - paragraph [ref=f4e203]: Coba pilih bulan, tanggal, atau filter keterangan lain
+  - contentinfo [ref=f4e204]:
+    - generic [ref=f4e205]:
+      - generic [ref=f4e206]:
+        - generic [ref=f4e207]:
+          - heading "Mahkamah Agung RI" [level=3] [ref=f4e208]
+          - paragraph [ref=f4e209]: Lembaga tinggi negara yang memegang kekuasaan kehakiman sebagai kekuasaan yang merdeka untuk menyelenggarakan peradilan guna menegakkan hukum dan keadilan.
+          - generic [ref=f4e210]:
+            - link [ref=f4e211] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f4e214] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f4e217] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f4e220] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f4e223]:
+          - heading "Tautan Cepat" [level=3] [ref=f4e224]
+          - list [ref=f4e225]:
+            - listitem [ref=f4e226]:
+              - link "Perkara" [ref=f4e227] [cursor=pointer]:
+                - /url: /perkara
+            - listitem [ref=f4e228]:
+              - link "FAQ & Panduan" [ref=f4e229] [cursor=pointer]:
+                - /url: /faq
+            - listitem [ref=f4e230]:
+              - link "Tentang MA" [ref=f4e231] [cursor=pointer]:
+                - /url: /tentang
+            - listitem [ref=f4e232]:
+              - link "Kontak" [ref=f4e233] [cursor=pointer]:
+                - /url: /kontak
+        - generic [ref=f4e234]:
+          - heading "Layanan Digital" [level=3] [ref=f4e235]
+          - list [ref=f4e236]:
+            - listitem [ref=f4e237]:
+              - link "Direktori Putusan" [ref=f4e238] [cursor=pointer]:
+                - /url: https://putusan3.mahkamahagung.go.id
+            - listitem [ref=f4e241]:
+              - link "e-Court" [ref=f4e242] [cursor=pointer]:
+                - /url: https://ecourt.mahkamahagung.go.id
+            - listitem [ref=f4e245]:
+              - link "Cek Status Perkara" [ref=f4e246] [cursor=pointer]:
+                - /url: https://sipp.pn-jakartapusat.go.id
+            - listitem [ref=f4e249]:
+              - link "SIPP" [ref=f4e250] [cursor=pointer]:
+                - /url: https://sipp.mahkamahagung.go.id
+            - listitem [ref=f4e253]:
+              - link "e-Berpadu" [ref=f4e254] [cursor=pointer]:
+                - /url: https://eberpadu.mahkamahagung.go.id
+        - generic [ref=f4e258]:
+          - heading "Kontak Kami" [level=3] [ref=f4e259]
+          - list [ref=f4e260]:
+            - listitem [ref=f4e261]:
+              - generic [ref=f4e264]: Jl. Medan Merdeka Utara No. 9-13Jakarta Pusat 10110
+            - listitem [ref=f4e265]:
+              - generic [ref=f4e268]: (021) 384 3348
+            - listitem [ref=f4e269]:
+              - generic [ref=f4e272]: info@mahkamahagung.go.id
+      - generic [ref=f4e273]:
+        - paragraph [ref=f4e274]: © 2026 Mahkamah Agung Republik Indonesia. Hak Cipta Dilindungi.
+        - generic [ref=f4e275]:
+          - link "Kebijakan Privasi" [ref=f4e276] [cursor=pointer]:
+            - /url: "#"
+          - link "Syarat & Ketentuan" [ref=f4e277] [cursor=pointer]:
+            - /url: "#"

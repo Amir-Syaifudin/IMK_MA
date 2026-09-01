@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/app/components/Navbar.tsx"
+        ],
+        "createdAt": "2026-09-01T09:26:35.832Z",
+        "reason": "Left-border accent on nav/dropdown list items (transparent default, gold on hover/active) - same pattern reused across desktop dropdown (L108,L535), mobile top-level links (L707), and new mobile Informasi section (L747, added this session, copied verbatim from L707 for consistency. Independently reviewed by /impeccable critique Assessment B as a defensible Gmail-sidebar-style interactive affordance, not the canonical card side-tab AI-slop tell."
+      }
+    ]
+  }
+}
