@@ -9,7 +9,7 @@ import {
   X,
   Funnel,
 } from "@phosphor-icons/react";
-import { useLocation } from "react-router";
+import { useLocation, useSearchParams } from "react-router";
 import { useState, useMemo } from "react";
 
 interface InfoItem {
@@ -19,9 +19,10 @@ interface InfoItem {
   author?: string;
   excerpt: string;
   category: string;
+  image?: string;
 }
 
-const dummyData: Record<
+export const dummyData: Record<
   string,
   { title: string; icon: any; items: InfoItem[] }
 > = {
@@ -100,32 +101,35 @@ const dummyData: Record<
     items: [
       {
         id: 1,
-        title: "Ketua Mahkamah Agung Melantik 5 Ketua Pengadilan Tinggi Baru",
-        date: "2026-05-15",
+        title: "Mahkamah Agung Luncurkan Sistem Digital untuk Transparansi Peradilan",
+        date: "2026-08-20",
         excerpt:
-          "Pelantikan ini merupakan bagian dari mutasi dan promosi rutin di lingkungan Mahkamah Agung untuk menjaga kualitas kepemimpinan di tingkat banding...",
+          "Dalam rangka meningkatkan transparansi dan akuntabilitas, MA meluncurkan platform digital baru yang memudahkan akses masyarakat terhadap informasi peradilan.",
         category: "Kegiatan MA",
+        image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
       },
       {
         id: 2,
-        title: "MA Raih Penghargaan Opini WTP ke-12 Kalinya Secara Berturut-turut",
-        date: "2026-05-12",
+        title: "Sosialisasi PERMA Baru tentang Administrasi Perkara",
+        date: "2026-08-05",
         excerpt:
-          "Badan Pemeriksa Keuangan (BPK) memberikan opini Wajar Tanpa Pengecualian atas Laporan Keuangan Mahkamah Agung Tahun Anggaran 2025.",
+          "Mahkamah Agung mengadakan sosialisasi PERMA terbaru untuk meningkatkan efisiensi administrasi perkara di seluruh pengadilan.",
         category: "Prestasi",
+        image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&q=80",
       },
       {
         id: 3,
-        title: "Kunjungan Delegasi Mahkamah Agung Singapura ke Mahkamah Agung RI",
-        date: "2026-05-08",
+        title: "Rapat Koordinasi Pengadilan Tinggi se-Indonesia",
+        date: "2026-07-31",
         excerpt:
-          "Pertemuan ini membahas penguatan kerja sama di bidang pertukaran hakim dan pengembangan sistem manajemen perkara elektronik (e-Court).",
+          "Ketua MA memimpin rapat koordinasi dengan seluruh Ketua Pengadilan Tinggi untuk evaluasi kinerja dan perencanaan strategis.",
         category: "Kerjasama Internasional",
+        image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
       },
       {
         id: 4,
         title: "Workshop Nasional: Optimalisasi Peran Hakim dalam Perkara Lingkungan",
-        date: "2026-05-02",
+        date: "2026-07-30",
         excerpt:
           "Mahkamah Agung menyelenggarakan workshop intensif bagi para hakim pengadilan tingkat pertama untuk memperdalam pemahaman tentang hukum lingkungan.",
         category: "Pendidikan",
@@ -133,7 +137,7 @@ const dummyData: Record<
       {
         id: 5,
         title: "Peresmian Gedung Kantor Pengadilan Agama Jakarta Barat yang Baru",
-        date: "2026-04-25",
+        date: "2026-07-23",
         excerpt:
           "Fasilitas baru ini diharapkan dapat meningkatkan kenyamanan dan kualitas pelayanan bagi masyarakat pencari keadilan di wilayah Jakarta Barat.",
         category: "Infrastruktur",
@@ -141,7 +145,7 @@ const dummyData: Record<
       {
         id: 6,
         title: "Sosialisasi Aplikasi SIPP Versi Terbaru di Lingkungan Peradilan Umum",
-        date: "2026-04-18",
+        date: "2026-07-16",
         excerpt:
           "Aplikasi Sistem Informasi Penelusuran Perkara (SIPP) kini hadir dengan fitur-fitur baru yang lebih user-friendly and transparan.",
         category: "Teknologi",
@@ -149,7 +153,7 @@ const dummyData: Record<
       {
         id: 7,
         title: "MA Selenggarakan Seminar Internasional tentang Hukum Ekonomi Syariah",
-        date: "2026-04-05",
+        date: "2026-07-09",
         excerpt:
           "Seminar ini menghadirkan pakar dari berbagai negara untuk mendiskusikan perkembangan terkini dalam penyelesaian sengketa ekonomi syariah.",
         category: "Seminar",
@@ -157,7 +161,7 @@ const dummyData: Record<
       {
         id: 8,
         title: "Pemberian Bantuan Sosial Mahkamah Agung Peduli Korban Bencana",
-        date: "2026-03-20",
+        date: "2026-07-02",
         excerpt:
           "Sebagai wujud kepedulian sosial, Mahkamah Agung menyalurkan bantuan kepada masyarakat yang terdampak bencana alam di wilayah Jawa Tengah.",
         category: "Sosial",
@@ -290,7 +294,7 @@ const dummyData: Record<
   },
 };
 
-const formatIndoDate = (dateStr: string) => {
+export const formatIndoDate = (dateStr: string) => {
   const months = [
     "Januari", "Februari", "Maret", "April", "Mei", "Juni",
     "Juli", "Agustus", "September", "Oktober", "November", "Desember"
@@ -307,9 +311,10 @@ export function InformationPage() {
   const pathParts = location.pathname.split("/");
   const type = pathParts[pathParts.length - 1]; // get 'artikel', 'berita', etc.
 
+  const [searchParams] = useSearchParams();
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
 
   const content = dummyData[type] || {
     title: "Informasi",
@@ -320,17 +325,24 @@ export function InformationPage() {
   const Icon = content.icon;
 
   const filteredItems = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
     return content.items.filter((item) => {
       const itemDate = new Date(item.date);
       const isAfterStart = startDate ? itemDate >= new Date(startDate) : true;
       const isBeforeEnd = endDate ? itemDate <= new Date(endDate) : true;
-      return isAfterStart && isBeforeEnd;
+      const matchesQuery = q
+        ? item.title.toLowerCase().includes(q) ||
+          item.excerpt.toLowerCase().includes(q) ||
+          item.category.toLowerCase().includes(q)
+        : true;
+      return isAfterStart && isBeforeEnd && matchesQuery;
     });
-  }, [content.items, startDate, endDate]);
+  }, [content.items, startDate, endDate, searchQuery]);
 
   const clearFilters = () => {
     setStartDate("");
     setEndDate("");
+    setSearchQuery("");
   };
 
   return (
@@ -352,6 +364,16 @@ export function InformationPage() {
 
           {/* Filter Bar */}
           <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-xl border border-gray-100">
+              <Funnel size={16} className="text-[var(--ma-gold)]" />
+              <input
+                type="text"
+                placeholder="Cari kata kunci..."
+                className="bg-transparent border-none outline-none text-xs text-gray-600 w-32 sm:w-40"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
             <div className="flex items-center gap-2">
               <span className="text-sm font-bold text-gray-700 hidden sm:block">Filter Tanggal:</span>
               <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-xl border border-gray-100">
@@ -375,8 +397,8 @@ export function InformationPage() {
               </div>
             </div>
 
-            {(startDate || endDate) && (
-              <button 
+            {(startDate || endDate || searchQuery) && (
+              <button
                 onClick={clearFilters}
                 className="p-2 bg-red-50 hover:bg-red-100 rounded-xl text-red-500 transition-colors"
                 title="Hapus Filter"
@@ -388,10 +410,12 @@ export function InformationPage() {
         </div>
 
         {/* Results Info */}
-        {(startDate || endDate) && (
+        {(startDate || endDate || searchQuery) && (
           <div className="mb-6 flex items-center gap-2 text-sm text-gray-500 italic">
             <Funnel size={14} />
-            Menampilkan {filteredItems.length} hasil untuk rentang tanggal yang dipilih.
+            Menampilkan {filteredItems.length} hasil
+            {searchQuery && <> untuk "{searchQuery}"</>}
+            {(startDate || endDate) && <> pada rentang tanggal yang dipilih</>}.
           </div>
         )}
 

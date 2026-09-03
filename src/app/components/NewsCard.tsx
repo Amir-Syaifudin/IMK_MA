@@ -1,4 +1,5 @@
 import { CalendarBlank } from "@phosphor-icons/react";
+import { Link } from "react-router";
 
 interface NewsCardProps {
   image: string;
@@ -20,9 +21,12 @@ export function NewsCard({ image, title, date, excerpt }: NewsCardProps) {
           {title}
         </h3>
         <p className="text-sm text-[var(--ma-text)] line-clamp-3">{excerpt}</p>
-        <button className="mt-4 text-[var(--ma-gold)] hover:text-[var(--ma-gold-dark)] font-medium text-sm transition-colors">
+        <Link
+          to={`/id/berita?q=${encodeURIComponent(title)}`}
+          className="mt-4 inline-block text-[var(--ma-gold)] hover:text-[var(--ma-gold-dark)] font-medium text-sm transition-colors"
+        >
           Baca Selengkapnya →
-        </button>
+        </Link>
       </div>
     </div>
   );

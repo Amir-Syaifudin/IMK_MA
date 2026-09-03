@@ -47,16 +47,16 @@ interface SearchResult {
 
 // ── Mock data kalender ───────────────────────────────────────────────────────
 
-const mockEvents: CalendarEvent[] = [
+export const mockEvents: CalendarEvent[] = [
   {
     id: "e16",
-    tanggal: "01/05/2026",
+    tanggal: "01/09/2026",
     type: "libur",
     title: "Hari Buruh Internasional — Pengadilan Libur",
   },
   {
     id: "e18",
-    tanggal: "02/05/2026",
+    tanggal: "02/09/2026",
     type: "agenda",
     jam: "13:30",
     title: "Rapat Koordinasi Kepaniteraan",
@@ -64,10 +64,10 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e1",
-    tanggal: "05/05/2026",
+    tanggal: "05/09/2026",
     type: "sidang",
     jam: "09:00",
-    nomorPerkara: "123/Pdt.G/2025/PN Jkt.Sel",
+    nomorPerkara: "123/Pdt.G/2026/PN Jkt.Sel",
     jenis: "Perdata",
     title: "Sidang Kasasi — Wanprestasi Kontrak",
     hakim: "Drs. Budi Santoso, S.H., M.H.",
@@ -75,10 +75,10 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e2",
-    tanggal: "05/05/2026",
+    tanggal: "05/09/2026",
     type: "sidang",
     jam: "13:00",
-    nomorPerkara: "456/Pid.B/2025/PN Sby",
+    nomorPerkara: "456/Pid.B/2026/PN Sby",
     jenis: "Pidana",
     title: "Sidang Kasasi — Korupsi Pengadaan Barang",
     hakim: "Siti Nurhaliza, S.H., M.H.",
@@ -86,7 +86,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e19",
-    tanggal: "06/05/2026",
+    tanggal: "06/09/2026",
     type: "sidang",
     jam: "10:00",
     nomorPerkara: "555 K/Ag/2026",
@@ -97,7 +97,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e8",
-    tanggal: "07/05/2026",
+    tanggal: "07/09/2026",
     type: "putusan",
     jam: "10:00",
     nomorPerkara: "200 K/Pdt/2026",
@@ -108,7 +108,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e11",
-    tanggal: "08/05/2026",
+    tanggal: "08/09/2026",
     type: "agenda",
     jam: "08:00",
     title: "Rapat Pimpinan MA — Evaluasi Kinerja Triwulan I",
@@ -116,16 +116,16 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e20",
-    tanggal: "09/05/2026",
+    tanggal: "09/09/2026",
     type: "pengumuman",
     title: "Jadwal Pemeliharaan Sistem SIPP Akhir Pekan",
   },
   {
     id: "e3",
-    tanggal: "12/05/2026",
+    tanggal: "12/09/2026",
     type: "sidang",
     jam: "09:00",
-    nomorPerkara: "789/TUN/2024/PTUN Bdg",
+    nomorPerkara: "789/TUN/2026/PTUN Bdg",
     jenis: "TUN",
     title: "Sidang Kasasi — Sengketa Pajak",
     hakim: "Ahmad Fauzi, S.H., LL.M.",
@@ -133,10 +133,10 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e4",
-    tanggal: "12/05/2026",
+    tanggal: "12/09/2026",
     type: "sidang",
     jam: "13:00",
-    nomorPerkara: "321/Pdt.G/2024/PA Jkt.Tim",
+    nomorPerkara: "321/Pdt.G/2026/PA Jkt.Tim",
     jenis: "Agama",
     title: "Sidang Kasasi — Pembagian Warisan",
     hakim: "Dr. Hj. Ratna Dewi, S.H.",
@@ -144,10 +144,10 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e21",
-    tanggal: "13/05/2026",
+    tanggal: "13/09/2026",
     type: "sidang",
     jam: "09:00",
-    nomorPerkara: "654/Pid.Sus/2025/PN Mdn",
+    nomorPerkara: "654/Pid.Sus/2026/PN Mdn",
     jenis: "Pidana",
     title: "Sidang Kasasi — Tindak Pidana Pencucian Uang",
     hakim: "Siti Nurhaliza, S.H., M.H.",
@@ -155,7 +155,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e9",
-    tanggal: "14/05/2026",
+    tanggal: "14/09/2026",
     type: "putusan",
     jam: "10:00",
     nomorPerkara: "300 K/Pid/2026",
@@ -166,13 +166,13 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e12",
-    tanggal: "15/05/2026",
+    tanggal: "15/09/2026",
     type: "pengumuman",
-    title: "Batas Akhir Pendaftaran Perkara Kasasi Periode Mei 2026",
+    title: "Batas Akhir Pendaftaran Perkara Kasasi Periode September 2026",
   },
   {
     id: "e22",
-    tanggal: "16/05/2026",
+    tanggal: "16/09/2026",
     type: "putusan",
     jam: "14:00",
     nomorPerkara: "777 K/TUN/2026",
@@ -183,7 +183,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e5",
-    tanggal: "19/05/2026",
+    tanggal: "19/09/2026",
     type: "sidang",
     jam: "10:00",
     nomorPerkara: "654 K/Pid.Mil/2026",
@@ -194,7 +194,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e6",
-    tanggal: "19/05/2026",
+    tanggal: "19/09/2026",
     type: "sidang",
     jam: "13:30",
     nomorPerkara: "987 K/Pdt/2026",
@@ -205,7 +205,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e13",
-    tanggal: "20/05/2026",
+    tanggal: "20/09/2026",
     type: "agenda",
     jam: "09:00",
     title: "Seminar Nasional — Reformasi Peradilan di Era Digital",
@@ -213,7 +213,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e10",
-    tanggal: "21/05/2026",
+    tanggal: "21/09/2026",
     type: "putusan",
     jam: "09:00",
     nomorPerkara: "400 K/TUN/2026",
@@ -224,13 +224,13 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e14",
-    tanggal: "22/05/2026",
+    tanggal: "22/09/2026",
     type: "pengumuman",
     title: "Pengumuman Seleksi Calon Hakim Agung Gelombang II 2026",
   },
   {
     id: "e23",
-    tanggal: "23/05/2026",
+    tanggal: "23/09/2026",
     type: "agenda",
     jam: "08:30",
     title: "Senam Pagi Bersama dan Kerja Bakti",
@@ -238,7 +238,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e7",
-    tanggal: "26/05/2026",
+    tanggal: "26/09/2026",
     type: "sidang",
     jam: "09:00",
     nomorPerkara: "111 K/Pid/2026",
@@ -249,7 +249,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e24",
-    tanggal: "27/05/2026",
+    tanggal: "27/09/2026",
     type: "sidang",
     jam: "10:30",
     nomorPerkara: "888 K/Pdt/2026",
@@ -260,7 +260,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e15",
-    tanggal: "28/05/2026",
+    tanggal: "28/09/2026",
     type: "agenda",
     jam: "10:00",
     title: "Pelantikan Hakim Agung Baru",
@@ -268,19 +268,19 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e17",
-    tanggal: "29/05/2026",
+    tanggal: "29/09/2026",
     type: "libur",
     title: "Kenaikan Isa Almasih — Pengadilan Libur",
   },
   {
     id: "e25",
-    tanggal: "30/05/2026",
+    tanggal: "30/09/2026",
     type: "pengumuman",
     title: "Laporan Kinerja Bulanan Dirilis",
   },
   {
     id: "e26",
-    tanggal: "20/05/2026",
+    tanggal: "20/09/2026",
     type: "sidang",
     jam: "13:00",
     nomorPerkara: "123 K/TUN/2026",
@@ -291,7 +291,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e27",
-    tanggal: "20/05/2026",
+    tanggal: "20/09/2026",
     type: "putusan",
     jam: "15:00",
     nomorPerkara: "456 K/Pid/2026",
@@ -302,19 +302,19 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e28",
-    tanggal: "05/05/2026",
+    tanggal: "05/09/2026",
     type: "pengumuman",
     title: "Rilis Laporan Kinerja Mingguan",
   },
   {
     id: "e29",
-    tanggal: "01/06/2026",
+    tanggal: "01/10/2026",
     type: "libur",
     title: "Hari Lahir Pancasila — Pengadilan Libur",
   },
   {
     id: "e30",
-    tanggal: "02/06/2026",
+    tanggal: "02/10/2026",
     type: "sidang",
     jam: "09:00",
     nomorPerkara: "555/Pid.Sus/2026/PN Jkt.Pst",
@@ -325,7 +325,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e31",
-    tanggal: "05/06/2026",
+    tanggal: "05/10/2026",
     type: "putusan",
     jam: "10:00",
     nomorPerkara: "111 K/Pdt/2026",
@@ -336,7 +336,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e32",
-    tanggal: "05/06/2026",
+    tanggal: "05/10/2026",
     type: "agenda",
     jam: "13:00",
     title: "Rapat Koordinasi Pengawasan",
@@ -344,13 +344,13 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e33",
-    tanggal: "10/06/2026",
+    tanggal: "10/10/2026",
     type: "pengumuman",
     title: "Pembaruan Pedoman Eksekusi Putusan",
   },
   {
     id: "e34",
-    tanggal: "15/06/2026",
+    tanggal: "15/10/2026",
     type: "sidang",
     jam: "10:30",
     nomorPerkara: "777 K/Ag/2026",
@@ -361,7 +361,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e35",
-    tanggal: "20/06/2026",
+    tanggal: "20/10/2026",
     type: "putusan",
     jam: "14:00",
     nomorPerkara: "888 K/TUN/2026",
@@ -372,7 +372,7 @@ const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e36",
-    tanggal: "25/06/2026",
+    tanggal: "25/10/2026",
     type: "sidang",
     jam: "09:00",
     nomorPerkara: "999/Pid.Mil/2026/Dilmiltama",
@@ -385,13 +385,13 @@ const mockEvents: CalendarEvent[] = [
 
 // ── Mock data pencarian ──────────────────────────────────────────────────────
 
-const mockResults: SearchResult[] = [
+export const mockResults: SearchResult[] = [
   {
     id: "1",
-    nomorPerkara: "123/Pdt.G/2025/PN Jkt.Sel",
+    nomorPerkara: "123/Pdt.G/2026/PN Jkt.Sel",
     jenisPerkara: "Perdata",
-    tahun: "2025",
-    tanggal: "15 Januari 2025",
+    tahun: "2026",
+    tanggal: "05 Juli 2026",
     status: "Telah diputus",
     pengadilan: "PN Jakarta Selatan",
     cuplikan:
@@ -399,10 +399,10 @@ const mockResults: SearchResult[] = [
   },
   {
     id: "2",
-    nomorPerkara: "456/Pid.B/2025/PN Sby",
+    nomorPerkara: "456/Pid.B/2026/PN Sby",
     jenisPerkara: "Pidana",
-    tahun: "2025",
-    tanggal: "20 Februari 2025",
+    tahun: "2026",
+    tanggal: "18 Juli 2026",
     status: "Dalam proses",
     pengadilan: "PN Surabaya",
     cuplikan:
@@ -410,10 +410,10 @@ const mockResults: SearchResult[] = [
   },
   {
     id: "3",
-    nomorPerkara: "789/TUN/2024/PTUN Bdg",
+    nomorPerkara: "789/TUN/2026/PTUN Bdg",
     jenisPerkara: "Tata Usaha Negara",
-    tahun: "2024",
-    tanggal: "10 Desember 2024",
+    tahun: "2026",
+    tanggal: "27 Juli 2026",
     status: "Telah diputus",
     pengadilan: "PTUN Bandung",
     cuplikan:
@@ -421,10 +421,10 @@ const mockResults: SearchResult[] = [
   },
   {
     id: "4",
-    nomorPerkara: "321/Pdt.G/2024/PA Jkt.Tim",
+    nomorPerkara: "321/Pdt.G/2026/PA Jkt.Tim",
     jenisPerkara: "Agama",
-    tahun: "2024",
-    tanggal: "05 November 2024",
+    tahun: "2026",
+    tanggal: "08 Agustus 2026",
     status: "Telah diputus",
     pengadilan: "PA Jakarta Timur",
     cuplikan:
@@ -432,10 +432,10 @@ const mockResults: SearchResult[] = [
   },
   {
     id: "5",
-    nomorPerkara: "654/Pid.Sus/2025/PN Mdn",
+    nomorPerkara: "654/Pid.Sus/2026/PN Mdn",
     jenisPerkara: "Pidana",
-    tahun: "2025",
-    tanggal: "02 Maret 2025",
+    tahun: "2026",
+    tanggal: "22 Agustus 2026",
     status: "Dalam proses",
     pengadilan: "PN Medan",
     cuplikan:
@@ -1481,7 +1481,7 @@ export function SearchPage() {
                                 onClick={() => jumpToCalendar(r.nomorPerkara)}
                                 className="bg-[var(--ma-gold)] text-[var(--ma-green)] px-5 py-2 rounded-lg hover:bg-[var(--ma-gold-dark)] transition-colors text-sm font-bold tracking-wide whitespace-nowrap shadow-sm"
                               >
-                                Lihat Jadwal di Kalender
+                                Lihat di Kalender
                               </button>
                               <button
                                 onClick={() => {

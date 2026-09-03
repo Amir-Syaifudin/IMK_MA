@@ -16,8 +16,9 @@ import {
   MagnifyingGlass,
   Flag,
 } from "@phosphor-icons/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
+import { searchUnified, categoryIcon } from "../lib/unifiedSearch";
 
 const digitalServices = [
   {
@@ -140,10 +141,15 @@ export function Navbar() {
     }
   }, [searchModalOpen]);
 
+  const searchResults = useMemo(() => searchUnified(searchQuery), [searchQuery]);
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (searchQuery.trim()) {
-      setSearchModalOpen(false);
+    if (!searchQuery.trim()) return;
+    setSearchModalOpen(false);
+    if (searchResults.length > 0) {
+      navigate(searchResults[0].path);
+    } else {
       navigate(`/perkara?q=${encodeURIComponent(searchQuery)}`);
     }
   };
@@ -263,15 +269,11 @@ export function Navbar() {
                   <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
                     Populer:
                   </span>
-                  {["Putusan Kasasi", "SIPP", "Jadwal Sidang", "Berita", "PERMA"].map(tag => (
+                  {["Putusan Kasasi", "Jadwal Sidang", "Berita", "Pidana"].map(tag => (
                     <button
                       key={tag}
                       type="button"
-                      onClick={() => {
-                        setSearchQuery(tag);
-                        navigate(`/perkara?q=${encodeURIComponent(tag)}`);
-                        setSearchModalOpen(false);
-                      }}
+                      onClick={() => setSearchQuery(tag)}
                       style={{
                         background: "transparent",
                         border: "1px solid rgba(255,255,255,0.15)",
@@ -295,6 +297,56 @@ export function Navbar() {
                     </button>
                   ))}
                 </div>
+
+                {/* Live results, gabungan Perkara/Berita/Agenda */}
+                {searchQuery.trim() && (
+                  <div style={{ marginTop: "20px", borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "16px" }}>
+                    {searchResults.length === 0 ? (
+                      <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px" }}>
+                        Tidak ditemukan hasil untuk "{searchQuery}".
+                      </p>
+                    ) : (
+                      <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                        {searchResults.map((hit) => {
+                          const Icon = categoryIcon[hit.category];
+                          return (
+                            <Link
+                              key={hit.id}
+                              to={hit.path}
+                              onClick={() => setSearchModalOpen(false)}
+                              style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "12px",
+                                padding: "10px 14px",
+                                borderRadius: "10px",
+                                textDecoration: "none",
+                                background: "rgba(255,255,255,0.05)",
+                                border: "1px solid rgba(255,255,255,0.08)",
+                                transition: "all 0.15s",
+                              }}
+                              onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(201,168,76,0.12)")}
+                              onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.05)")}
+                            >
+                              <Icon size={16} style={{ color: "var(--ma-gold)", flexShrink: 0 }} />
+                              <div style={{ flex: 1, minWidth: 0 }}>
+                                <div style={{ color: "rgba(255,255,255,0.9)", fontSize: "13px", fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                                  {hit.title}
+                                </div>
+                                <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "11px" }}>
+                                  {hit.subtitle}
+                                </div>
+                              </div>
+                              <span style={{ color: "var(--ma-gold)", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", flexShrink: 0 }}>
+                                {hit.category}
+                              </span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                )}
               </form>
             </div>
           </div>

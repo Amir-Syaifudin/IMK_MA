@@ -1,8 +1,8 @@
 import {
-  MagnifyingGlass,
   FileMagnifyingGlass,
   ClipboardText,
   Phone,
+  Flag,
   CalendarBlank,
   FileText,
   Bell,
@@ -12,33 +12,37 @@ import {
   SquaresFour,
   Users,
 } from "@phosphor-icons/react";
-import { useState } from "react";
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 
 import { ServiceCard } from "../components/ServiceCard";
 import { NewsCard } from "../components/NewsCard";
+import { dummyData, formatIndoDate } from "./InformationPage";
 
 export function Homepage() {
-  const navigate = useNavigate();
-
   const heroButtons = [
     {
       icon: FileMagnifyingGlass,
       title: "Cari Putusan",
       description: "Temukan putusan pengadilan dengan mudah",
-      action: () => navigate("/perkara"),
+      to: "/perkara",
     },
     {
       icon: ClipboardText,
       title: "Cek Status Perkara",
       description: "Lacak perkembangan perkara Anda",
-      action: () => navigate("/perkara?tab=status"),
+      to: "/perkara?tab=status",
     },
     {
       icon: Phone,
       title: "Hubungi Pengadilan",
       description: "Kontak dan informasi pengadilan",
-      action: () => navigate("/kontak"),
+      to: "/kontak",
+    },
+    {
+      icon: Flag,
+      title: "Adukan Pelanggaran",
+      description: "Sampaikan pengaduan Anda ke Mahkamah Agung",
+      to: "/pengaduan",
     },
   ];
 
@@ -93,33 +97,14 @@ export function Homepage() {
     },
   ];
 
-  const beritaTerbaru = [
-    {
-      image:
-        "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
-      title:
-        "Mahkamah Agung Luncurkan Sistem Digital untuk Transparansi Peradilan",
-      date: "15 Mei 2026",
-      excerpt:
-        "Dalam rangka meningkatkan transparansi dan akuntabilitas, MA meluncurkan platform digital baru yang memudahkan akses masyarakat terhadap informasi peradilan.",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&q=80",
-      title: "Sosialisasi PERMA Baru tentang Administrasi Perkara",
-      date: "12 Mei 2026",
-      excerpt:
-        "Mahkamah Agung mengadakan sosialisasi PERMA terbaru untuk meningkatkan efisiensi administrasi perkara di seluruh pengadilan.",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
-      title: "Rapat Koordinasi Pengadilan Tinggi se-Indonesia",
-      date: "10 Mei 2026",
-      excerpt:
-        "Ketua MA memimpin rapat koordinasi dengan seluruh Ketua Pengadilan Tinggi untuk evaluasi kinerja dan perencanaan strategis.",
-    },
-  ];
+  const beritaTerbaru = dummyData.berita.items
+    .slice(0, 3)
+    .map((item) => ({
+      image: item.image || "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
+      title: item.title,
+      date: formatIndoDate(item.date),
+      excerpt: item.excerpt,
+    }));
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[var(--ma-bg)]">
@@ -135,8 +120,8 @@ export function Homepage() {
         >
           {/* Layer 1: dark green base */}
           <div className="absolute inset-0 bg-[var(--ma-green-dark)]/85" />
-          {/* Layer 2: gold shimmer top, fade to light yellow bottom */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--ma-gold)]/15 via-transparent to-[var(--ma-gold-soft)]/80" />
+          {/* Layer 2: gold shimmer top, fade to black bottom */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--ma-gold)]/15 via-transparent to-black/80" />
           {/* Layer 3: vignette edges */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,30,10,0.5)_100%)]" />
         </div>
@@ -145,17 +130,17 @@ export function Homepage() {
         <div className="relative z-10 flex flex-1 items-center justify-center">
           <div className="w-full max-w-7xl px-6 py-6 lg:px-8">
             {/* Heading */}
-            <div className="mx-auto mb-20 flex max-w-5xl flex-col items-center text-center">
-              <h1 className="ma-display mb-6 text-center text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
+            <div className="mx-auto mb-8 flex max-w-5xl flex-col items-center text-center md:mb-20">
+              <h1 className="ma-display mb-4 text-center text-3xl font-extrabold leading-tight tracking-tight text-white md:mb-6 md:text-6xl">
                 Mahkamah Agung
                 <br /> Republik Indonesia
               </h1>
 
-              <p className="mb-3 text-center text-base font-black uppercase tracking-[0.2em] text-[var(--ma-gold)] md:text-xl">
+              <p className="mb-3 text-center text-sm font-black uppercase tracking-[0.1em] text-[var(--ma-gold)] md:text-xl md:tracking-[0.2em]">
                 "Menuju Badan Peradilan yang Agung dan Modern"
               </p>
 
-              <p className="ma-serif max-w-3xl text-center text-sm leading-relaxed text-white/85 md:text-base">
+              <p className="ma-serif hidden max-w-3xl text-center text-sm leading-relaxed text-white/85 sm:block md:text-base">
                 Lembaga tinggi negara yang memegang kekuasaan kehakiman
                 sebagai kekuasaan yang merdeka untuk menyelenggarakan
                 peradilan guna menegakkan hukum dan keadilan.
@@ -163,31 +148,31 @@ export function Homepage() {
             </div>
 
             {/* Hero Buttons */}
-            <div className="mx-auto mb-6 grid w-full max-w-5xl grid-cols-1 gap-4 md:grid-cols-3">
+            <div className="mx-auto mb-6 grid w-full max-w-6xl grid-cols-2 gap-4 md:grid-cols-4">
               {heroButtons.map((item) => {
                 const Icon = item.icon;
 
                 return (
-                  <button
+                  <Link
                     key={item.title}
-                    onClick={item.action}
-                    className="group flex h-full flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-5 text-center backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[var(--ma-gold)]/60 hover:bg-white/15 hover:shadow-[0_8px_32px_rgba(201,168,76,0.3)]"
+                    to={item.to}
+                    className="group flex h-full flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-3 text-center backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[var(--ma-gold)]/60 hover:bg-white/15 hover:shadow-[0_8px_32px_rgba(201,168,76,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ma-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ma-green-dark)] md:p-5"
                   >
-                    <div className="mb-3 rounded-xl border border-white/10 bg-white/10 p-4 shadow-lg transition-all duration-300 group-hover:bg-[var(--ma-gold)]">
+                    <div className="mb-2 rounded-xl border border-white/10 bg-white/10 p-3 shadow-lg transition-all duration-300 group-hover:bg-[var(--ma-gold)] md:mb-3 md:p-4">
                       <Icon
-                        size={32}
+                        size={28}
                         className="text-[var(--ma-gold)] transition-colors group-hover:text-[var(--ma-green-dark)]"
                       />
                     </div>
 
-                    <h3 className="ma-display mb-1 text-center text-base font-bold text-white">
+                    <h3 className="ma-display mb-1 text-center text-sm font-bold text-white md:text-base">
                       {item.title}
                     </h3>
 
-                    <p className="max-w-xs text-center text-xs font-medium leading-relaxed text-white/80">
+                    <p className="hidden max-w-xs text-center text-xs font-medium leading-relaxed text-white/80 md:block">
                       {item.description}
                     </p>
-                  </button>
+                  </Link>
                 );
               })}
             </div>
@@ -198,7 +183,7 @@ export function Homepage() {
       </section>
 
       {/* LAYANAN DIGITAL & UTAMA */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+      <section className="mx-auto max-w-7xl px-6 pb-12 pt-16 lg:px-8">
         <SectionHeader title="Layanan & Inovasi Digital" />
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {layananGabungan.map((item) => (
@@ -218,14 +203,17 @@ export function Homepage() {
             <div className="mx-auto h-1.5 w-16 rounded-full bg-[var(--ma-gold)] md:mx-0" />
           </div>
 
-          <button className="group flex items-center gap-3 text-xl font-bold text-[var(--ma-gold)] transition-all hover:text-[var(--ma-gold-dark)]">
+          <Link
+            to="/id/berita"
+            className="group flex items-center gap-3 text-xl font-bold text-[var(--ma-gold)] transition-all hover:text-[var(--ma-gold-dark)]"
+          >
             Lihat Semua Berita
 
             <ArrowSquareOut
               size={24}
               className="transition-transform group-hover:translate-x-1"
             />
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
