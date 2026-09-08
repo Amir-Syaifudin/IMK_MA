@@ -23,13 +23,13 @@ export function Homepage() {
     {
       icon: FileMagnifyingGlass,
       title: "Cari Putusan",
-      description: "Temukan putusan pengadilan dengan mudah",
+      description: "Temukan putusan pengadilan",
       to: "/perkara",
     },
     {
       icon: ClipboardText,
       title: "Cek Status Perkara",
-      description: "Lacak perkembangan perkara Anda",
+      description: "Lacak perkembangan perkara",
       to: "/perkara?tab=status",
     },
     {
@@ -41,7 +41,7 @@ export function Homepage() {
     {
       icon: Flag,
       title: "Adukan Pelanggaran",
-      description: "Sampaikan pengaduan Anda ke Mahkamah Agung",
+      description: "Sampaikan pengaduan",
       to: "/pengaduan",
     },
   ];

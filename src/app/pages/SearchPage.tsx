@@ -64,7 +64,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e1",
-    tanggal: "05/09/2026",
+    tanggal: "03/09/2026",
     type: "sidang",
     jam: "09:00",
     nomorPerkara: "123/Pdt.G/2026/PN Jkt.Sel",
@@ -75,7 +75,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e2",
-    tanggal: "05/09/2026",
+    tanggal: "03/09/2026",
     type: "sidang",
     jam: "13:00",
     nomorPerkara: "456/Pid.B/2026/PN Sby",
@@ -86,7 +86,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e19",
-    tanggal: "06/09/2026",
+    tanggal: "07/09/2026",
     type: "sidang",
     jam: "10:00",
     nomorPerkara: "555 K/Ag/2026",
@@ -97,7 +97,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e8",
-    tanggal: "07/09/2026",
+    tanggal: "08/09/2026",
     type: "putusan",
     jam: "10:00",
     nomorPerkara: "200 K/Pdt/2026",
@@ -108,7 +108,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e11",
-    tanggal: "08/09/2026",
+    tanggal: "09/09/2026",
     type: "agenda",
     jam: "08:00",
     title: "Rapat Pimpinan MA — Evaluasi Kinerja Triwulan I",
@@ -116,13 +116,13 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e20",
-    tanggal: "09/09/2026",
+    tanggal: "10/09/2026",
     type: "pengumuman",
     title: "Jadwal Pemeliharaan Sistem SIPP Akhir Pekan",
   },
   {
     id: "e3",
-    tanggal: "12/09/2026",
+    tanggal: "14/09/2026",
     type: "sidang",
     jam: "09:00",
     nomorPerkara: "789/TUN/2026/PTUN Bdg",
@@ -133,7 +133,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e4",
-    tanggal: "12/09/2026",
+    tanggal: "14/09/2026",
     type: "sidang",
     jam: "13:00",
     nomorPerkara: "321/Pdt.G/2026/PA Jkt.Tim",
@@ -144,7 +144,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e21",
-    tanggal: "13/09/2026",
+    tanggal: "15/09/2026",
     type: "sidang",
     jam: "09:00",
     nomorPerkara: "654/Pid.Sus/2026/PN Mdn",
@@ -155,7 +155,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e9",
-    tanggal: "14/09/2026",
+    tanggal: "16/09/2026",
     type: "putusan",
     jam: "10:00",
     nomorPerkara: "300 K/Pid/2026",
@@ -166,13 +166,13 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e12",
-    tanggal: "15/09/2026",
+    tanggal: "17/09/2026",
     type: "pengumuman",
     title: "Batas Akhir Pendaftaran Perkara Kasasi Periode September 2026",
   },
   {
     id: "e22",
-    tanggal: "16/09/2026",
+    tanggal: "21/09/2026",
     type: "putusan",
     jam: "14:00",
     nomorPerkara: "777 K/TUN/2026",
@@ -183,7 +183,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e5",
-    tanggal: "19/09/2026",
+    tanggal: "22/09/2026",
     type: "sidang",
     jam: "10:00",
     nomorPerkara: "654 K/Pid.Mil/2026",
@@ -194,7 +194,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e6",
-    tanggal: "19/09/2026",
+    tanggal: "22/09/2026",
     type: "sidang",
     jam: "13:30",
     nomorPerkara: "987 K/Pdt/2026",
@@ -205,7 +205,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e13",
-    tanggal: "20/09/2026",
+    tanggal: "23/09/2026",
     type: "agenda",
     jam: "09:00",
     title: "Seminar Nasional — Reformasi Peradilan di Era Digital",
@@ -213,7 +213,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e10",
-    tanggal: "21/09/2026",
+    tanggal: "24/09/2026",
     type: "putusan",
     jam: "09:00",
     nomorPerkara: "400 K/TUN/2026",
@@ -224,13 +224,13 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e14",
-    tanggal: "22/09/2026",
+    tanggal: "28/09/2026",
     type: "pengumuman",
     title: "Pengumuman Seleksi Calon Hakim Agung Gelombang II 2026",
   },
   {
     id: "e23",
-    tanggal: "23/09/2026",
+    tanggal: "29/09/2026",
     type: "agenda",
     jam: "08:30",
     title: "Senam Pagi Bersama dan Kerja Bakti",
@@ -238,7 +238,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e7",
-    tanggal: "26/09/2026",
+    tanggal: "30/09/2026",
     type: "sidang",
     jam: "09:00",
     nomorPerkara: "111 K/Pid/2026",
@@ -249,7 +249,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e24",
-    tanggal: "27/09/2026",
+    tanggal: "01/10/2026",
     type: "sidang",
     jam: "10:30",
     nomorPerkara: "888 K/Pdt/2026",
@@ -260,7 +260,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e15",
-    tanggal: "28/09/2026",
+    tanggal: "05/10/2026",
     type: "agenda",
     jam: "10:00",
     title: "Pelantikan Hakim Agung Baru",
@@ -268,19 +268,19 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e17",
-    tanggal: "29/09/2026",
+    tanggal: "06/10/2026",
     type: "libur",
     title: "Kenaikan Isa Almasih — Pengadilan Libur",
   },
   {
     id: "e25",
-    tanggal: "30/09/2026",
+    tanggal: "07/10/2026",
     type: "pengumuman",
     title: "Laporan Kinerja Bulanan Dirilis",
   },
   {
     id: "e26",
-    tanggal: "20/09/2026",
+    tanggal: "23/09/2026",
     type: "sidang",
     jam: "13:00",
     nomorPerkara: "123 K/TUN/2026",
@@ -291,7 +291,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e27",
-    tanggal: "20/09/2026",
+    tanggal: "23/09/2026",
     type: "putusan",
     jam: "15:00",
     nomorPerkara: "456 K/Pid/2026",
@@ -302,19 +302,19 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e28",
-    tanggal: "05/09/2026",
+    tanggal: "03/09/2026",
     type: "pengumuman",
     title: "Rilis Laporan Kinerja Mingguan",
   },
   {
     id: "e29",
-    tanggal: "01/10/2026",
+    tanggal: "08/10/2026",
     type: "libur",
     title: "Hari Lahir Pancasila — Pengadilan Libur",
   },
   {
     id: "e30",
-    tanggal: "02/10/2026",
+    tanggal: "12/10/2026",
     type: "sidang",
     jam: "09:00",
     nomorPerkara: "555/Pid.Sus/2026/PN Jkt.Pst",
@@ -325,7 +325,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e31",
-    tanggal: "05/10/2026",
+    tanggal: "13/10/2026",
     type: "putusan",
     jam: "10:00",
     nomorPerkara: "111 K/Pdt/2026",
@@ -336,7 +336,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e32",
-    tanggal: "05/10/2026",
+    tanggal: "13/10/2026",
     type: "agenda",
     jam: "13:00",
     title: "Rapat Koordinasi Pengawasan",
@@ -344,7 +344,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e33",
-    tanggal: "10/10/2026",
+    tanggal: "14/10/2026",
     type: "pengumuman",
     title: "Pembaruan Pedoman Eksekusi Putusan",
   },
@@ -361,7 +361,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e35",
-    tanggal: "20/10/2026",
+    tanggal: "19/10/2026",
     type: "putusan",
     jam: "14:00",
     nomorPerkara: "888 K/TUN/2026",
@@ -372,7 +372,7 @@ export const mockEvents: CalendarEvent[] = [
   },
   {
     id: "e36",
-    tanggal: "25/10/2026",
+    tanggal: "20/10/2026",
     type: "sidang",
     jam: "09:00",
     nomorPerkara: "999/Pid.Mil/2026/Dilmiltama",

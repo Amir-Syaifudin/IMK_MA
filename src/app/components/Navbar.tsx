@@ -102,7 +102,7 @@ const navStyle = {
     padding: "11px 18px",
     textDecoration: "none",
     fontFamily: "'DM Sans', sans-serif" as const,
-    fontSize: "12px",
+    fontSize: "14px",
     color: "rgba(255,255,255,0.7)",
     borderBottom: "1px solid rgba(255,255,255,0.06)",
     borderLeft: "3px solid transparent",
@@ -454,6 +454,18 @@ export function Navbar() {
                     ? "var(--ma-gold)"
                     : "transparent",
                 }}
+                onMouseEnter={(e) => {
+                  if (!isActive(link.path)) {
+                    e.currentTarget.style.color = "var(--ma-gold-light)";
+                    e.currentTarget.style.borderBottomColor = "rgba(201,168,76,0.4)";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive(link.path)) {
+                    e.currentTarget.style.color = "rgba(255,255,255,0.78)";
+                    e.currentTarget.style.borderBottomColor = "transparent";
+                  }
+                }}
               >
                 {link.label}
               </Link>
@@ -477,8 +489,8 @@ export function Navbar() {
                   border: "none",
                   ...navStyle.linkBase,
                   cursor: "pointer",
-                  color: informasiItems.some(item => location.pathname.startsWith(item.path)) ? "var(--ma-gold-light)" : "rgba(255,255,255,0.78)",
-                  borderBottomColor: informasiItems.some(item => location.pathname.startsWith(item.path)) ? "var(--ma-gold)" : "transparent",
+                  color: (informasiOpen || informasiItems.some(item => location.pathname.startsWith(item.path))) ? "var(--ma-gold-light)" : "rgba(255,255,255,0.78)",
+                  borderBottomColor: (informasiOpen || informasiItems.some(item => location.pathname.startsWith(item.path))) ? "var(--ma-gold)" : "transparent",
                   gap: "4px",
                 }}
               >
@@ -526,6 +538,18 @@ export function Navbar() {
                   ? "var(--ma-gold)"
                   : "transparent",
               }}
+              onMouseEnter={(e) => {
+                if (!isActive("/faq")) {
+                  e.currentTarget.style.color = "var(--ma-gold-light)";
+                  e.currentTarget.style.borderBottomColor = "rgba(201,168,76,0.4)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isActive("/faq")) {
+                  e.currentTarget.style.color = "rgba(255,255,255,0.78)";
+                  e.currentTarget.style.borderBottomColor = "transparent";
+                }
+              }}
             >
               Bantuan
             </Link>
@@ -547,7 +571,8 @@ export function Navbar() {
                   border: "none",
                   ...navStyle.linkBase,
                   cursor: "pointer",
-                  color: "rgba(255,255,255,0.78)",
+                  color: layananOpen ? "var(--ma-gold-light)" : "rgba(255,255,255,0.78)",
+                  borderBottomColor: layananOpen ? "var(--ma-gold)" : "transparent",
                   gap: "4px",
                 }}
               >
@@ -618,7 +643,7 @@ export function Navbar() {
                           <div
                             style={{
                               fontFamily: "'DM Sans', sans-serif",
-                              fontSize: "12px",
+                              fontSize: "14px",
                               fontWeight: "500",
                               color: "rgba(255,255,255,0.85)",
                             }}
@@ -628,7 +653,7 @@ export function Navbar() {
                           <div
                             style={{
                               fontFamily: "'DM Sans', sans-serif",
-                              fontSize: "10px",
+                              fontSize: "12px",
                               color: "rgba(255,255,255,0.35)",
                               marginTop: "1px",
                             }}
@@ -639,7 +664,7 @@ export function Navbar() {
                         <ArrowSquareOut
                           size={11}
                           style={{
-                            color: "rgba(255,255,255,0.25)",
+                            color: "var(--ma-gold)",
                             flexShrink: 0,
                           }}
                         />
@@ -660,6 +685,18 @@ export function Navbar() {
                 borderBottomColor: isActive("/pengaduan")
                   ? "var(--ma-gold)"
                   : "transparent",
+              }}
+              onMouseEnter={(e) => {
+                if (!isActive("/pengaduan")) {
+                  e.currentTarget.style.color = "var(--ma-gold-light)";
+                  e.currentTarget.style.borderBottomColor = "rgba(201,168,76,0.4)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isActive("/pengaduan")) {
+                  e.currentTarget.style.color = "rgba(255,255,255,0.78)";
+                  e.currentTarget.style.borderBottomColor = "transparent";
+                }
               }}
             >
               Pengaduan
