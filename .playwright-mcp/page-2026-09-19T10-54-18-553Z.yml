@@ -1,0 +1,133 @@
+- generic [ref=f6e7]:
+  - navigation [ref=f6e8]:
+    - generic [ref=f6e10]:
+      - generic [ref=f6e11]:
+        - img "Logo Mahkamah Agung RI" [ref=f6e12]
+        - generic [ref=f6e13]:
+          - heading "Info Perkara MA-RI" [level=1] [ref=f6e14]
+          - paragraph [ref=f6e15]: Mahkamah Agung Republik Indonesia
+      - generic [ref=f6e16]:
+        - generic [ref=f6e17]:
+          - generic [ref=f6e18]: "Data Source:"
+          - button "Real API" [ref=f6e19] [cursor=pointer]
+        - link "Bantuan" [ref=f6e20] [cursor=pointer]:
+          - /url: "#"
+        - link "Tentang" [ref=f6e21] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=f6e22]:
+    - banner [ref=f6e23]:
+      - generic [ref=f6e25]:
+        - img "Logo Mahkamah Agung RI" [ref=f6e27]
+        - heading "Info Perkara Mahkamah Agung RI" [level=1] [ref=f6e28]
+        - heading "Sistem Informasi Penelusuran Perkara" [level=2] [ref=f6e29]
+        - paragraph [ref=f6e30]: Akses informasi perkara dan putusan pengadilan secara transparan dan mudah. Cari berdasarkan nomor perkara, jenis perkara, atau nama pihak yang berperkara.
+        - generic [ref=f6e31]:
+          - generic [ref=f6e32]: Data Real-time
+          - generic [ref=f6e35]: Akses Publik
+          - generic [ref=f6e38]: Transparan
+    - generic [ref=f6e42]:
+      - generic [ref=f6e48]:
+        - heading "Form Pencarian Perkara" [level=3] [ref=f6e49]
+        - paragraph [ref=f6e50]: Masukkan kriteria pencarian untuk menemukan informasi perkara
+      - generic [ref=f6e51]:
+        - generic [ref=f6e52]:
+          - generic [ref=f6e53]:
+            - generic [ref=f6e54]:
+              - generic [ref=f6e55]: Nomor Perkara(Opsional)
+              - 'textbox "Contoh: 123/Pdt.G/2024/PN.Jkt.Pst" [ref=f6e57]'
+            - generic [ref=f6e61]:
+              - generic [ref=f6e62]: Jenis Perkara
+              - combobox [ref=f6e64]:
+                - option "Pilih jenis perkara..." [selected]
+                - option "PID - Pidana"
+                - option "PID.SUS - Pidana Khusus"
+                - option "PDT - Perdata"
+                - option "PDT.SUS - Perdata Khusus"
+                - option "AG - Agama"
+                - option "TUN - Tata Usaha Negara"
+                - option "MIL - Militer"
+            - generic [ref=f6e65]:
+              - generic [ref=f6e66]: Pengadilan Asal(Opsional)
+              - 'textbox "Contoh: Pengadilan Negeri Jakarta Pusat" [ref=f6e68]'
+          - generic [ref=f6e72]:
+            - generic [ref=f6e73]:
+              - generic [ref=f6e74]: Putusan Tersedia(Opsional)
+              - generic [ref=f6e75]:
+                - generic [ref=f6e76] [cursor=pointer]:
+                  - radio "Ya" [ref=f6e77]
+                  - generic [ref=f6e78]: Ya
+                - generic [ref=f6e79] [cursor=pointer]:
+                  - radio "Tidak" [ref=f6e80]
+                  - generic [ref=f6e81]: Tidak
+                - generic [ref=f6e82] [cursor=pointer]:
+                  - radio "Semua" [checked] [ref=f6e83]
+                  - generic [ref=f6e84]: Semua
+            - generic [ref=f6e85]:
+              - generic [ref=f6e86]: Nama Pihak(Opsional)
+              - 'textbox "Contoh: PT. ABC atau John Doe" [ref=f6e88]'
+            - generic [ref=f6e92]:
+              - generic [ref=f6e93]: Nomor Surat Pengantar(Opsional)
+              - 'textbox "Contoh: 001/SP/2024" [ref=f6e95]'
+        - generic [ref=f6e100]:
+          - button "Reset" [ref=f6e101] [cursor=pointer]
+          - button "Cari Perkara" [ref=f6e106] [cursor=pointer]
+      - generic [ref=f6e115]:
+        - paragraph [ref=f6e116]: "Tips Pencarian:"
+        - list [ref=f6e117]:
+          - listitem [ref=f6e118]: • Minimal pilih jenis perkara untuk memulai pencarian
+          - listitem [ref=f6e119]: • Gunakan nomor perkara lengkap untuk hasil yang lebih akurat
+          - listitem [ref=f6e120]: • Nama pihak dapat berupa nama orang atau badan hukum
+          - listitem [ref=f6e121]: • Kombinasikan beberapa kriteria untuk mempersempit hasil pencarian
+    - generic [ref=f6e124]:
+      - heading "Belum Ada Hasil Pencarian" [level=3] [ref=f6e128]
+      - paragraph [ref=f6e129]: Silakan isi form pencarian di atas dan pilih minimal jenis perkara untuk memulai pencarian informasi perkara.
+      - generic [ref=f6e130]:
+        - generic [ref=f6e131]: Cari berdasarkan jenis perkara
+        - generic [ref=f6e134]: Filter berdasarkan kriteria
+  - contentinfo [ref=f6e137]:
+    - generic [ref=f6e138]:
+      - generic [ref=f6e139]:
+        - generic [ref=f6e140]:
+          - generic [ref=f6e145]:
+            - heading "Info Perkara MA-RI" [level=3] [ref=f6e146]
+            - paragraph [ref=f6e147]: Sistem Informasi Perkara
+          - paragraph [ref=f6e148]: Portal resmi untuk mengakses informasi perkara dan putusan Mahkamah Agung Republik Indonesia. Memberikan layanan informasi yang transparan dan akuntabel untuk masyarakat.
+        - generic [ref=f6e149]:
+          - heading "Layanan" [level=4] [ref=f6e150]
+          - list [ref=f6e151]:
+            - listitem [ref=f6e152]:
+              - link "Pencarian Perkara" [ref=f6e153] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f6e154]:
+              - link "Download Putusan" [ref=f6e155] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f6e156]:
+              - link "Informasi Jadwal" [ref=f6e157] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f6e158]:
+              - link "Status Perkara" [ref=f6e159] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f6e160]:
+          - heading "Bantuan" [level=4] [ref=f6e161]
+          - list [ref=f6e162]:
+            - listitem [ref=f6e163]:
+              - link "Panduan Penggunaan" [ref=f6e164] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f6e165]:
+              - link "FAQ" [ref=f6e166] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f6e167]:
+              - link "Kontak Support" [ref=f6e168] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f6e169]:
+              - link "Syarat & Ketentuan" [ref=f6e170] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=f6e171]:
+        - paragraph [ref=f6e172]: © 2025 Mahkamah Agung Republik Indonesia. Hak cipta dilindungi.
+        - generic [ref=f6e173]:
+          - link "Facebook" [ref=f6e174] [cursor=pointer]:
+            - /url: "#"
+          - link "Twitter" [ref=f6e178] [cursor=pointer]:
+            - /url: "#"
+          - link "Instagram" [ref=f6e182] [cursor=pointer]:
+            - /url: "#"

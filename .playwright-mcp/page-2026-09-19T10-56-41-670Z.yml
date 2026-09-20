@@ -1,0 +1,332 @@
+- generic [active] [ref=f12e1]:
+  - generic [ref=f12e2]:
+    - generic:
+      - img "Lambang Mahkamah Agung Republik Indonesia" [ref=f12e4]
+      - link "Mahkamah Agung Republik Indonesia" [ref=f12e6] [cursor=pointer]:
+        - /url: https://www.mahkamahagung.go.id/id
+      - generic [ref=f12e7]:
+        - text: "| Kata Kunci"
+        - textbox "| Kata Kunci" [ref=f12e8]: a
+        - button [ref=f12e9]:
+          - emphasis [ref=f12e10]: 
+          - text: Cari
+      - link "English" [ref=f12e12] [cursor=pointer]:
+        - /url: https://www.mahkamahagung.go.id/en
+  - generic [ref=f12e13]:
+    - img "Lambang Mahkamah Agung Republik Indonesia" [ref=f12e15]
+    - navigation [ref=f12e17]:
+      - list [ref=f12e18]:
+        - listitem [ref=f12e19]:
+          - link [ref=f12e20] [cursor=pointer]:
+            - /url: https://www.mahkamahagung.go.id/id
+            - emphasis [ref=f12e21]: 
+            - text: Beranda
+        - listitem [ref=f12e22]:
+          - link [ref=f12e23] [cursor=pointer]:
+            - /url: http://kepaniteraan.mahkamahagung.go.id/perkara/
+            - emphasis [ref=f12e24]: 
+            - text: Perkara
+        - listitem [ref=f12e25]:
+          - link [ref=f12e26] [cursor=pointer]:
+            - /url: https://www.mahkamahagung.go.id/id/berita
+            - emphasis [ref=f12e27]: 
+            - text: Berita
+        - listitem [ref=f12e28]:
+          - link [ref=f12e29] [cursor=pointer]:
+            - /url: https://www.mahkamahagung.go.id/id/pengumuman
+            - emphasis [ref=f12e30]: 
+            - text: Pengumuman
+        - listitem [ref=f12e31]:
+          - link [ref=f12e32] [cursor=pointer]:
+            - /url: https://www.mahkamahagung.go.id/id/keputusan
+            - emphasis [ref=f12e33]: 
+            - text: Kebijakan
+        - listitem [ref=f12e34]:
+          - link [ref=f12e35] [cursor=pointer]:
+            - /url: https://www.mahkamahagung.go.id/id/artikel
+            - emphasis [ref=f12e36]: 
+            - text: Artikel
+  - generic [ref=f12e37]:
+    - heading [level=1] [ref=f12e38]:
+      - generic [ref=f12e39]:
+        - emphasis [ref=f12e40]: 
+        - text: a
+    - generic [ref=f12e41]:
+      - generic [ref=f12e42]:
+        - img "MA TERIMA AUDIENSI IPASPI, PERJUANGKAN KESEJAHTERAAN APARATUR PERADILAN" [ref=f12e44]
+        - generic [ref=f12e45]:
+          - paragraph [ref=f12e46]: Jumat, 18 September 2026 09:15 WIB - Satria Kusuma
+          - heading [level=1] [ref=f12e47]:
+            - link "MA TERIMA AUDIENSI IPASPI, PERJUANGKAN KESEJAHTERAAN APARATUR PERADILAN" [ref=f12e48] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/berita/7450/ma-terima-audiensi-ipaspi-perjuangkan-kesejahteraan-aparatur-peradilan
+      - generic [ref=f12e49]:
+        - img "PENGIRIMAN BERITA ACARA SERAH TERIMA (BAST) MAHKAMAH AGUNG RI" [ref=f12e51]
+        - generic [ref=f12e52]:
+          - paragraph [ref=f12e53]: Kamis, 17 September 2026 18:46 WIB - Enny Nadra
+          - heading [level=1] [ref=f12e54]:
+            - link "PENGIRIMAN BERITA ACARA SERAH TERIMA (BAST) MAHKAMAH AGUNG RI" [ref=f12e55] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/pengumuman/7449/pengiriman-berita-acara-serah-terima-bast-mahkamah-agung-ri
+      - generic [ref=f12e56]:
+        - img "PENERAPAN DAN PENILAIAN PENGENDALIAN INTERN ATAS PELAPORAN KEUANGAN (PIPK) TAHUN 2026" [ref=f12e58]
+        - generic [ref=f12e59]:
+          - paragraph [ref=f12e60]: Kamis, 17 September 2026 18:30 WIB - Enny Nadra
+          - heading [level=1] [ref=f12e61]:
+            - link "PENERAPAN DAN PENILAIAN PENGENDALIAN INTERN ATAS PELAPORAN KEUANGAN (PIPK) TAHUN 2026" [ref=f12e62] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/pengumuman/7447/penerapan-dan-penilaian-pengendalian-intern-atas-pelaporan-keuangan-pipk-tahun-2026
+      - generic [ref=f12e63]:
+        - img "PEMBERITAHUAN PELAKSANAAN KEGIATAN PEMBINAAN DAERAH" [ref=f12e65]
+        - generic [ref=f12e66]:
+          - paragraph [ref=f12e67]: Kamis, 17 September 2026 15:46 WIB - DEWI INDRIYANI
+          - heading [level=1] [ref=f12e68]:
+            - link "PEMBERITAHUAN PELAKSANAAN KEGIATAN PEMBINAAN DAERAH" [ref=f12e69] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/pengumuman/7446/pemberitahuan-pelaksanaan-kegiatan-pembinaan-daerah
+      - generic [ref=f12e70]:
+        - img "KETUA MA RI TEKANKAN URGENSI ‘PENDIDIKAN BERKELANJUTAN’ GUNA PERKUAT KOMPETENSI DAN LEGITIMASI PERADILAN" [ref=f12e72]
+        - generic [ref=f12e73]:
+          - paragraph [ref=f12e74]: Kamis, 17 September 2026 13:00 WIB - Enny Nadra
+          - heading [level=1] [ref=f12e75]:
+            - link "KETUA MA RI TEKANKAN URGENSI ‘PENDIDIKAN BERKELANJUTAN’ GUNA PERKUAT KOMPETENSI DAN LEGITIMASI PERADILAN" [ref=f12e76] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/berita/7448/ketua-ma-ri-tekankan-urgensi-pendidikan-berkelanjutan-guna-perkuat-kompetensi-dan-legitimasi-peradilan
+      - generic [ref=f12e77]:
+        - img "SELEKSI CALON HAKIM AD HOC PENGADILAN TINDAK PIDANA KORUPSI TAHAP XXIV TAHUN 2026" [ref=f12e79]
+        - generic [ref=f12e80]:
+          - paragraph [ref=f12e81]: Kamis, 17 September 2026 09:47 WIB - DEWI INDRIYANI
+          - heading [level=1] [ref=f12e82]:
+            - link "SELEKSI CALON HAKIM AD HOC PENGADILAN TINDAK PIDANA KORUPSI TAHAP XXIV TAHUN 2026" [ref=f12e83] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/pengumuman/7445/seleksi-calon-hakim-ad-hoc-pengadilan-tindak-pidana-korupsi-tahap-xxiv-tahun-2026
+      - generic [ref=f12e84]:
+        - img "BUKA KONFERENSI MA ASIA PASIFIK KE-20, KETUA MA KOREA SERUKAN PENGUATAN KERJASAMA PERADILAN" [ref=f12e86]
+        - generic [ref=f12e87]:
+          - paragraph [ref=f12e88]: Rabu, 16 September 2026 11:00 WIB - Enny Nadra
+          - heading [level=1] [ref=f12e89]:
+            - link "BUKA KONFERENSI MA ASIA PASIFIK KE-20, KETUA MA KOREA SERUKAN PENGUATAN KERJASAMA PERADILAN" [ref=f12e90] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/berita/7444/buka-konferensi-ma-asia-pasifik-ke-20-ketua-ma-korea-serukan-penguatan-kerjasama-peradilan
+      - generic [ref=f12e91]:
+        - img "PELAKSANAAN SURVEI EFEKTIVITAS PENGENDALIAN KORUPSI TAHUN 2026" [ref=f12e93]
+        - generic [ref=f12e94]:
+          - paragraph [ref=f12e95]: Rabu, 16 September 2026 08:29 WIB - Enny Nadra
+          - heading [level=1] [ref=f12e96]:
+            - link "PELAKSANAAN SURVEI EFEKTIVITAS PENGENDALIAN KORUPSI TAHUN 2026" [ref=f12e97] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/pengumuman/7442/pelaksanaan-survei-efektivitas-pengendalian-korupsi-tahun-2026
+      - generic [ref=f12e98]:
+        - img "RDP PANSUS RUU HPI DENGAN HAKIM AGUNG KAMAR PERDATA MAHKAMAH AGUNG" [ref=f12e100]
+        - generic [ref=f12e101]:
+          - paragraph [ref=f12e102]: Selasa, 15 September 2026 17:05 WIB - Enny Nadra
+          - heading [level=1] [ref=f12e103]:
+            - link "RDP PANSUS RUU HPI DENGAN HAKIM AGUNG KAMAR PERDATA MAHKAMAH AGUNG" [ref=f12e104] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/berita/7441/rdp-pansus-ruu-hpi-dengan-hakim-agung-kamar-perdata-mahkamah-agung
+      - generic [ref=f12e105]:
+        - img "WKMA BIDANG NON YUDISIAL HADIRI SERAH TERIMA JABATAN MENTERI KEUANGAN" [ref=f12e107]
+        - generic [ref=f12e108]:
+          - paragraph [ref=f12e109]: Selasa, 15 September 2026 13:50 WIB - Satria Kusuma
+          - heading [level=1] [ref=f12e110]:
+            - link "WKMA BIDANG NON YUDISIAL HADIRI SERAH TERIMA JABATAN MENTERI KEUANGAN" [ref=f12e111] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/berita/7440/wkma-bidang-non-yudisial-hadiri-serah-terima-jabatan-menteri-keuangan
+    - list [ref=f12e113]:
+      - text:  
+      - listitem [ref=f12e114] [cursor=pointer]: 1 of 687
+      - listitem [ref=f12e115] [cursor=pointer]:
+        - emphasis [ref=f12e116]: 
+      - listitem [ref=f12e117] [cursor=pointer]:
+        - emphasis [ref=f12e118]: 
+  - generic [ref=f12e120]:
+    - generic [ref=f12e121]:
+      - generic [ref=f12e123]:
+        - heading [level=1] [ref=f12e124]:
+          - generic [ref=f12e125]:
+            - emphasis [ref=f12e126]: 
+            - text: Kesekretariatan
+        - list [ref=f12e128]:
+          - listitem [ref=f12e129]:
+            - link [ref=f12e130] [cursor=pointer]:
+              - /url: http://kepaniteraan.mahkamahagung.go.id/
+              - emphasis [ref=f12e131]: 
+              - text: Kepaniteraan
+          - listitem [ref=f12e132]:
+            - link [ref=f12e133] [cursor=pointer]:
+              - /url: http://bua.mahkamahagung.go.id/
+              - emphasis [ref=f12e134]: 
+              - text: Badan Urusan Administrasi
+          - listitem [ref=f12e135]:
+            - link [ref=f12e136] [cursor=pointer]:
+              - /url: http://bawas.mahkamahagung.go.id/
+              - emphasis [ref=f12e137]: 
+              - text: Badan Pengawasan
+          - listitem [ref=f12e138]:
+            - link [ref=f12e139] [cursor=pointer]:
+              - /url: https://badilag.mahkamahagung.go.id
+              - emphasis [ref=f12e140]: 
+              - text: Badan Peradilan Agama
+          - listitem [ref=f12e141]:
+            - link [ref=f12e142] [cursor=pointer]:
+              - /url: http://badilum.mahkamahagung.go.id
+              - emphasis [ref=f12e143]: 
+              - text: Badan Peradilan Umum
+          - listitem [ref=f12e144]:
+            - link [ref=f12e145] [cursor=pointer]:
+              - /url: http://ditjenmiltun.mahkamahagung.go.id/
+              - emphasis [ref=f12e146]: 
+              - text: Badan Peradilan Militer dan Tata Usaha Negara
+          - listitem [ref=f12e147]:
+            - link [ref=f12e148] [cursor=pointer]:
+              - /url: http://bldk.mahkamahagung.go.id/
+              - emphasis [ref=f12e149]: 
+              - text: Badan Penelitian Pengembangan Pendidikan dan Pelatihan Hukum dan Peradilan
+        - heading [level=1] [ref=f12e150]:
+          - generic [ref=f12e151]:
+            - emphasis [ref=f12e152]: 
+            - text: Layanan Informasi
+        - list [ref=f12e154]:
+          - listitem [ref=f12e155]:
+            - link [ref=f12e156] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/meja-informasi-dan-pengaduan-
+              - emphasis [ref=f12e157]: 
+              - text: Media informasi dan Pengaduan
+          - listitem [ref=f12e158]:
+            - link [ref=f12e159] [cursor=pointer]:
+              - /url: "#"
+              - emphasis [ref=f12e160]: 
+              - text: Rapat Kerja Nasional
+          - listitem [ref=f12e161]:
+            - link [ref=f12e162] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/mediasi-di-pengadilan
+              - emphasis [ref=f12e163]: 
+              - text: Mediasi di Pengadilan
+          - listitem [ref=f12e164]:
+            - link [ref=f12e165] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/media/3336
+              - emphasis [ref=f12e166]: 
+              - text: Brosur Petunjuk Penggunaan Info Perkara Meja Informasi
+          - listitem [ref=f12e167]:
+            - link [ref=f12e168] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCOtpmZ2yK7_4n07nbRHDJVQ/featured
+              - emphasis [ref=f12e169]: 
+              - text: Live Streaming MA RI
+      - generic [ref=f12e171]:
+        - heading [level=1] [ref=f12e172]:
+          - generic [ref=f12e173]:
+            - emphasis [ref=f12e174]: 
+            - text: Profil Kami
+        - list [ref=f12e176]:
+          - listitem [ref=f12e177]:
+            - link [ref=f12e178] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/tugas-pokok-dan-fungsi
+              - emphasis [ref=f12e179]: 
+              - text: Tugas Pokok dan Fungsi
+          - listitem [ref=f12e180]:
+            - link [ref=f12e181] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/lambang-mahkamah-agung
+              - emphasis [ref=f12e182]: 
+              - text: Lambang Mahkamah Agung
+          - listitem [ref=f12e183]:
+            - link [ref=f12e184] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/struktur-organisasi-mahkamah-agung-ri
+              - emphasis [ref=f12e185]: 
+              - text: Struktur Organisasi
+          - listitem [ref=f12e186]:
+            - link [ref=f12e187] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/badan-dan-peradilan
+              - emphasis [ref=f12e188]: 
+              - text: Badan dan Peradilan
+          - listitem [ref=f12e189]:
+            - link [ref=f12e190] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/ketua-mahkamah-agung
+              - emphasis [ref=f12e191]: 
+              - text: Ketua Mahkamah Agung
+          - listitem [ref=f12e192]:
+            - link [ref=f12e193] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/wakil-ketua-mahkamah-agung-ri-bidang-yudisial
+              - emphasis [ref=f12e194]: 
+              - text: Wakil Ketua Mahkamah Agung RI Bidang Yudisial
+          - listitem [ref=f12e195]:
+            - link [ref=f12e196] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/wakil-ketua-mahkamah-agung-ri-bidang-non-yudisial
+              - emphasis [ref=f12e197]: 
+              - text: Wakil Ketua Mahkamah Agung RI Bidang Non Yudisial
+          - listitem [ref=f12e198]:
+            - link [ref=f12e199] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/hakim-agung
+              - emphasis [ref=f12e200]: 
+              - text: Hakim Agung
+          - listitem [ref=f12e201]:
+            - link [ref=f12e202] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/hakim-ad-hoc
+              - emphasis [ref=f12e203]: 
+              - text: Hakim Ad Hoc
+        - heading [level=1] [ref=f12e204]:
+          - generic [ref=f12e205]:
+            - emphasis [ref=f12e206]: 
+            - text: Pembaruan Peradilan
+        - list [ref=f12e208]:
+          - listitem [ref=f12e209]:
+            - link [ref=f12e210] [cursor=pointer]:
+              - /url: /media/198
+              - emphasis [ref=f12e211]: 
+              - text: Cetak Biru MA 2010 - 2035
+          - listitem [ref=f12e212]:
+            - link [ref=f12e213] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/summary-laporan-tahunan-mahkamah-agung-ri
+              - emphasis [ref=f12e214]: 
+              - text: Laporan Tahunan
+          - listitem [ref=f12e215]:
+            - link [ref=f12e216] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/media/3236
+              - emphasis [ref=f12e217]: 
+              - text: Road MAp Reformasi Birokrasi MA RI /2015-2019
+          - listitem [ref=f12e218]:
+            - link [ref=f12e219] [cursor=pointer]:
+              - /url: http://pembaruanperadilan.net/kemudahanberusaha/
+              - emphasis [ref=f12e220]: 
+              - text: Kemudahan Berusaha
+          - listitem [ref=f12e221]:
+            - link [ref=f12e222] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/summary-laporan-keuangan-mahkamah-agung-ri
+              - emphasis [ref=f12e223]: 
+              - text: Laporan Keuangan
+      - generic [ref=f12e225]:
+        - heading [level=1] [ref=f12e226]:
+          - generic [ref=f12e227]:
+            - emphasis [ref=f12e228]: 
+            - text: Pustaka
+        - list [ref=f12e230]:
+          - listitem [ref=f12e231]:
+            - link [ref=f12e232] [cursor=pointer]:
+              - /url: http://perpustakaan.mahkamahagung.go.id/
+              - emphasis [ref=f12e233]: 
+              - text: Perpustakaan
+          - listitem [ref=f12e234]:
+            - link [ref=f12e235] [cursor=pointer]:
+              - /url: https://www.mahkamahagung.go.id/id/majalah
+              - emphasis [ref=f12e236]: 
+              - text: Majalah Mahkamah Agung
+      - generic [ref=f12e238]:
+        - heading [level=1] [ref=f12e239]:
+          - generic [ref=f12e240]:
+            - emphasis [ref=f12e241]: 
+            - text: Kantor Pusat
+        - paragraph [ref=f12e242]:
+          - strong [ref=f12e243]: Mahkamah Agung Republik Indonesia.
+          - text: Jl. Medan Merdeka Utara No. 9-13. Jakarta Pusat - DKI Jakarta Indonesia 10110
+          - emphasis [ref=f12e244]: 
+          - text: (021) 3843348
+          - emphasis [ref=f12e245]: 
+          - text: (021) 3810350
+          - emphasis [ref=f12e246]: 
+          - text: (021) 3457661
+          - emphasis [ref=f12e247]: 
+          - text: persuratan[at]mahkamahagung.go.id
+          - link [ref=f12e248] [cursor=pointer]:
+            - /url: https://maps.google.com/?q=-6.171041,106.82593
+            - emphasis [ref=f12e249]: 
+            - text: Peta
+    - generic [ref=f12e250]:
+      - text: "Hak Cipta Mahkamah Agung Republik Indonesia © 2026 Your IP Address : 2001:448a:2061:e9f5:c8ad:be72:92b1:bd4b"
+      - generic [ref=f12e251]:
+        - link [ref=f12e252] [cursor=pointer]:
+          - /url: http://achecker.ca/checker/index.php
+          - img "WCAG 2.0 Level AAA Compliant" [ref=f12e253]
+        - link [ref=f12e254] [cursor=pointer]:
+          - /url: https://validator.w3.org/nu/?showsource=yes&doc=http%3A%2F%2Fwww.mahkamahagung.go.id%2Fid
+          - img "W3 HTML 5 Compliant" [ref=f12e255]
+        - img "SSL Secured Website" [ref=f12e256]
+      - generic [ref=f12e257]: "⚠️ Hati-hati terhadap penipuan yang mengatasnamakan Mahkamah Agung. | 1. Mahkamah Agung tidak melakukan komunikasi baik lisan maupun tertulis dengan pihak berperkara. | 2. Semua komunikasi yang berkaitan dengan penyelesaian perkara meliputi informasi kekurangan berkas, registrasi perkara, dan pemberitahuan salinan putusan disampaikan melalui pengadilan pengaju. | 3. Pengadilan pengaju akan menyampaikan kepada pihak berperkara melalui petugas resmi yang ditunjuk sesuai peraturan perundang-undangan. | 4. Cek info perkara Anda hanya di: https://kepaniteraan.mahkamahagung.go.id/perkara ."

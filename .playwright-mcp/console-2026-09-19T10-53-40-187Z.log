@@ -1,0 +1,10 @@
+[     267ms] [ERROR] Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495' violates the following Content Security Policy directive: "script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com 'unsafe-inline' 'unsafe-eval'". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked. @ https://www.mahkamahagung.go.id/id/cari/zzxxqqww:0
+[     285ms] [ERROR] Loading the script 'https://secure.comodo.com/trustlogo/javascript/trustlogo.js' violates the following Content Security Policy directive: "script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com 'unsafe-inline' 'unsafe-eval'". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked. @ https://www.mahkamahagung.go.id/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[     296ms] [ERROR] Loading the script 'https://www.google-analytics.com/analytics.js' violates the following Content Security Policy directive: "script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com 'unsafe-inline' 'unsafe-eval'". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked. @ :3
+[     316ms] ReferenceError: TrustLogo is not defined
+    at <anonymous>:2:4
+    at t.activateScript (https://www.mahkamahagung.go.id/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:1:11855)
+    at https://www.mahkamahagung.go.id/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:1:11052
+    at t.run (https://www.mahkamahagung.go.id/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:1:11259)
+    at https://www.mahkamahagung.go.id/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:1:11156
+    at HTMLScriptElement.<anonymous> (https://www.mahkamahagung.go.id/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:1:670)
