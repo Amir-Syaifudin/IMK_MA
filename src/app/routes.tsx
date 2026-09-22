@@ -6,6 +6,7 @@ import { FAQPage } from "./pages/FAQPage";
 import { NotFound } from "./pages/NotFound";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import { InformationPage } from "./pages/InformationPage";
+import { ProfilPage } from "./pages/ProfilPage";
 import { PengaduanPage } from "./pages/PengaduanPage";
 import { HomepageWF } from "./pages/wireframe/HomepageWF";
 import { SearchPageWF } from "./pages/wireframe/SearchPageWF";
@@ -34,15 +35,7 @@ export const router = createBrowserRouter([
         ],
       },
 
-      {
-        path: "profil",
-        element: (
-          <PlaceholderPage
-            title="Profil Mahkamah Agung"
-            description="Halaman ini sedang dalam pengembangan. Kembali ke beranda untuk mengakses layanan lainnya."
-          />
-        ),
-      },
+      { path: "profil", Component: ProfilPage },
       {
         path: "kontak",
         element: (
