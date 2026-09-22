@@ -19,6 +19,7 @@ import {
 import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { searchUnified, categoryIcon } from "../lib/unifiedSearch";
+import maLogo from "../../imports/image.png";
 
 const digitalServices = [
   {
@@ -400,7 +401,7 @@ export function Navbar() {
               }}
             >
               <img
-                src="/src/imports/image.png"
+                src={maLogo}
                 alt="MA Logo"
                 style={{ width: "36px", height: "36px", objectFit: "contain" }}
               />

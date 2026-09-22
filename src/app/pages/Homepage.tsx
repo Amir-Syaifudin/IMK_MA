@@ -17,6 +17,7 @@ import { Link } from "react-router";
 import { ServiceCard } from "../components/ServiceCard";
 import { NewsCard } from "../components/NewsCard";
 import { dummyData, formatIndoDate } from "./InformationPage";
+import maBg from "../../imports/ma-bg.jpg";
 
 export function Homepage() {
   const heroButtons = [
@@ -31,12 +32,6 @@ export function Homepage() {
       title: "Cek Status Perkara",
       description: "Lacak perkembangan perkara",
       to: "/perkara?tab=status",
-    },
-    {
-      icon: Phone,
-      title: "Hubungi Pengadilan",
-      description: "Kontak dan informasi pengadilan",
-      to: "/kontak",
     },
     {
       icon: Flag,
@@ -114,7 +109,7 @@ export function Homepage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/src/imports/ma-bg.jpg')",
+            backgroundImage: `url('${maBg}')`,
             backgroundAttachment: "fixed",
           }}
         >

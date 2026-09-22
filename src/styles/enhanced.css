@@ -208,7 +208,7 @@ body {
         linear-gradient(to bottom,
             rgba(22, 43, 34, 0.4),
             rgba(22, 43, 34, 0.9)),
-        url("/src/imports/ma-bg.jpg");
+        url("../imports/ma-bg.jpg");
 
     background-size: cover;
     background-position: center;
