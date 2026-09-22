@@ -4,6 +4,7 @@ import {
   PaperPlaneTilt,
   CheckCircle,
   ArrowSquareOut,
+  WarningCircle,
 } from "@phosphor-icons/react";
 import { useState, type FormEvent } from "react";
 
@@ -34,16 +35,25 @@ export function PengaduanPage() {
   const [jenisPengaduan, setJenisPengaduan] = useState("");
   const [instansiTerkait, setInstansiTerkait] = useState("");
   const [deskripsi, setDeskripsi] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState<{ jenis?: string; deskripsi?: string }>({});
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!jenisPengaduan || !deskripsi.trim()) {
-      setError("Jenis pengaduan dan deskripsi wajib diisi.");
-      return;
+
+    const nextErrors: { jenis?: string; deskripsi?: string } = {};
+    if (!jenisPengaduan) {
+      nextErrors.jenis = "Pilih jenis pengaduan terlebih dahulu.";
     }
-    setError("");
+    if (!deskripsi.trim()) {
+      nextErrors.deskripsi = "Ceritakan kronologi pengaduan Anda sebelum mengirim.";
+    } else if (deskripsi.trim().length < 20) {
+      nextErrors.deskripsi = `Deskripsi masih terlalu singkat (${deskripsi.trim().length}/20 karakter minimum). Tambahkan detail kronologinya.`;
+    }
+
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) return;
+
     setSubmitted(true);
   }
 
@@ -54,6 +64,7 @@ export function PengaduanPage() {
     setJenisPengaduan("");
     setInstansiTerkait("");
     setDeskripsi("");
+    setErrors({});
   }
 
   return (
@@ -141,8 +152,18 @@ export function PengaduanPage() {
                   </label>
                   <select
                     value={jenisPengaduan}
-                    onChange={(e) => setJenisPengaduan(e.target.value)}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--ma-gold)] focus:border-[var(--ma-gold)] text-[var(--ma-title)] bg-white"
+                    onChange={(e) => {
+                      setJenisPengaduan(e.target.value);
+                      if (e.target.value) {
+                        setErrors((prev) => ({ ...prev, jenis: undefined }));
+                      }
+                    }}
+                    aria-invalid={!!errors.jenis}
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 text-[var(--ma-title)] bg-white ${
+                      errors.jenis
+                        ? "border-red-300 focus:ring-red-200 focus:border-red-400"
+                        : "border-gray-200 focus:ring-[var(--ma-gold)] focus:border-[var(--ma-gold)]"
+                    }`}
                   >
                     <option value="">Pilih jenis pengaduan...</option>
                     {jenisOptions.map((opt) => (
@@ -151,6 +172,12 @@ export function PengaduanPage() {
                       </option>
                     ))}
                   </select>
+                  {errors.jenis && (
+                    <p className="mt-2 flex items-center gap-1.5 text-sm text-red-600" role="alert">
+                      <WarningCircle size={16} weight="fill" />
+                      {errors.jenis}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -172,18 +199,28 @@ export function PengaduanPage() {
                   </label>
                   <textarea
                     value={deskripsi}
-                    onChange={(e) => setDeskripsi(e.target.value)}
+                    onChange={(e) => {
+                      setDeskripsi(e.target.value);
+                      if (errors.deskripsi && e.target.value.trim().length >= 20) {
+                        setErrors((prev) => ({ ...prev, deskripsi: undefined }));
+                      }
+                    }}
                     rows={5}
                     placeholder="Jelaskan kronologi dan detail pengaduan Anda..."
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--ma-gold)] focus:border-[var(--ma-gold)] text-[var(--ma-title)] placeholder:text-[var(--ma-text-muted)] resize-none"
+                    aria-invalid={!!errors.deskripsi}
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 text-[var(--ma-title)] placeholder:text-[var(--ma-text-muted)] resize-none ${
+                      errors.deskripsi
+                        ? "border-red-300 focus:ring-red-200 focus:border-red-400"
+                        : "border-gray-200 focus:ring-[var(--ma-gold)] focus:border-[var(--ma-gold)]"
+                    }`}
                   />
+                  {errors.deskripsi && (
+                    <p className="mt-2 flex items-center gap-1.5 text-sm text-red-600" role="alert">
+                      <WarningCircle size={16} weight="fill" />
+                      {errors.deskripsi}
+                    </p>
+                  )}
                 </div>
-
-                {error && (
-                  <p className="text-sm text-red-600" role="alert">
-                    {error}
-                  </p>
-                )}
 
                 <button
                   type="submit"

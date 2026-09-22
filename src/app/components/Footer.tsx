@@ -28,25 +28,37 @@ export function Footer() {
             {/* Social Media moved here */}
             <div className="flex gap-3 mt-3">
               <a
-                href="#"
+                href="https://www.facebook.com/humasma123/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook Humas Mahkamah Agung RI"
                 className="bg-white/5 hover:bg-[var(--ma-gold)] p-2.5 rounded-lg transition-all duration-300 hover:text-[var(--ma-green-dark)]"
               >
                 <FacebookLogo size={18} />
               </a>
               <a
-                href="#"
+                href="https://x.com/humas_ma"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter/X Humas Mahkamah Agung RI"
                 className="bg-white/5 hover:bg-[var(--ma-gold)] p-2.5 rounded-lg transition-all duration-300 hover:text-[var(--ma-green-dark)]"
               >
                 <TwitterLogo size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/humasmahkamahagung/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Humas Mahkamah Agung RI"
                 className="bg-white/5 hover:bg-[var(--ma-gold)] p-2.5 rounded-lg transition-all duration-300 hover:text-[var(--ma-green-dark)]"
               >
                 <InstagramLogo size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@humasmahkamahagungri1523"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube Humas Mahkamah Agung RI"
                 className="bg-white/5 hover:bg-[var(--ma-gold)] p-2.5 rounded-lg transition-all duration-300 hover:text-[var(--ma-green-dark)]"
               >
                 <YoutubeLogo size={18} />
@@ -218,18 +230,18 @@ export function Footer() {
             Hak Cipta Dilindungi.
           </p>
           <div className="flex gap-4">
-            <a
-              href="#"
+            <Link
+              to="/privasi"
               className="hover:text-[var(--ma-gold)] transition-colors"
             >
               Kebijakan Privasi
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/ketentuan"
               className="hover:text-[var(--ma-gold)] transition-colors"
             >
               Syarat &amp; Ketentuan
-            </a>
+            </Link>
           </div>
         </div>
       </div>

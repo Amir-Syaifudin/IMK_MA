@@ -63,6 +63,24 @@ export const router = createBrowserRouter([
           />
         ),
       },
+      {
+        path: "privasi",
+        element: (
+          <PlaceholderPage
+            title="Kebijakan Privasi"
+            description="Halaman ini sedang dalam pengembangan. Kembali ke beranda untuk mengakses layanan lainnya."
+          />
+        ),
+      },
+      {
+        path: "ketentuan",
+        element: (
+          <PlaceholderPage
+            title="Syarat & Ketentuan"
+            description="Halaman ini sedang dalam pengembangan. Kembali ke beranda untuk mengakses layanan lainnya."
+          />
+        ),
+      },
       { path: "*", Component: NotFound },
     ],
   },
