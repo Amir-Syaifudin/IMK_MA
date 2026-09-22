@@ -1,7 +1,6 @@
 import {
   FileMagnifyingGlass,
   ClipboardText,
-  Phone,
   Flag,
   CalendarBlank,
   FileText,
@@ -143,7 +142,7 @@ export function Homepage() {
             </div>
 
             {/* Hero Buttons */}
-            <div className="mx-auto mb-6 grid w-full max-w-6xl grid-cols-2 gap-4 md:grid-cols-4">
+            <div className="mx-auto mb-6 grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
               {heroButtons.map((item) => {
                 const Icon = item.icon;
 
