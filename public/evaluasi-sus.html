@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Evaluasi SUS Redesain MA RI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ma-green: #1e3a2f;
+    --ma-green-dark: #162b22;
+    --ma-green-mid: #2e5a45;
+    --ma-gold: #c9a84c;
+    --ma-gold-dark: #a8852a;
+    --ma-gold-light: #e8c96a;
+    --ma-gold-soft: #f9f3e3;
+
+    --bg: #F2F2F2;
+    --surface: #ffffff;
+    --surface-2: #faf6ea;
+    --border: #e4e0d4;
+    --border-strong: #d8d2c0;
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --ink-mute: #8A8A8A;
+    --danger: #b91c1c;
+    --danger-soft: #fdecec;
+    --success: #15803d;
+    --success-soft: #eaf6ee;
+    --accent: var(--ma-green);
+    --accent-dark: var(--ma-green-dark);
+    --gold: var(--ma-gold);
+    --gold-dark: var(--ma-gold-dark);
+
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-ui: "DM Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  /* Tema tunggal (terang) — konsisten dengan situs utama MA RI yang tidak punya dark mode */
+  * { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body { background: var(--bg); color: var(--ink-soft); font-family: var(--font-ui); }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px 64px; }
+
+  /* ---------- Header ---------- */
+  header.top {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+  }
+  .top-inner { max-width: 880px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .brand-icon {
+    width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; color: white;
+    background: linear-gradient(135deg, var(--ma-green) 0%, var(--ma-green-dark) 100%);
+  }
+  .brand-icon svg { width: 22px; height: 22px; }
+  .brand-text { min-width: 0; }
+  .brand-text .t1 { font-weight: 700; font-size: 13px; color: var(--ink); line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand-text .t2 { font-size: 11px; color: var(--ink-mute); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .progress-chip {
+    flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border-radius: 999px; font-size: 11px; font-weight: 700;
+    background: var(--ma-gold-soft); color: var(--ma-gold-dark); border: 1px solid var(--gold);
+    font-variant-numeric: tabular-nums;
+  }
+  .progress-chip .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--ma-gold-dark); }
+  .progress-track { height: 3px; background: var(--border); position: relative; overflow: hidden; }
+  .progress-fill { height: 100%; width: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--ma-green) 0%, var(--gold) 100%); transition: transform .4s ease; }
+
+  main { padding-top: 28px; display: flex; flex-direction: column; gap: 24px; }
+
+  /* ---------- Cards ---------- */
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+    padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  }
+  @media (max-width: 560px) { .card { padding: 20px; border-radius: 16px; } }
+
+  .kop { display: flex; align-items: center; gap: 12px; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border); flex-wrap: wrap; justify-content: space-between; }
+  .kop-left { display: flex; align-items: center; gap: 12px; }
+  .kop-badge { width: 38px; height: 38px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 10px; color: var(--accent-dark); flex-shrink: 0; }
+  .kop-inst { font-size: 10.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-dark); }
+  .kop-course { font-size: 12px; font-weight: 600; color: var(--ink); }
+  .kop-tag { padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; background: var(--surface-2); color: var(--ink); border: 1px solid var(--border-strong); }
+
+  h1.page-title { font-family: var(--font-display); font-size: clamp(20px, 4vw, 26px); color: var(--ink); margin: 0 0 12px; line-height: 1.25; text-wrap: balance; }
+  .lede { font-size: 13.5px; line-height: 1.75; color: var(--ink-soft); }
+  .lede p { margin: 0 0 12px; text-align: justify; }
+  .lede p:last-child { margin-bottom: 0; }
+  .lede b { color: var(--ink); }
+
+  .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 18px; }
+  @media (max-width: 480px) { .team-grid { grid-template-columns: 1fr; } }
+  .team-card { padding: 13px 14px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface-2); }
+  .team-card .name { display: block; font-weight: 800; font-size: 12.5px; color: var(--ink); }
+  .team-card .nim { display: block; margin-top: 3px; font-size: 11px; font-weight: 700; color: var(--accent-dark); }
+
+  /* ---------- Petunjuk ---------- */
+  .card.petunjuk { background: var(--surface-2); border-color: var(--border-strong); }
+  .status-pill { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; background: var(--surface-2); border: 1px solid var(--border-strong); color: var(--ink-soft); }
+  .status-pill .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--ink-mute); }
+  .status-pill.live .dot { background: var(--success); }
+  .status-pill.live { color: var(--success); background: var(--success-soft); border-color: var(--success); }
+
+  .btn {
+    appearance: none; border: none; cursor: pointer; font-family: var(--font-ui);
+    display: inline-flex; align-items: center; gap: 9px; justify-content: center;
+    border-radius: 12px; font-weight: 700; text-decoration: none;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-primary { background: linear-gradient(135deg, var(--ma-green) 0%, var(--ma-green-dark) 100%); color: white; padding: 13px 22px; font-size: 13.5px; box-shadow: 0 6px 18px rgba(30,58,47,.25); }
+  .btn-primary:hover { opacity: .93; }
+  .btn-gold { background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%); color: var(--ma-green-dark); padding: 15px 28px; font-size: 14px; box-shadow: 0 8px 22px rgba(201,168,76,.3); }
+  .btn-gold:hover { opacity: .93; }
+  .btn-gold:disabled { opacity: .45; cursor: not-allowed; box-shadow: none; }
+  .btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .chip-link {
+    display: inline-flex; align-items: center; gap: 7px; padding: 8px 13px; border-radius: 11px;
+    font-size: 12px; font-weight: 700; background: var(--surface); border: 1px solid var(--border-strong);
+    color: var(--ink-soft); text-decoration: none; transition: all .15s ease;
+  }
+  .chip-link:hover { border-color: var(--ma-green); color: var(--ink); }
+  .chip-link .n { width: 5px; height: 5px; border-radius: 999px; background: var(--ink-mute); flex-shrink: 0; }
+
+  .scenario-list { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .scenario { display: flex; gap: 12px; padding: 13px 14px; border-radius: 13px; background: var(--surface-2); border: 1px solid var(--border); }
+  .scenario .num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 999px; background: var(--ma-green); color: white; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .scenario .body { font-size: 12.5px; line-height: 1.55; color: var(--ink-soft); }
+  .scenario .body b { color: var(--ink); }
+
+  /* ---------- Section header ---------- */
+  .sec-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .sec-head h2 { font-family: var(--font-display); font-size: 19px; color: var(--ink); margin: 0; }
+  .sec-sub { font-size: 11.5px; color: var(--ink-mute); font-weight: 600; }
+  .eyebrow { display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--ma-green); background: var(--ma-gold-soft); padding: 3px 10px; border-radius: 6px; margin-bottom: 8px; }
+
+  /* ---------- Identitas ---------- */
+  .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+  @media (max-width: 560px) { .field-grid { grid-template-columns: 1fr; } }
+  .field { padding: 14px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface-2); transition: all .15s ease; }
+  .field:focus-within { background: var(--surface); border-color: var(--ma-green); }
+  .field label { display: block; font-size: 11.5px; font-weight: 700; color: var(--ink-soft); margin-bottom: 8px; }
+  .field label .opt { font-weight: 500; color: var(--ink-mute); text-transform: none; letter-spacing: 0; }
+  .field input[type="text"] {
+    width: 100%; padding: 10px 13px; border-radius: 10px; border: 1px solid var(--border-strong);
+    background: var(--surface); color: var(--ink); font-size: 13px; font-family: var(--font-ui); outline: none;
+  }
+  .field input[type="text"]:focus { border-color: var(--ma-green); }
+  .field input::placeholder { color: var(--ink-mute); }
+  .toggle-row { display: flex; flex-wrap: wrap; gap: 7px; }
+  .toggle-btn {
+    padding: 8px 13px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer;
+    background: var(--surface); border: 1px solid var(--border-strong); color: var(--ink-soft);
+    font-family: var(--font-ui); transition: all .15s ease;
+  }
+  .toggle-btn:hover { border-color: var(--ma-green); }
+  .toggle-btn.active { background: var(--ma-green); border-color: var(--ma-green); color: white; }
+
+  /* ---------- SUS instrument ---------- */
+  .instrument {
+    border: 2px solid var(--ma-green); border-radius: 20px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(30,58,47,.1);
+  }
+  .instrument-head {
+    padding: 18px 24px; color: white; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    background: linear-gradient(135deg, var(--ma-green) 0%, var(--ma-green-dark) 100%);
+  }
+  .instrument-head h3 { margin: 0; font-family: var(--font-display); font-size: 17px; }
+  .instrument-head p { margin: 2px 0 0; font-size: 11px; color: rgba(255,255,255,.75); }
+  .instrument-count { padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.3); font-variant-numeric: tabular-nums; }
+  .instrument-body { padding: 22px; background: var(--surface-2); display: flex; flex-direction: column; gap: 14px; }
+  @media (max-width: 560px) { .instrument-body { padding: 16px; } }
+  .scale-note { font-size: 11.5px; color: var(--ink-mute); font-weight: 600; }
+
+  .qbox { padding: 18px; border-radius: 16px; background: var(--surface); border: 1.5px solid var(--border); transition: all .2s ease; }
+  .qbox.answered { border-color: var(--ma-green); }
+  .qbox.flash { animation: flash 1s ease; }
+  @keyframes flash { 0%, 100% { background: var(--surface); } 30% { background: var(--ma-gold-soft); } }
+
+  .qtop { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+  .qtop-left { display: flex; align-items: flex-start; gap: 11px; }
+  .qnum { flex-shrink: 0; width: 26px; height: 26px; border-radius: 999px; background: var(--ink-mute); color: white; font-size: 11.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 1px; font-variant-numeric: tabular-nums; }
+  .qbox.answered .qnum { background: var(--ma-green); }
+  .qtext { font-size: 13.5px; font-weight: 700; color: var(--ink); line-height: 1.5; }
+  .qstatus { flex-shrink: 0; padding: 4px 10px; border-radius: 999px; font-size: 10.5px; font-weight: 700; background: var(--border); color: var(--ink-mute); white-space: nowrap; }
+  .qbox.answered .qstatus { background: var(--success-soft); color: var(--success); }
+
+  .rate-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .rate-anchor { font-size: 10.5px; font-weight: 700; line-height: 1.3; width: 84px; flex-shrink: 0; }
+  .rate-anchor.left { text-align: right; color: var(--danger); }
+  .rate-anchor.right { text-align: left; color: var(--success); }
+  .rate-btns { display: flex; gap: 7px; flex: 1; justify-content: center; flex-wrap: wrap; }
+  .rate-btn {
+    width: 38px; height: 38px; border-radius: 999px; border: 2px solid var(--border-strong);
+    background: var(--surface); color: var(--ink-soft); font-weight: 800; font-size: 13px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-family: var(--font-ui);
+    transition: all .15s ease;
+  }
+  .rate-btn:hover { border-color: var(--ma-green); }
+  .rate-btn.sel { background: var(--ma-green); border-color: var(--ma-green); color: white; }
+
+  /* ---------- Kualitatif ---------- */
+  .card.kualitatif { padding: 0; overflow: hidden; }
+  .kualitatif-head { padding: 20px 24px; color: white; background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%); }
+  .kualitatif-head .eb { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; background: rgba(255,255,255,.85); color: var(--ma-green-dark); padding: 3px 10px; border-radius: 6px; margin-bottom: 8px; }
+  .kualitatif-head h3 { margin: 0; font-family: var(--font-display); font-size: 18px; color: var(--ma-green-dark); }
+  .kualitatif-head p { margin: 4px 0 0; font-size: 11.5px; color: var(--ma-green-dark); opacity: .85; }
+  .kualitatif-body { padding: 22px 24px; display: flex; flex-direction: column; gap: 14px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag-btn { padding: 7px 12px; border-radius: 10px; font-size: 11.5px; font-weight: 700; background: var(--surface); border: 1px solid var(--border-strong); color: var(--ink-soft); cursor: pointer; font-family: var(--font-ui); }
+  .tag-btn:hover { border-color: var(--gold-dark); color: var(--ink); }
+  textarea.masukan {
+    width: 100%; padding: 14px 16px; border-radius: 14px; border: 1.5px solid var(--border-strong);
+    background: var(--surface); color: var(--ink); font-size: 13px; font-family: var(--font-ui);
+    resize: vertical; min-height: 110px; outline: none; line-height: 1.6;
+  }
+  textarea.masukan:focus { border-color: var(--gold-dark); }
+  .char-count { align-self: flex-end; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--ma-gold-soft); color: var(--gold-dark); font-variant-numeric: tabular-nums; }
+
+  /* ---------- Ringkasan / submit ---------- */
+  .card.ringkasan { display: flex; flex-direction: column; gap: 18px; }
+  .ring-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .ring-left { display: flex; align-items: center; gap: 10px; }
+  .ring-dot { width: 13px; height: 13px; border-radius: 999px; background: var(--danger); flex-shrink: 0; transition: background .2s; }
+  .ring-dot.done { background: var(--success); }
+  .ring-count { font-weight: 800; font-size: 14.5px; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .unanswered-list { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .unanswered-label { font-size: 11px; font-weight: 700; color: var(--danger); }
+  .jump-btn { padding: 4px 9px; border-radius: 7px; background: var(--danger-soft); color: var(--danger); font-weight: 800; font-size: 11px; border: none; cursor: pointer; }
+  .ring-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .ring-note { font-size: 12px; color: var(--ink-mute); max-width: 380px; line-height: 1.6; }
+
+  /* ---------- Selesai ---------- */
+  .done-panel { display: none; flex-direction: column; gap: 18px; }
+  .done-panel.show { display: flex; }
+  .done-icon { width: 56px; height: 56px; border-radius: 999px; background: var(--success-soft); color: var(--success); display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+  .done-icon svg { width: 28px; height: 28px; }
+  .recap-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .recap-table th, .recap-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  .recap-table th { color: var(--ink-mute); font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; }
+  .recap-table td.score { font-weight: 800; color: var(--ma-green); font-variant-numeric: tabular-nums; text-align: center; }
+  .recap-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; }
+
+  footer.foot { text-align: center; font-size: 11px; color: var(--ink-mute); padding: 28px 16px 8px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14M12 3l-6 3M12 3l6 3M6 6L3 12a3 3 0 006 0L6 6zM18 6l-3 6a3 3 0 006 0l-3-6zM9 21h6"/></svg>
+      </div>
+      <div class="brand-text">
+        <div class="t1">Evaluasi Usability &mdash; System Usability Scale (SUS)</div>
+        <div class="t2">Redesain Website Mahkamah Agung RI &bull; Politeknik Statistika STIS</div>
+      </div>
+    </div>
+    <div class="progress-chip"><span class="dot"></span><span id="hdr-progress">Progres: 0 / 10 Butir (0%)</span></div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+</header>
+
+<div class="wrap">
+<main>
+
+  <!-- Kata Pengantar -->
+  <section class="card">
+    <div class="kop">
+      <div class="kop-left">
+        <div class="kop-badge">STIS</div>
+        <div>
+          <div class="kop-inst">Politeknik Statistika STIS &bull; Program Studi D-IV Komputasi Statistik</div>
+          <div class="kop-course">Mata Kuliah: Interaksi Manusia dan Komputer (IMK)</div>
+        </div>
+      </div>
+      <div class="kop-tag">Kelompok 10 &bull; Kelas 3SI1</div>
+    </div>
+
+    <h1 class="page-title">Kata Pengantar Pengujian Kepuasan Pengguna (System Usability Scale)</h1>
+    <div class="lede">
+      <p>Kami telah meredesain antarmuka website resmi <b>Mahkamah Agung Republik Indonesia</b> melalui tahapan <i>Empathize, Define, Ideate,</i> dan <i>Prototype</i> (Design Thinking). Kuesioner ini bertujuan menguji hasil redesain tersebut menggunakan instrumen baku <b>System Usability Scale (SUS)</b>.</p>
+      <p>Sebelum mengisi sepuluh pernyataan di bawah, Anda disarankan mencoba dua skenario berikut pada prototipe: <b>(1) Mencari Putusan</b> lewat fitur pencarian dari halaman Beranda, dan <b>(2) Mencari Bantuan</b> lewat halaman Bantuan/FAQ.</p>
+      <p>Seluruh data dan identitas yang dihimpun bersifat rahasia dan semata-mata dimanfaatkan untuk kepentingan akademis. Pengisian memakan waktu 3&ndash;5 menit. Tidak ada jawaban benar atau salah &mdash; jawab sejujurnya sesuai pengalaman Anda.</p>
+    </div>
+
+    <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--border)">
+      <div style="font-size:11px;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Identitas Tim Peneliti (Kelompok 10)</div>
+      <div class="team-grid">
+        <div class="team-card"><span class="name">Amir Syaifudin</span><span class="nim">NIM. 222312968</span></div>
+        <div class="team-card"><span class="name">Ilham Akbar Tauhid</span><span class="nim">NIM. 222313132</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Petunjuk Pengujian -->
+  <section class="card petunjuk">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="eyebrow">Petunjuk Pengujian</span>
+      <span class="status-pill" id="prototype-status"><span class="dot"></span>Status: Belum Membuka Prototipe</span>
+    </div>
+    <h2 style="font-family:var(--font-display);font-size:20px;color:var(--ink);margin:0 0 8px">Skenario Pengujian Antarmuka Web</h2>
+    <p style="font-size:12.5px;color:var(--ink-soft);line-height:1.7;margin:0 0 18px;max-width:640px">Bukalah prototipe hasil redesain di tab baru, coba dua skenario berikut, lalu kembali ke halaman ini untuk mengisi penilaian.</p>
+
+    <a href="https://imk-ma.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-prototype">
+      <span>Buka Prototipe Redesain Website MA RI (Tab Baru)</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+    </a>
+
+    <div class="scenario-list">
+      <div class="scenario">
+        <div class="num">1</div>
+        <div class="body"><b>Mencari Putusan</b> &mdash; dari halaman Beranda, cari salah satu putusan pengadilan lewat fitur pencarian terpadu.</div>
+      </div>
+      <div class="scenario">
+        <div class="num">2</div>
+        <div class="body"><b>Mencari Bantuan</b> &mdash; dari halaman Beranda, buka halaman Bantuan/FAQ dan temukan jawaban salah satu pertanyaan yang tersedia.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--border)">
+      <div style="font-size:11px;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px">Eksplorasi Fitur Lainnya (Opsional)</div>
+      <div class="chip-row">
+        <a class="chip-link" href="https://imk-ma.vercel.app/" target="_blank" rel="noopener noreferrer"><span class="n"></span>Beranda &amp; Navigasi Utama</a>
+        <a class="chip-link" href="https://imk-ma.vercel.app/perkara" target="_blank" rel="noopener noreferrer"><span class="n"></span>Cek Status Perkara</a>
+        <a class="chip-link" href="https://imk-ma.vercel.app/pengaduan" target="_blank" rel="noopener noreferrer"><span class="n"></span>Kanal Pengaduan</a>
+        <a class="chip-link" href="https://imk-ma.vercel.app/profil" target="_blank" rel="noopener noreferrer"><span class="n"></span>Profil Lembaga</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Identitas Responden -->
+  <section class="card">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Seksi A &bull; Opsional</span>
+        <h2>Profil Responden</h2>
+      </div>
+      <span class="sec-sub" id="ident-count">0 dari 4 data terisi</span>
+    </div>
+    <p style="font-size:12px;color:var(--ink-mute);margin:6px 0 0">Membantu tim kami mengelompokkan hasil evaluasi &mdash; boleh dikosongkan atau diisi inisial saja.</p>
+
+    <div class="field-grid">
+      <div class="field">
+        <label>Nama Lengkap / Inisial</label>
+        <input type="text" id="f-nama" placeholder="Contoh: Budi S. / B.S." />
+      </div>
+      <div class="field">
+        <label>Pekerjaan / Profesi</label>
+        <input type="text" id="f-pekerjaan" placeholder="Contoh: Mahasiswa / ASN / Advokat" />
+      </div>
+      <div class="field">
+        <label>Kelompok Usia</label>
+        <div class="toggle-row" data-group="usia">
+          <button type="button" class="toggle-btn" data-value="&lt; 20 tahun">&lt; 20 tahun</button>
+          <button type="button" class="toggle-btn" data-value="20&ndash;30 tahun">20&ndash;30 tahun</button>
+          <button type="button" class="toggle-btn" data-value="30&ndash;45 tahun">30&ndash;45 tahun</button>
+          <button type="button" class="toggle-btn" data-value="&gt; 45 tahun">&gt; 45 tahun</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Pengalaman Akses Website Pengadilan/Pemerintah</label>
+        <div class="toggle-row" data-group="pengalaman">
+          <button type="button" class="toggle-btn" data-value="Sering">Sering</button>
+          <button type="button" class="toggle-btn" data-value="Pernah">Pernah</button>
+          <button type="button" class="toggle-btn" data-value="Belum Pernah">Belum Pernah</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instrumen SUS -->
+  <div>
+    <div class="sec-head" style="margin-bottom:14px">
+      <h2>Instrumen System Usability Scale (SUS)</h2>
+      <span class="sec-sub">Skala 1 (Sangat Tidak Setuju) &ndash; 5 (Sangat Setuju)</span>
+    </div>
+
+    <div class="instrument">
+      <div class="instrument-head">
+        <div>
+          <h3>Sepuluh Pernyataan SUS</h3>
+          <p>System Usability Scale &bull; Brooke, 1986</p>
+        </div>
+        <span class="instrument-count" id="instrument-count">Terisi: 0 / 10</span>
+      </div>
+      <div class="instrument-body" id="qlist"><!-- filled by JS --></div>
+    </div>
+  </div>
+
+  <!-- Masukan Kualitatif -->
+  <section class="card kualitatif">
+    <div class="kualitatif-head">
+      <span class="eb">Seksi B &bull; Opsional</span>
+      <h3>Kritik, Kendala, dan Saran Perbaikan</h3>
+      <p>Masukan kualitatif Anda menjadi dasar rekomendasi perbaikan pada laporan penelitian kami.</p>
+    </div>
+    <div class="kualitatif-body">
+      <div class="tag-row" id="tag-row">
+        <button type="button" class="tag-btn" data-tag="Kemudahan Navigasi Menu">Kemudahan Navigasi Menu</button>
+        <button type="button" class="tag-btn" data-tag="Keterbacaan &amp; Kontras Teks">Keterbacaan &amp; Kontras Teks</button>
+        <button type="button" class="tag-btn" data-tag="Kejelasan Bahasa Hukum">Kejelasan Bahasa Hukum</button>
+        <button type="button" class="tag-btn" data-tag="Kecepatan &amp; Responsivitas">Kecepatan &amp; Responsivitas</button>
+        <button type="button" class="tag-btn" data-tag="Tampilan di Layar Ponsel">Tampilan di Layar Ponsel</button>
+        <button type="button" class="tag-btn" data-tag="Formulir Pengaduan &amp; Cek Status">Formulir Pengaduan &amp; Cek Status</button>
+      </div>
+      <textarea class="masukan" id="f-catatan" placeholder="Tuliskan masukan Anda secara rinci, misalnya mengenai kemudahan navigasi, kejelasan bahasa hukum, keterbacaan teks, maupun tampilan pada perangkat mobile..."></textarea>
+      <div class="char-count" id="char-count">0 karakter</div>
+    </div>
+  </section>
+
+  <!-- Ringkasan & Kirim -->
+  <section class="card ringkasan" id="ringkasan-card">
+    <div class="ring-top">
+      <div class="ring-left">
+        <div class="ring-dot" id="ring-dot"></div>
+        <div class="ring-count" id="ring-count">0 dari 10 pertanyaan terisi (0%)</div>
+      </div>
+      <div class="unanswered-list" id="unanswered-list"></div>
+    </div>
+    <div class="ring-bottom">
+      <p class="ring-note">Pastikan seluruh pernyataan SUS telah diisi. Jawaban Anda akan otomatis terisi di Google Form resmi kami &mdash; tinggal klik "Kirim" di sana.</p>
+      <button type="button" class="btn btn-gold" id="btn-submit" disabled>
+        <span>Siapkan Google Form dengan Jawaban Saya</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- Panel selesai -->
+    <div class="done-panel" id="done-panel">
+      <div style="text-align:center;padding-top:6px">
+        <div class="done-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
+        <h3 style="font-family:var(--font-display);font-size:19px;color:var(--ink);margin:14px 0 6px">Jawaban Anda Sudah Disiapkan</h3>
+        <p style="font-size:12.5px;color:var(--ink-soft);max-width:460px;margin:0 auto;line-height:1.7">Google Form resmi kami sudah otomatis terisi dengan 10 skor di bawah ini. Klik tombol untuk membukanya di tab baru, lalu tekan <b>Kirim</b> di sana agar tercatat sebagai data penelitian.</p>
+      </div>
+      <div class="recap-scroll">
+        <table class="recap-table">
+          <thead><tr><th>No.</th><th>Pernyataan</th><th>Skor</th></tr></thead>
+          <tbody id="recap-body"></tbody>
+        </table>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+        <a class="btn btn-primary" href="#" id="btn-gform" target="_blank" rel="noopener noreferrer">
+          <span>Buka Google Form (Sudah Terisi Otomatis)</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <button type="button" class="btn" id="btn-copy" style="background:var(--surface-2);color:var(--ink);border:1px solid var(--border-strong);padding:13px 22px;font-size:13.5px">
+          <span id="copy-label">Salin Ringkasan sebagai Teks</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">Prototipe Redesain Website Mahkamah Agung RI &bull; Kelompok 10 &bull; IMK 3SI1 &bull; Politeknik Statistika STIS</footer>
+</main>
+</div>
+
+<script>
+(function () {
+  var ITEMS = [
+    "Saya pikir saya akan sering menggunakan website ini",
+    "Saya merasa website ini rumit tanpa alasan yang jelas",
+    "Saya pikir website ini mudah digunakan",
+    "Saya rasa saya butuh bantuan dari orang teknis untuk bisa menggunakan website ini",
+    "Saya merasa berbagai fitur di website ini terintegrasi dengan baik",
+    "Saya merasa ada terlalu banyak hal yang tidak konsisten di website ini",
+    "Saya membayangkan kebanyakan orang akan cepat mempelajari website ini",
+    "Saya merasa website ini sangat merepotkan untuk digunakan",
+    "Saya merasa percaya diri saat menggunakan website ini",
+    "Saya perlu belajar banyak hal dulu sebelum bisa mulai menggunakan website ini"
+  ];
+
+  // Entry ID field asli Google Form "SUS - Redesign Website Mahkamah Agung RI",
+  // diambil dari data publik form (urutan sama dengan ITEMS di atas).
+  var GFORM_BASE = "https://docs.google.com/forms/d/1uu8kJwKyGn_OsBpJoDjpGJtogc9u6R-3EnNDi26ewrI/viewform";
+  var GFORM_ENTRY_IDS = [
+    1592987834, 1941753472, 732220500, 809551627, 1961191030,
+    159473590, 1285815937, 1703531927, 1754505523, 521052889
+  ];
+  var GFORM_ENTRY_NAMA = 1559998654;
+  var GFORM_ENTRY_PEKERJAAN = 647499859;
+  var GFORM_ENTRY_USIA = 1411579141;
+  var GFORM_ENTRY_PENGALAMAN = 535068448;
+  var GFORM_ENTRY_CATATAN = 1228020772;
+
+  function buildPrefilledGformUrl() {
+    var params = ["usp=pp_url"];
+    GFORM_ENTRY_IDS.forEach(function (id, i) {
+      params.push("entry." + id + "=" + encodeURIComponent(answers[i + 1]));
+    });
+    if (identity.nama.trim()) params.push("entry." + GFORM_ENTRY_NAMA + "=" + encodeURIComponent(identity.nama.trim()));
+    if (identity.pekerjaan.trim()) params.push("entry." + GFORM_ENTRY_PEKERJAAN + "=" + encodeURIComponent(identity.pekerjaan.trim()));
+    if (identity.usia) params.push("entry." + GFORM_ENTRY_USIA + "=" + encodeURIComponent(identity.usia));
+    if (identity.pengalaman) params.push("entry." + GFORM_ENTRY_PENGALAMAN + "=" + encodeURIComponent(identity.pengalaman));
+    var catatan = document.getElementById("f-catatan").value.trim();
+    if (catatan) params.push("entry." + GFORM_ENTRY_CATATAN + "=" + encodeURIComponent(catatan));
+    return GFORM_BASE + "?" + params.join("&");
+  }
+
+  var answers = {};
+  var identity = { nama: "", pekerjaan: "", usia: "", pengalaman: "" };
+
+  var qlist = document.getElementById("qlist");
+  ITEMS.forEach(function (text, i) {
+    var n = i + 1;
+    var box = document.createElement("div");
+    box.className = "qbox";
+    box.id = "qbox-" + n;
+    box.innerHTML =
+      '<div class="qtop">' +
+        '<div class="qtop-left">' +
+          '<div class="qnum">' + n + '</div>' +
+          '<div class="qtext">' + text + '</div>' +
+        '</div>' +
+        '<div class="qstatus" id="qstatus-' + n + '">Belum dipilih</div>' +
+      '</div>' +
+      '<div class="rate-row">' +
+        '<span class="rate-anchor left">Sangat Tidak<br>Setuju</span>' +
+        '<div class="rate-btns" id="rbtns-' + n + '"></div>' +
+        '<span class="rate-anchor right">Sangat<br>Setuju</span>' +
+      '</div>';
+    qlist.appendChild(box);
+
+    var rbtns = box.querySelector("#rbtns-" + n);
+    for (var v = 1; v <= 5; v++) {
+      (function (val) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "rate-btn";
+        b.textContent = val;
+        b.addEventListener("click", function () {
+          answers[n] = val;
+          renderQuestion(n);
+          renderProgress();
+        });
+        rbtns.appendChild(b);
+      })(v);
+    }
+  });
+
+  function renderQuestion(n) {
+    var box = document.getElementById("qbox-" + n);
+    var val = answers[n];
+    box.classList.toggle("answered", !!val);
+    var btns = box.querySelectorAll(".rate-btn");
+    btns.forEach(function (b, idx) {
+      b.classList.toggle("sel", idx + 1 === val);
+    });
+    document.getElementById("qstatus-" + n).textContent = val ? "Skor: " + val : "Belum dipilih";
+  }
+
+  function renderProgress() {
+    var total = ITEMS.length;
+    var filled = Object.keys(answers).filter(function (k) { return answers[k]; }).length;
+    var pct = Math.round((filled / total) * 100);
+
+    document.getElementById("hdr-progress").textContent = "Progres: " + filled + " / " + total + " Butir (" + pct + "%)";
+    document.getElementById("progress-fill").style.transform = "scaleX(" + (pct / 100) + ")";
+    document.getElementById("instrument-count").textContent = "Terisi: " + filled + " / " + total;
+    document.getElementById("ring-count").textContent = filled + " dari " + total + " pertanyaan terisi (" + pct + "%)";
+    document.getElementById("ring-dot").classList.toggle("done", filled === total);
+
+    var unlist = document.getElementById("unanswered-list");
+    unlist.innerHTML = "";
+    var missing = [];
+    for (var i = 1; i <= total; i++) { if (!answers[i]) missing.push(i); }
+    if (missing.length) {
+      var label = document.createElement("span");
+      label.className = "unanswered-label";
+      label.textContent = "Belum diisi:";
+      unlist.appendChild(label);
+      missing.forEach(function (n) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "jump-btn";
+        btn.textContent = "No. " + n;
+        btn.addEventListener("click", function () {
+          var box = document.getElementById("qbox-" + n);
+          box.scrollIntoView({ behavior: "smooth", block: "center" });
+          box.classList.remove("flash");
+          void box.offsetWidth;
+          box.classList.add("flash");
+        });
+        unlist.appendChild(btn);
+      });
+    }
+
+    document.getElementById("btn-submit").disabled = filled !== total;
+  }
+
+  // Identity toggles
+  document.querySelectorAll(".toggle-row").forEach(function (row) {
+    var group = row.getAttribute("data-group");
+    row.querySelectorAll(".toggle-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        row.querySelectorAll(".toggle-btn").forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        identity[group] = btn.getAttribute("data-value");
+        renderIdentCount();
+      });
+    });
+  });
+  document.getElementById("f-nama").addEventListener("input", function (e) { identity.nama = e.target.value; renderIdentCount(); });
+  document.getElementById("f-pekerjaan").addEventListener("input", function (e) { identity.pekerjaan = e.target.value; renderIdentCount(); });
+
+  function renderIdentCount() {
+    var filled = 0;
+    if (identity.nama.trim()) filled++;
+    if (identity.pekerjaan.trim()) filled++;
+    if (identity.usia) filled++;
+    if (identity.pengalaman) filled++;
+    document.getElementById("ident-count").textContent = filled + " dari 4 data terisi";
+  }
+
+  // Prototype status
+  document.getElementById("btn-prototype").addEventListener("click", function () {
+    var pill = document.getElementById("prototype-status");
+    pill.classList.add("live");
+    pill.innerHTML = '<span class="dot"></span>Status: Prototipe Telah Dibuka';
+  });
+
+  // Qualitative tags
+  var textarea = document.getElementById("f-catatan");
+  document.getElementById("tag-row").addEventListener("click", function (e) {
+    var btn = e.target.closest(".tag-btn");
+    if (!btn) return;
+    var tag = btn.getAttribute("data-tag");
+    var prefix = textarea.value.trim().length ? "\n" : "";
+    textarea.value += prefix + "Terkait " + tag + ": ";
+    textarea.focus();
+    textarea.selectionStart = textarea.selectionEnd = textarea.value.length;
+    updateCharCount();
+  });
+  function updateCharCount() {
+    document.getElementById("char-count").textContent = textarea.value.length + " karakter";
+  }
+  textarea.addEventListener("input", updateCharCount);
+
+  // Submit -> recap
+  document.getElementById("btn-submit").addEventListener("click", function () {
+    var tbody = document.getElementById("recap-body");
+    tbody.innerHTML = "";
+    ITEMS.forEach(function (text, i) {
+      var n = i + 1;
+      var tr = document.createElement("tr");
+      tr.innerHTML = "<td>" + n + "</td><td>" + text + "</td><td class=\"score\">" + answers[n] + "</td>";
+      tbody.appendChild(tr);
+    });
+    document.getElementById("btn-gform").href = buildPrefilledGformUrl();
+    document.getElementById("done-panel").classList.add("show");
+    document.getElementById("done-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Copy recap
+  document.getElementById("btn-copy").addEventListener("click", function () {
+    var lines = ["Ringkasan Evaluasi SUS - Redesain Website Mahkamah Agung RI"];
+    if (identity.nama) lines.push("Nama: " + identity.nama);
+    if (identity.pekerjaan) lines.push("Pekerjaan: " + identity.pekerjaan);
+    if (identity.usia) lines.push("Usia: " + identity.usia);
+    if (identity.pengalaman) lines.push("Pengalaman akses website pengadilan/pemerintah: " + identity.pengalaman);
+    ITEMS.forEach(function (text, i) {
+      lines.push((i + 1) + ". " + text + " -> " + answers[i + 1]);
+    });
+    if (textarea.value.trim()) {
+      lines.push("");
+      lines.push("Masukan: " + textarea.value.trim());
+    }
+    var text = lines.join("\n");
+    var label = document.getElementById("copy-label");
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        label.textContent = "Tersalin!";
+        setTimeout(function () { label.textContent = "Salin Ringkasan sebagai Teks"; }, 1800);
+      });
+    } catch (err) {
+      label.textContent = "Gagal menyalin";
+    }
+  });
+
+  renderProgress();
+  renderIdentCount();
+})();
+</script>
+</body>
+</html>
