@@ -1,0 +1,166 @@
+- generic [ref=f5e3]:
+  - navigation [ref=f5e4]:
+    - generic [ref=f5e5]:
+      - link "MA Logo Mahkamah Agung Republik Indonesia" [ref=f5e6] [cursor=pointer]:
+        - /url: /
+        - img "MA Logo" [ref=f5e8]
+        - generic [ref=f5e9]:
+          - generic [ref=f5e10]: Mahkamah Agung
+          - generic [ref=f5e11]: Republik Indonesia
+      - button [ref=f5e12] [cursor=pointer]
+  - main [ref=f5e15]:
+    - generic [ref=f5e16]:
+      - generic [ref=f5e23]:
+        - generic [ref=f5e24]:
+          - heading "Mahkamah Agung Republik Indonesia" [level=1] [ref=f5e25]
+          - paragraph [ref=f5e26]: "\"Menuju Badan Peradilan yang Agung dan Modern\""
+        - generic [ref=f5e27]:
+          - link [ref=f5e28] [cursor=pointer]:
+            - /url: /perkara
+            - heading "Cari Putusan" [level=3] [ref=f5e32]
+          - link [ref=f5e33] [cursor=pointer]:
+            - /url: /perkara?tab=status
+            - heading "Cek Status Perkara" [level=3] [ref=f5e37]
+          - link [ref=f5e38] [cursor=pointer]:
+            - /url: /kontak
+            - heading "Hubungi Pengadilan" [level=3] [ref=f5e42]
+          - link [ref=f5e43] [cursor=pointer]:
+            - /url: /pengaduan
+            - heading "Adukan Pelanggaran" [level=3] [ref=f5e47]
+      - generic [ref=f5e48]:
+        - heading "Layanan & Inovasi Digital" [level=2] [ref=f5e50]
+        - generic [ref=f5e52]:
+          - link [ref=f5e53] [cursor=pointer]:
+            - /url: https://putusan3.mahkamahagung.go.id
+            - generic [ref=f5e58]:
+              - heading "Direktori Putusan" [level=3] [ref=f5e59]
+              - paragraph [ref=f5e60]: Akses jutaan putusan di seluruh Indonesia
+          - link [ref=f5e61] [cursor=pointer]:
+            - /url: https://ecourt.mahkamahagung.go.id
+            - generic [ref=f5e66]:
+              - heading "e-Court" [level=3] [ref=f5e67]
+              - paragraph [ref=f5e68]: Pendaftaran perkara secara online
+          - link [ref=f5e69] [cursor=pointer]:
+            - /url: https://sipp.pn-jakartapusat.go.id
+            - generic [ref=f5e74]:
+              - heading "Cek Status Perkara" [level=3] [ref=f5e75]
+              - paragraph [ref=f5e76]: Lacak perkembangan perkara Anda
+          - link [ref=f5e77] [cursor=pointer]:
+            - /url: https://sipp.mahkamahagung.go.id
+            - generic [ref=f5e82]:
+              - heading "SIPP" [level=3] [ref=f5e83]
+              - paragraph [ref=f5e84]: Sistem Informasi Penelusuran Perkara
+          - link [ref=f5e85] [cursor=pointer]:
+            - /url: /perkara
+            - generic [ref=f5e90]:
+              - heading "Jadwal Sidang" [level=3] [ref=f5e91]
+              - paragraph [ref=f5e92]: Pantau jadwal sidang dan agenda pengadilan
+          - link [ref=f5e93] [cursor=pointer]:
+            - /url: /kepaniteraan
+            - generic [ref=f5e98]:
+              - heading "Kepaniteraan" [level=3] [ref=f5e99]
+              - paragraph [ref=f5e100]: Layanan administrasi dan kepaniteraan
+          - link [ref=f5e101] [cursor=pointer]:
+            - /url: /pengumuman
+            - generic [ref=f5e106]:
+              - heading "Pengumuman" [level=3] [ref=f5e107]
+              - paragraph [ref=f5e108]: Informasi dan pengumuman penting
+          - link [ref=f5e109] [cursor=pointer]:
+            - /url: https://eberpadu.mahkamahagung.go.id
+            - generic [ref=f5e114]:
+              - heading "e-Berpadu" [level=3] [ref=f5e115]
+              - paragraph [ref=f5e116]: Layanan terintegrasi untuk advokat
+      - generic [ref=f5e117]:
+        - generic [ref=f5e118]:
+          - heading "Berita Terbaru" [level=2] [ref=f5e120]
+          - link "Lihat Semua Berita" [ref=f5e122] [cursor=pointer]:
+            - /url: /id/berita
+        - generic [ref=f5e125]:
+          - generic [ref=f5e126]:
+            - img "Mahkamah Agung Luncurkan Sistem Digital untuk Transparansi Peradilan" [ref=f5e127]
+            - generic [ref=f5e128]:
+              - generic [ref=f5e129]: 20 Agustus 2026
+              - heading "Mahkamah Agung Luncurkan Sistem Digital untuk Transparansi Peradilan" [level=3] [ref=f5e133]
+              - paragraph [ref=f5e134]: Dalam rangka meningkatkan transparansi dan akuntabilitas, MA meluncurkan platform digital baru yang memudahkan akses masyarakat terhadap informasi peradilan.
+              - link "Baca Selengkapnya →" [ref=f5e135] [cursor=pointer]:
+                - /url: /id/berita?q=Mahkamah%20Agung%20Luncurkan%20Sistem%20Digital%20untuk%20Transparansi%20Peradilan
+          - generic [ref=f5e136]:
+            - img "Sosialisasi PERMA Baru tentang Administrasi Perkara" [ref=f5e137]
+            - generic [ref=f5e138]:
+              - generic [ref=f5e139]: 5 Agustus 2026
+              - heading "Sosialisasi PERMA Baru tentang Administrasi Perkara" [level=3] [ref=f5e143]
+              - paragraph [ref=f5e144]: Mahkamah Agung mengadakan sosialisasi PERMA terbaru untuk meningkatkan efisiensi administrasi perkara di seluruh pengadilan.
+              - link "Baca Selengkapnya →" [ref=f5e145] [cursor=pointer]:
+                - /url: /id/berita?q=Sosialisasi%20PERMA%20Baru%20tentang%20Administrasi%20Perkara
+          - generic [ref=f5e146]:
+            - img "Rapat Koordinasi Pengadilan Tinggi se-Indonesia" [ref=f5e147]
+            - generic [ref=f5e148]:
+              - generic [ref=f5e149]: 31 Juli 2026
+              - heading "Rapat Koordinasi Pengadilan Tinggi se-Indonesia" [level=3] [ref=f5e153]
+              - paragraph [ref=f5e154]: Ketua MA memimpin rapat koordinasi dengan seluruh Ketua Pengadilan Tinggi untuk evaluasi kinerja dan perencanaan strategis.
+              - link "Baca Selengkapnya →" [ref=f5e155] [cursor=pointer]:
+                - /url: /id/berita?q=Rapat%20Koordinasi%20Pengadilan%20Tinggi%20se-Indonesia
+  - contentinfo [ref=f5e156]:
+    - generic [ref=f5e157]:
+      - generic [ref=f5e158]:
+        - generic [ref=f5e159]:
+          - heading "Mahkamah Agung RI" [level=3] [ref=f5e160]
+          - paragraph [ref=f5e161]: Lembaga tinggi negara yang memegang kekuasaan kehakiman sebagai kekuasaan yang merdeka untuk menyelenggarakan peradilan guna menegakkan hukum dan keadilan.
+          - generic [ref=f5e162]:
+            - link [ref=f5e163] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f5e166] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f5e169] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f5e172] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f5e175]:
+          - heading "Tautan Cepat" [level=3] [ref=f5e176]
+          - list [ref=f5e177]:
+            - listitem [ref=f5e178]:
+              - link "Perkara" [ref=f5e179] [cursor=pointer]:
+                - /url: /perkara
+            - listitem [ref=f5e180]:
+              - link "FAQ & Panduan" [ref=f5e181] [cursor=pointer]:
+                - /url: /faq
+            - listitem [ref=f5e182]:
+              - link "Tentang MA" [ref=f5e183] [cursor=pointer]:
+                - /url: /profil
+            - listitem [ref=f5e184]:
+              - link "Kontak" [ref=f5e185] [cursor=pointer]:
+                - /url: /kontak
+        - generic [ref=f5e186]:
+          - heading "Layanan Digital" [level=3] [ref=f5e187]
+          - list [ref=f5e188]:
+            - listitem [ref=f5e189]:
+              - link "Direktori Putusan" [ref=f5e190] [cursor=pointer]:
+                - /url: https://putusan3.mahkamahagung.go.id
+            - listitem [ref=f5e193]:
+              - link "e-Court" [ref=f5e194] [cursor=pointer]:
+                - /url: https://ecourt.mahkamahagung.go.id
+            - listitem [ref=f5e197]:
+              - link "Cek Status Perkara" [ref=f5e198] [cursor=pointer]:
+                - /url: https://sipp.pn-jakartapusat.go.id
+            - listitem [ref=f5e201]:
+              - link "SIPP" [ref=f5e202] [cursor=pointer]:
+                - /url: https://sipp.mahkamahagung.go.id
+            - listitem [ref=f5e205]:
+              - link "e-Berpadu" [ref=f5e206] [cursor=pointer]:
+                - /url: https://eberpadu.mahkamahagung.go.id
+        - generic [ref=f5e209]:
+          - heading "Kontak Kami" [level=3] [ref=f5e210]
+          - list [ref=f5e211]:
+            - listitem [ref=f5e212]:
+              - generic [ref=f5e215]: Jl. Medan Merdeka Utara No. 9-13Jakarta Pusat 10110
+            - listitem [ref=f5e216]:
+              - generic [ref=f5e219]: (021) 384 3348
+            - listitem [ref=f5e220]:
+              - generic [ref=f5e223]: info@mahkamahagung.go.id
+      - generic [ref=f5e224]:
+        - paragraph [ref=f5e225]: © 2026 Mahkamah Agung Republik Indonesia. Hak Cipta Dilindungi.
+        - generic [ref=f5e226]:
+          - link "Kebijakan Privasi" [ref=f5e227] [cursor=pointer]:
+            - /url: "#"
+          - link "Syarat & Ketentuan" [ref=f5e228] [cursor=pointer]:
+            - /url: "#"

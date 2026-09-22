@@ -1,0 +1,153 @@
+- generic [ref=f10e3]:
+  - navigation [ref=f10e4]:
+    - generic [ref=f10e5]:
+      - link "MA Logo Mahkamah Agung Republik Indonesia" [ref=f10e6] [cursor=pointer]:
+        - /url: /
+        - img "MA Logo" [ref=f10e8]
+        - generic [ref=f10e9]:
+          - generic [ref=f10e10]: Mahkamah Agung
+          - generic [ref=f10e11]: Republik Indonesia
+      - generic [ref=f10e12]:
+        - link "Beranda" [ref=f10e13] [cursor=pointer]:
+          - /url: /
+        - link "Perkara" [ref=f10e14] [cursor=pointer]:
+          - /url: /perkara
+        - button "Informasi" [ref=f10e16] [cursor=pointer]
+        - link "Bantuan" [ref=f10e19] [cursor=pointer]:
+          - /url: /faq
+        - button "Layanan Digital" [ref=f10e21] [cursor=pointer]
+        - link "Pengaduan" [ref=f10e24] [cursor=pointer]:
+          - /url: /pengaduan
+        - button "Cari" [ref=f10e25] [cursor=pointer]
+  - main [ref=f10e28]:
+    - generic [ref=f10e30]:
+      - generic [ref=f10e31]:
+        - heading "Berita Terkini" [level=1] [ref=f10e37]
+        - generic [ref=f10e39]:
+          - textbox "Cari kata kunci..." [ref=f10e43]
+          - generic [ref=f10e44]:
+            - generic [ref=f10e45]: "Filter Tanggal:"
+            - textbox [ref=f10e49] [cursor=pointer]
+            - generic [ref=f10e50]: s/d
+            - textbox [ref=f10e54] [cursor=pointer]
+      - generic [ref=f10e55]:
+        - generic [ref=f10e57]:
+          - generic [ref=f10e58]:
+            - generic [ref=f10e59]: Kegiatan MA
+            - generic [ref=f10e60]: 2026-08-20
+          - heading "Mahkamah Agung Luncurkan Sistem Digital untuk Transparansi Peradilan" [level=2] [ref=f10e63] [cursor=pointer]
+          - paragraph [ref=f10e64]: Dalam rangka meningkatkan transparansi dan akuntabilitas, MA meluncurkan platform digital baru yang memudahkan akses masyarakat terhadap informasi peradilan.
+          - button "Baca Selengkapnya" [ref=f10e65]
+        - generic [ref=f10e69]:
+          - generic [ref=f10e70]:
+            - generic [ref=f10e71]: Prestasi
+            - generic [ref=f10e72]: 2026-08-05
+          - heading "Sosialisasi PERMA Baru tentang Administrasi Perkara" [level=2] [ref=f10e75] [cursor=pointer]
+          - paragraph [ref=f10e76]: Mahkamah Agung mengadakan sosialisasi PERMA terbaru untuk meningkatkan efisiensi administrasi perkara di seluruh pengadilan.
+          - button "Baca Selengkapnya" [ref=f10e77]
+        - generic [ref=f10e81]:
+          - generic [ref=f10e82]:
+            - generic [ref=f10e83]: Kerjasama Internasional
+            - generic [ref=f10e84]: 2026-07-31
+          - heading "Rapat Koordinasi Pengadilan Tinggi se-Indonesia" [level=2] [ref=f10e87] [cursor=pointer]
+          - paragraph [ref=f10e88]: Ketua MA memimpin rapat koordinasi dengan seluruh Ketua Pengadilan Tinggi untuk evaluasi kinerja dan perencanaan strategis.
+          - button "Baca Selengkapnya" [ref=f10e89]
+        - generic [ref=f10e93]:
+          - generic [ref=f10e94]:
+            - generic [ref=f10e95]: Pendidikan
+            - generic [ref=f10e96]: 2026-07-30
+          - 'heading "Workshop Nasional: Optimalisasi Peran Hakim dalam Perkara Lingkungan" [level=2] [ref=f10e99] [cursor=pointer]'
+          - paragraph [ref=f10e100]: Mahkamah Agung menyelenggarakan workshop intensif bagi para hakim pengadilan tingkat pertama untuk memperdalam pemahaman tentang hukum lingkungan.
+          - button "Baca Selengkapnya" [ref=f10e101]
+        - generic [ref=f10e105]:
+          - generic [ref=f10e106]:
+            - generic [ref=f10e107]: Infrastruktur
+            - generic [ref=f10e108]: 2026-07-23
+          - heading "Peresmian Gedung Kantor Pengadilan Agama Jakarta Barat yang Baru" [level=2] [ref=f10e111] [cursor=pointer]
+          - paragraph [ref=f10e112]: Fasilitas baru ini diharapkan dapat meningkatkan kenyamanan dan kualitas pelayanan bagi masyarakat pencari keadilan di wilayah Jakarta Barat.
+          - button "Baca Selengkapnya" [ref=f10e113]
+        - generic [ref=f10e117]:
+          - generic [ref=f10e118]:
+            - generic [ref=f10e119]: Teknologi
+            - generic [ref=f10e120]: 2026-07-16
+          - heading "Sosialisasi Aplikasi SIPP Versi Terbaru di Lingkungan Peradilan Umum" [level=2] [ref=f10e123] [cursor=pointer]
+          - paragraph [ref=f10e124]: Aplikasi Sistem Informasi Penelusuran Perkara (SIPP) kini hadir dengan fitur-fitur baru yang lebih user-friendly and transparan.
+          - button "Baca Selengkapnya" [ref=f10e125]
+        - generic [ref=f10e129]:
+          - generic [ref=f10e130]:
+            - generic [ref=f10e131]: Seminar
+            - generic [ref=f10e132]: 2026-07-09
+          - heading "MA Selenggarakan Seminar Internasional tentang Hukum Ekonomi Syariah" [level=2] [ref=f10e135] [cursor=pointer]
+          - paragraph [ref=f10e136]: Seminar ini menghadirkan pakar dari berbagai negara untuk mendiskusikan perkembangan terkini dalam penyelesaian sengketa ekonomi syariah.
+          - button "Baca Selengkapnya" [ref=f10e137]
+        - generic [ref=f10e141]:
+          - generic [ref=f10e142]:
+            - generic [ref=f10e143]: Sosial
+            - generic [ref=f10e144]: 2026-07-02
+          - heading "Pemberian Bantuan Sosial Mahkamah Agung Peduli Korban Bencana" [level=2] [ref=f10e147] [cursor=pointer]
+          - paragraph [ref=f10e148]: Sebagai wujud kepedulian sosial, Mahkamah Agung menyalurkan bantuan kepada masyarakat yang terdampak bencana alam di wilayah Jawa Tengah.
+          - button "Baca Selengkapnya" [ref=f10e149]
+  - contentinfo [ref=f10e152]:
+    - generic [ref=f10e153]:
+      - generic [ref=f10e154]:
+        - generic [ref=f10e155]:
+          - heading "Mahkamah Agung RI" [level=3] [ref=f10e156]
+          - paragraph [ref=f10e157]: Lembaga tinggi negara yang memegang kekuasaan kehakiman sebagai kekuasaan yang merdeka untuk menyelenggarakan peradilan guna menegakkan hukum dan keadilan.
+          - generic [ref=f10e158]:
+            - link [ref=f10e159] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f10e162] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f10e165] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f10e168] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f10e171]:
+          - heading "Tautan Cepat" [level=3] [ref=f10e172]
+          - list [ref=f10e173]:
+            - listitem [ref=f10e174]:
+              - link "Perkara" [ref=f10e175] [cursor=pointer]:
+                - /url: /perkara
+            - listitem [ref=f10e176]:
+              - link "FAQ & Panduan" [ref=f10e177] [cursor=pointer]:
+                - /url: /faq
+            - listitem [ref=f10e178]:
+              - link "Tentang MA" [ref=f10e179] [cursor=pointer]:
+                - /url: /profil
+            - listitem [ref=f10e180]:
+              - link "Kontak" [ref=f10e181] [cursor=pointer]:
+                - /url: /kontak
+        - generic [ref=f10e182]:
+          - heading "Layanan Digital" [level=3] [ref=f10e183]
+          - list [ref=f10e184]:
+            - listitem [ref=f10e185]:
+              - link "Direktori Putusan" [ref=f10e186] [cursor=pointer]:
+                - /url: https://putusan3.mahkamahagung.go.id
+            - listitem [ref=f10e189]:
+              - link "e-Court" [ref=f10e190] [cursor=pointer]:
+                - /url: https://ecourt.mahkamahagung.go.id
+            - listitem [ref=f10e193]:
+              - link "Cek Status Perkara" [ref=f10e194] [cursor=pointer]:
+                - /url: https://sipp.pn-jakartapusat.go.id
+            - listitem [ref=f10e197]:
+              - link "SIPP" [ref=f10e198] [cursor=pointer]:
+                - /url: https://sipp.mahkamahagung.go.id
+            - listitem [ref=f10e201]:
+              - link "e-Berpadu" [ref=f10e202] [cursor=pointer]:
+                - /url: https://eberpadu.mahkamahagung.go.id
+        - generic [ref=f10e205]:
+          - heading "Kontak Kami" [level=3] [ref=f10e206]
+          - list [ref=f10e207]:
+            - listitem [ref=f10e208]:
+              - generic [ref=f10e211]: Jl. Medan Merdeka Utara No. 9-13Jakarta Pusat 10110
+            - listitem [ref=f10e212]:
+              - generic [ref=f10e215]: (021) 384 3348
+            - listitem [ref=f10e216]:
+              - generic [ref=f10e219]: info@mahkamahagung.go.id
+      - generic [ref=f10e220]:
+        - paragraph [ref=f10e221]: © 2026 Mahkamah Agung Republik Indonesia. Hak Cipta Dilindungi.
+        - generic [ref=f10e222]:
+          - link "Kebijakan Privasi" [ref=f10e223] [cursor=pointer]:
+            - /url: "#"
+          - link "Syarat & Ketentuan" [ref=f10e224] [cursor=pointer]:
+            - /url: "#"

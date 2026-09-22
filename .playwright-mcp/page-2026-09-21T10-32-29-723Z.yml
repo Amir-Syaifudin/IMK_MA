@@ -1,0 +1,128 @@
+- generic [ref=f3e3]:
+  - navigation [ref=f3e4]:
+    - generic [ref=f3e5]:
+      - link "MA Logo Mahkamah Agung Republik Indonesia" [ref=f3e6] [cursor=pointer]:
+        - /url: /
+        - img "MA Logo" [ref=f3e8]
+        - generic [ref=f3e9]:
+          - generic [ref=f3e10]: Mahkamah Agung
+          - generic [ref=f3e11]: Republik Indonesia
+      - generic [ref=f3e12]:
+        - link "Beranda" [ref=f3e13] [cursor=pointer]:
+          - /url: /
+        - link "Perkara" [ref=f3e14] [cursor=pointer]:
+          - /url: /perkara
+        - button "Informasi" [ref=f3e16] [cursor=pointer]
+        - link "Bantuan" [ref=f3e19] [cursor=pointer]:
+          - /url: /faq
+        - button "Layanan Digital" [ref=f3e21] [cursor=pointer]
+        - link "Pengaduan" [ref=f3e24] [cursor=pointer]:
+          - /url: /pengaduan
+        - button "Cari" [ref=f3e25] [cursor=pointer]
+  - main [ref=f3e28]:
+    - generic [ref=f3e30]:
+      - generic [ref=f3e31]:
+        - heading "Kanal Pengaduan" [level=1] [ref=f3e32]
+        - paragraph [ref=f3e34]: Mahkamah Agung berkomitmen menjaga akuntabilitas dan transparansi peradilan. Sampaikan pengaduan terkait layanan peradilan atau dugaan pelanggaran kode etik hakim melalui kanal resmi di bawah ini.
+      - generic [ref=f3e35]:
+        - generic [ref=f3e36]:
+          - heading "Pengaduan Layanan Peradilan" [level=3] [ref=f3e41]
+          - paragraph [ref=f3e42]: Keluhan terkait pelayanan administrasi perkara, kelambatan proses, atau pelayanan petugas pengadilan yang tidak sesuai standar.
+        - generic [ref=f3e43]:
+          - heading "Pengaduan Kode Etik Hakim" [level=3] [ref=f3e48]
+          - paragraph [ref=f3e49]: Dugaan pelanggaran kode etik dan pedoman perilaku hakim, termasuk indikasi penyalahgunaan wewenang dalam proses peradilan.
+      - generic [ref=f3e50]:
+        - heading "Ajukan Pengaduan" [level=2] [ref=f3e51]
+        - paragraph [ref=f3e52]: Form ini adalah prototipe demo — pengaduan tidak dikirim ke server manapun. Untuk pengaduan resmi, gunakan Sistem Informasi Pengawasan (SIWAS) di tautan bawah halaman.
+        - generic [ref=f3e53]:
+          - generic [ref=f3e54]:
+            - generic [ref=f3e55]: Nama Lengkap
+            - textbox "Nama Anda" [ref=f3e56]
+            - generic [ref=f3e57]:
+              - checkbox "Kirim sebagai anonim" [ref=f3e58]
+              - text: Kirim sebagai anonim
+          - generic [ref=f3e59]:
+            - generic [ref=f3e60]: Jenis Pengaduan *
+            - combobox [ref=f3e61]:
+              - option "Pilih jenis pengaduan..." [selected]
+              - option "Layanan Peradilan"
+              - option "Kode Etik Hakim"
+              - option "Lainnya"
+          - generic [ref=f3e62]:
+            - generic [ref=f3e63]: Pengadilan / Instansi Terkait
+            - 'textbox "Contoh: Pengadilan Negeri Jakarta Pusat" [ref=f3e64]'
+          - generic [ref=f3e65]:
+            - generic [ref=f3e66]: Deskripsi Pengaduan *
+            - textbox "Jelaskan kronologi dan detail pengaduan Anda..." [ref=f3e67]
+          - alert [ref=f3e151]: Jenis pengaduan dan deskripsi wajib diisi.
+          - button "Kirim Pengaduan" [active] [ref=f3e68]
+      - generic [ref=f3e71]:
+        - generic [ref=f3e72]:
+          - heading "Untuk pengaduan resmi" [level=3] [ref=f3e73]
+          - paragraph [ref=f3e74]: Sampaikan pengaduan resmi melalui Sistem Informasi Pengawasan (SIWAS) Mahkamah Agung, atau hubungi (021) 384 3348.
+        - link "Buka SIWAS" [ref=f3e75] [cursor=pointer]:
+          - /url: https://siwas.mahkamahagung.go.id
+  - contentinfo [ref=f3e78]:
+    - generic [ref=f3e79]:
+      - generic [ref=f3e80]:
+        - generic [ref=f3e81]:
+          - heading "Mahkamah Agung RI" [level=3] [ref=f3e82]
+          - paragraph [ref=f3e83]: Lembaga tinggi negara yang memegang kekuasaan kehakiman sebagai kekuasaan yang merdeka untuk menyelenggarakan peradilan guna menegakkan hukum dan keadilan.
+          - generic [ref=f3e84]:
+            - link [ref=f3e85] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f3e88] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f3e91] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f3e94] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f3e97]:
+          - heading "Tautan Cepat" [level=3] [ref=f3e98]
+          - list [ref=f3e99]:
+            - listitem [ref=f3e100]:
+              - link "Perkara" [ref=f3e101] [cursor=pointer]:
+                - /url: /perkara
+            - listitem [ref=f3e102]:
+              - link "FAQ & Panduan" [ref=f3e103] [cursor=pointer]:
+                - /url: /faq
+            - listitem [ref=f3e104]:
+              - link "Tentang MA" [ref=f3e105] [cursor=pointer]:
+                - /url: /profil
+            - listitem [ref=f3e106]:
+              - link "Kontak" [ref=f3e107] [cursor=pointer]:
+                - /url: /kontak
+        - generic [ref=f3e108]:
+          - heading "Layanan Digital" [level=3] [ref=f3e109]
+          - list [ref=f3e110]:
+            - listitem [ref=f3e111]:
+              - link "Direktori Putusan" [ref=f3e112] [cursor=pointer]:
+                - /url: https://putusan3.mahkamahagung.go.id
+            - listitem [ref=f3e115]:
+              - link "e-Court" [ref=f3e116] [cursor=pointer]:
+                - /url: https://ecourt.mahkamahagung.go.id
+            - listitem [ref=f3e119]:
+              - link "Cek Status Perkara" [ref=f3e120] [cursor=pointer]:
+                - /url: https://sipp.pn-jakartapusat.go.id
+            - listitem [ref=f3e123]:
+              - link "SIPP" [ref=f3e124] [cursor=pointer]:
+                - /url: https://sipp.mahkamahagung.go.id
+            - listitem [ref=f3e127]:
+              - link "e-Berpadu" [ref=f3e128] [cursor=pointer]:
+                - /url: https://eberpadu.mahkamahagung.go.id
+        - generic [ref=f3e131]:
+          - heading "Kontak Kami" [level=3] [ref=f3e132]
+          - list [ref=f3e133]:
+            - listitem [ref=f3e134]:
+              - generic [ref=f3e137]: Jl. Medan Merdeka Utara No. 9-13Jakarta Pusat 10110
+            - listitem [ref=f3e138]:
+              - generic [ref=f3e141]: (021) 384 3348
+            - listitem [ref=f3e142]:
+              - generic [ref=f3e145]: info@mahkamahagung.go.id
+      - generic [ref=f3e146]:
+        - paragraph [ref=f3e147]: © 2026 Mahkamah Agung Republik Indonesia. Hak Cipta Dilindungi.
+        - generic [ref=f3e148]:
+          - link "Kebijakan Privasi" [ref=f3e149] [cursor=pointer]:
+            - /url: "#"
+          - link "Syarat & Ketentuan" [ref=f3e150] [cursor=pointer]:
+            - /url: "#"

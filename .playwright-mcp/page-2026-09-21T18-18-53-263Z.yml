@@ -1,0 +1,22 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - img "Logo Mahkamah Agung RI" [ref=f2e4]
+    - heading "Mahkamah Agung RI" [level=1] [ref=f2e5]
+    - paragraph [ref=f2e6]: Selamat datang di portal pengarah. Silakan pilih versi website Mahkamah Agung Republik Indonesia yang ingin Anda kunjungi.
+    - generic [ref=f2e7]:
+      - generic [ref=f2e8]:
+        - generic [ref=f2e9]:
+          - generic [ref=f2e10]: Website Utama
+          - heading "Website Lama" [level=2] [ref=f2e11]
+          - generic [ref=f2e12]: mahkamahagung.go.id
+          - paragraph [ref=f2e13]: Situs web resmi utama Mahkamah Agung RI dengan layanan informasi publik dan perkara terpublikasi.
+        - link "Kunjungi Website Lama →" [ref=f2e14] [cursor=pointer]:
+          - /url: https://mahkamahagung.go.id
+      - generic [ref=f2e15]:
+        - generic [ref=f2e16]:
+          - generic [ref=f2e17]: Transisi
+          - heading "Website Baru" [level=2] [ref=f2e18]
+          - paragraph [ref=f2e19]: Situs web baru Mahkamah Agung RI dengan layanan informasi publik dan perkara terpublikasi.
+        - link "Coba →" [ref=f2e20] [cursor=pointer]:
+          - /url: http://103.116.108.150
+  - contentinfo [ref=f2e21]: © 2026 Mahkamah Agung Republik Indonesia. Seluruh hak dilindungi undang-undang.

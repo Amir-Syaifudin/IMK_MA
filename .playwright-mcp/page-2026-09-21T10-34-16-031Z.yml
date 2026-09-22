@@ -1,0 +1,125 @@
+- generic [ref=f9e3]:
+  - generic [ref=f9e4]:
+    - generic [ref=f9e5]: Wireframe Mode
+    - link "Beranda" [ref=f9e6] [cursor=pointer]:
+      - /url: /wireframe
+    - link "Perkara" [ref=f9e7] [cursor=pointer]:
+      - /url: /wireframe/perkara
+    - link "Bantuan" [ref=f9e8] [cursor=pointer]:
+      - /url: /wireframe/faq
+    - link "Informasi" [ref=f9e9] [cursor=pointer]:
+      - /url: /wireframe/informasi/berita
+    - link "Subbab Navigasi" [ref=f9e10] [cursor=pointer]:
+      - /url: /wireframe/navbar
+    - link "Lihat Visual Design" [ref=f9e12] [cursor=pointer]:
+      - /url: /
+  - generic [ref=f9e13]:
+    - generic [ref=f9e14]: "[ Logo MA ]"
+    - generic [ref=f9e15]:
+      - generic [ref=f9e16]: Beranda
+      - generic [ref=f9e17]: Perkara
+      - generic [ref=f9e18]: Informasi
+      - generic [ref=f9e19]: Bantuan
+      - generic [ref=f9e20]: Layanan Digital
+    - generic [ref=f9e21]: Cari
+  - generic [ref=f9e22]:
+    - generic [ref=f9e23]: "bg: foto gedung MA + overlay gelap"
+    - generic [ref=f9e24]:
+      - generic [ref=f9e25]: H1 — Judul Utama
+      - generic [ref=f9e26]: Mahkamah Agung
+      - generic [ref=f9e27]: TAGLINE — "Pengadilan Bermartabat, Negara Berdaulat"
+      - generic [ref=f9e28]: Deskripsi singkat lembaga (2–3 kalimat)
+      - generic [ref=f9e29]:
+        - generic [ref=f9e30]:
+          - generic [ref=f9e32]: Cari Putusan
+          - generic [ref=f9e33]: deskripsi singkat
+        - generic [ref=f9e34]:
+          - generic [ref=f9e36]: Cek Status Perkara
+          - generic [ref=f9e37]: deskripsi singkat
+        - generic [ref=f9e38]:
+          - generic [ref=f9e40]: Hubungi Pengadilan
+          - generic [ref=f9e41]: deskripsi singkat
+  - generic [ref=f9e42]:
+    - generic [ref=f9e43]: Section 2 — Layanan & Inovasi Digital
+    - generic [ref=f9e44]:
+      - generic [ref=f9e45]: Layanan & Inovasi Digital
+      - generic [ref=f9e47]: 8 layanan utama MA dalam satu grid
+    - generic [ref=f9e48]:
+      - generic [ref=f9e52]:
+        - generic [ref=f9e53]: Direktori Putusan
+        - generic [ref=f9e54]: deskripsi
+      - generic [ref=f9e58]:
+        - generic [ref=f9e59]: e-Court
+        - generic [ref=f9e60]: deskripsi
+      - generic [ref=f9e64]:
+        - generic [ref=f9e65]: Cek Status Perkara
+        - generic [ref=f9e66]: deskripsi
+      - generic [ref=f9e70]:
+        - generic [ref=f9e71]: SIPP
+        - generic [ref=f9e72]: deskripsi
+      - generic [ref=f9e76]:
+        - generic [ref=f9e77]: Jadwal Sidang
+        - generic [ref=f9e78]: deskripsi
+      - generic [ref=f9e82]:
+        - generic [ref=f9e83]: Kepaniteraan
+        - generic [ref=f9e84]: deskripsi
+      - generic [ref=f9e88]:
+        - generic [ref=f9e89]: Pengumuman
+        - generic [ref=f9e90]: deskripsi
+      - generic [ref=f9e94]:
+        - generic [ref=f9e95]: e-Berpadu
+        - generic [ref=f9e96]: deskripsi
+  - generic [ref=f9e98]:
+    - generic [ref=f9e99]: Section 3 — Berita Terbaru
+    - generic [ref=f9e100]:
+      - generic [ref=f9e101]: Berita Terbaru
+      - generic [ref=f9e104] [cursor=pointer]: Lihat Semua
+    - generic [ref=f9e105]:
+      - generic [ref=f9e106]:
+        - generic [ref=f9e107]: "[ Foto Berita ]"
+        - generic [ref=f9e108]:
+          - generic [ref=f9e109]: 15 Mei 2026
+          - generic [ref=f9e110]: Berita 1 — Judul berita singkat yang relevan
+          - generic [ref=f9e111]: Ringkasan/excerpt berita...
+          - generic [ref=f9e112]: Baca
+      - generic [ref=f9e113]:
+        - generic [ref=f9e114]: "[ Foto Berita ]"
+        - generic [ref=f9e115]:
+          - generic [ref=f9e116]: 15 Mei 2026
+          - generic [ref=f9e117]: Berita 2 — Judul berita singkat yang relevan
+          - generic [ref=f9e118]: Ringkasan/excerpt berita...
+          - generic [ref=f9e119]: Baca
+      - generic [ref=f9e120]:
+        - generic [ref=f9e121]: "[ Foto Berita ]"
+        - generic [ref=f9e122]:
+          - generic [ref=f9e123]: 15 Mei 2026
+          - generic [ref=f9e124]: Berita 3 — Judul berita singkat yang relevan
+          - generic [ref=f9e125]: Ringkasan/excerpt berita...
+          - generic [ref=f9e126]: Baca
+  - generic [ref=f9e127]:
+    - generic [ref=f9e129]:
+      - generic [ref=f9e130]:
+        - generic [ref=f9e131]: Tentang MA
+        - generic [ref=f9e132]: Logo + Deskripsi lembaga
+      - generic [ref=f9e138]:
+        - generic [ref=f9e139]: Tautan Cepat
+        - generic [ref=f9e140]: Beranda
+        - generic [ref=f9e141]: Perkara
+        - generic [ref=f9e142]: FAQ
+        - generic [ref=f9e143]: Kontak
+      - generic [ref=f9e144]:
+        - generic [ref=f9e145]: Layanan Digital
+        - generic [ref=f9e146]: Direktori Putusan
+        - generic [ref=f9e147]: e-Court
+        - generic [ref=f9e148]: SIPP
+        - generic [ref=f9e149]: Cek Perkara
+        - generic [ref=f9e150]: e-Berpadu
+      - generic [ref=f9e151]:
+        - generic [ref=f9e152]: Kontak & Portal Internal
+        - generic [ref=f9e153]: Alamat + Telepon + Email
+        - generic [ref=f9e154]: Portal Pegawai
+        - generic [ref=f9e155]:
+          - generic [ref=f9e156]: Sistem Manajemen Kasus
+          - generic [ref=f9e157]: Dashboard Kinerja
+          - generic [ref=f9e158]: Repositori Dok.
+    - generic [ref=f9e159]: © 2026 Mahkamah Agung Republik Indonesia. Hak Cipta Dilindungi. | Kebijakan Privasi | Syarat & Ketentuan

@@ -1,0 +1,401 @@
+- generic [ref=f1e3]:
+  - navigation [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - link "MA Logo Mahkamah Agung Republik Indonesia" [ref=f1e6] [cursor=pointer]:
+        - /url: /
+        - img "MA Logo" [ref=f1e8]
+        - generic [ref=f1e9]:
+          - generic [ref=f1e10]: Mahkamah Agung
+          - generic [ref=f1e11]: Republik Indonesia
+      - generic [ref=f1e12]:
+        - link "Beranda" [ref=f1e13] [cursor=pointer]:
+          - /url: /
+        - link "Perkara" [ref=f1e14] [cursor=pointer]:
+          - /url: /perkara
+        - button "Informasi" [ref=f1e16] [cursor=pointer]
+        - link "Bantuan" [ref=f1e19] [cursor=pointer]:
+          - /url: /faq
+        - button "Layanan Digital" [ref=f1e21] [cursor=pointer]
+        - link "Pengaduan" [ref=f1e24] [cursor=pointer]:
+          - /url: /pengaduan
+        - button "Cari" [ref=f1e25] [cursor=pointer]
+  - main [ref=f1e28]:
+    - generic [ref=f1e30]:
+      - generic [ref=f1e32]:
+        - heading "Informasi Perkara & Jadwal Sidang" [level=1] [ref=f1e33]
+        - paragraph [ref=f1e34]: Layanan terpadu Mahkamah Agung untuk mencari detail putusan perkara serta memantau jadwal sidang dan agenda kelembagaan secara transparan.
+        - generic [ref=f1e35]:
+          - button "Pencarian Perkara" [ref=f1e36]
+          - button "Kalender Agenda" [ref=f1e39]
+      - generic [ref=f1e43]:
+        - heading "Pencarian Perkara" [level=2] [ref=f1e45]
+        - generic [ref=f1e48]:
+          - generic [ref=f1e49]:
+            - generic [ref=f1e50]: Kata Kunci
+            - textbox "Nomor perkara, nama pihak, atau kata kunci..." [ref=f1e54]
+          - generic [ref=f1e55]:
+            - generic [ref=f1e56]:
+              - generic [ref=f1e57]: Jenis Perkara
+              - combobox [ref=f1e59]:
+                - option "Semua Jenis" [selected]
+                - option "Perdata"
+                - option "Pidana"
+                - option "Tata Usaha Negara"
+                - option "Agama"
+                - option "Militer"
+            - generic [ref=f1e60]:
+              - generic [ref=f1e61]: Tanggal Dari
+              - button "Pilih tanggal awal" [ref=f1e62]
+            - generic [ref=f1e66]:
+              - generic [ref=f1e67]: Tanggal Sampai
+              - button "Pilih tanggal akhir" [ref=f1e68]
+          - generic [ref=f1e72]:
+            - button "Cari Sekarang" [ref=f1e73]
+            - button "Reset" [ref=f1e76]
+      - generic [ref=f1e79]:
+        - heading "Kalender Mahkamah Agung" [level=2] [ref=f1e81]
+        - generic [ref=f1e83]:
+          - generic [ref=f1e85]:
+            - generic [ref=f1e86]:
+              - button [ref=f1e87]
+              - generic [ref=f1e90]:
+                - heading "September" [level=3] [ref=f1e91]
+                - paragraph [ref=f1e92]: "2026"
+              - button [ref=f1e93]
+            - generic [ref=f1e96]:
+              - generic [ref=f1e97]: Min
+              - generic [ref=f1e98]: Sen
+              - generic [ref=f1e99]: Sel
+              - generic [ref=f1e100]: Rab
+              - generic [ref=f1e101]: Kam
+              - generic [ref=f1e102]: Jum
+              - generic [ref=f1e103]: Sab
+            - generic [ref=f1e104]:
+              - button "1" [ref=f1e107]
+              - button "2" [ref=f1e111]
+              - button "3" [ref=f1e115]
+              - button "4" [ref=f1e120]
+              - button "5" [ref=f1e122]
+              - button "6" [ref=f1e124]
+              - button "7" [ref=f1e126]
+              - button "8" [ref=f1e130]
+              - button "9" [ref=f1e134]
+              - button "10" [ref=f1e138]
+              - button "11" [ref=f1e142]
+              - button "12" [ref=f1e144]
+              - button "13" [ref=f1e146]
+              - button "14" [ref=f1e148]
+              - button "15" [ref=f1e152]
+              - button "16" [ref=f1e156]
+              - button "17" [ref=f1e160]
+              - button "18" [ref=f1e164]
+              - button "19" [ref=f1e166]
+              - button "20" [ref=f1e168]
+              - button "21" [ref=f1e170]
+              - button "22" [ref=f1e174]
+              - button "23" [ref=f1e178]
+              - button "24" [ref=f1e184]
+              - button "25" [ref=f1e188]
+              - button "26" [ref=f1e190]
+              - button "27" [ref=f1e192]
+              - button "28" [ref=f1e194]
+              - button "29" [ref=f1e198]
+              - button "30" [ref=f1e202]
+            - generic [ref=f1e206]:
+              - generic [ref=f1e207]: "Keterangan:"
+              - generic [ref=f1e208]:
+                - generic [ref=f1e209]: Sidang
+                - generic [ref=f1e211]: Putusan
+                - generic [ref=f1e213]: Pengumuman
+                - generic [ref=f1e215]: Agenda
+                - generic [ref=f1e217]: Libur
+          - generic [ref=f1e219]:
+            - generic [ref=f1e220]:
+              - heading "Filter Kategori Agenda" [level=4] [ref=f1e221]
+              - generic [ref=f1e222]:
+                - button "Semua" [ref=f1e223]
+                - button "Sidang" [ref=f1e224]
+                - button "Putusan" [ref=f1e225]
+                - button "Pengumuman" [ref=f1e226]
+                - button "Agenda" [ref=f1e227]
+                - button "Libur" [ref=f1e228]
+            - generic [ref=f1e229]:
+              - heading "Semua Agenda — September 2026" [level=3] [ref=f1e236]
+              - generic [ref=f1e237]:
+                - generic [ref=f1e238]:
+                  - generic [ref=f1e239]:
+                    - generic [ref=f1e240]: Libur
+                    - generic [ref=f1e243]: 01 September 2026
+                  - heading "Hari Buruh Internasional — Pengadilan Libur" [level=4] [ref=f1e245]
+                  - paragraph [ref=f1e247]: Hari libur nasional / cuti bersama instansi pemerintah dan pengadilan.
+                  - button "Detail" [ref=f1e249]
+                - generic [ref=f1e250]:
+                  - generic [ref=f1e251]:
+                    - generic [ref=f1e252]: Agenda
+                    - generic [ref=f1e255]: 02 September 2026 - 13:30 WIB
+                  - heading "Rapat Koordinasi Kepaniteraan" [level=4] [ref=f1e257]
+                  - paragraph [ref=f1e259]: Agenda kegiatan internal atau layanan publik Mahkamah Agung.
+                  - button "Detail" [ref=f1e261]
+                - generic [ref=f1e262]:
+                  - generic [ref=f1e263]:
+                    - generic [ref=f1e264]: Sidang
+                    - generic [ref=f1e267]: 03 September 2026 - 09:00 WIB
+                  - generic [ref=f1e268]:
+                    - generic [ref=f1e269]: Perdata
+                    - heading "No. 123/Pdt.G/2026/PN Jkt.Sel" [level=4] [ref=f1e271]
+                    - paragraph [ref=f1e272]: Sidang Kasasi — Wanprestasi Kontrak
+                  - paragraph [ref=f1e274]: Pemeriksaan pokok perkara terkait Wanprestasi Kontrak yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e276]
+                - generic [ref=f1e277]:
+                  - generic [ref=f1e278]:
+                    - generic [ref=f1e279]: Sidang
+                    - generic [ref=f1e282]: 03 September 2026 - 13:00 WIB
+                  - generic [ref=f1e283]:
+                    - generic [ref=f1e284]: Pidana
+                    - heading "No. 456/Pid.B/2026/PN Sby" [level=4] [ref=f1e286]
+                    - paragraph [ref=f1e287]: Sidang Kasasi — Korupsi Pengadaan Barang
+                  - paragraph [ref=f1e289]: Pemeriksaan pokok perkara terkait Korupsi Pengadaan Barang yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e291]
+                - generic [ref=f1e292]:
+                  - generic [ref=f1e293]:
+                    - generic [ref=f1e294]: Pengumuman
+                    - generic [ref=f1e297]: 03 September 2026
+                  - heading "Rilis Laporan Kinerja Mingguan" [level=4] [ref=f1e299]
+                  - paragraph [ref=f1e301]: Pemberitahuan resmi dari Mahkamah Agung terkait kebijakan atau sistem layanan.
+                  - button "Detail" [ref=f1e303]
+                - generic [ref=f1e304]:
+                  - generic [ref=f1e305]:
+                    - generic [ref=f1e306]: Sidang
+                    - generic [ref=f1e309]: 07 September 2026 - 10:00 WIB
+                  - generic [ref=f1e310]:
+                    - generic [ref=f1e311]: Agama
+                    - heading "No. 555 K/Ag/2026" [level=4] [ref=f1e313]
+                    - paragraph [ref=f1e314]: Sidang Kasasi — Sengketa Harta Bersama
+                  - paragraph [ref=f1e316]: Pemeriksaan pokok perkara terkait Sengketa Harta Bersama yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e318]
+                - generic [ref=f1e319]:
+                  - generic [ref=f1e320]:
+                    - generic [ref=f1e321]: Putusan
+                    - generic [ref=f1e324]: 08 September 2026 - 10:00 WIB
+                  - generic [ref=f1e325]:
+                    - generic [ref=f1e326]: Perdata
+                    - heading "No. 200 K/Pdt/2026" [level=4] [ref=f1e328]
+                    - paragraph [ref=f1e329]: Pengucapan Putusan — Sengketa Warisan
+                  - paragraph [ref=f1e331]: Pemeriksaan pokok perkara terkait Sengketa Warisan yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e333]
+                - generic [ref=f1e334]:
+                  - generic [ref=f1e335]:
+                    - generic [ref=f1e336]: Agenda
+                    - generic [ref=f1e339]: 09 September 2026 - 08:00 WIB
+                  - heading "Rapat Pimpinan MA — Evaluasi Kinerja Triwulan I" [level=4] [ref=f1e341]
+                  - paragraph [ref=f1e343]: Agenda kegiatan internal atau layanan publik Mahkamah Agung.
+                  - button "Detail" [ref=f1e345]
+                - generic [ref=f1e346]:
+                  - generic [ref=f1e347]:
+                    - generic [ref=f1e348]: Pengumuman
+                    - generic [ref=f1e351]: 10 September 2026
+                  - heading "Jadwal Pemeliharaan Sistem SIPP Akhir Pekan" [level=4] [ref=f1e353]
+                  - paragraph [ref=f1e355]: Pemberitahuan resmi dari Mahkamah Agung terkait kebijakan atau sistem layanan.
+                  - button "Detail" [ref=f1e357]
+                - generic [ref=f1e358]:
+                  - generic [ref=f1e359]:
+                    - generic [ref=f1e360]: Sidang
+                    - generic [ref=f1e363]: 14 September 2026 - 09:00 WIB
+                  - generic [ref=f1e364]:
+                    - generic [ref=f1e365]: TUN
+                    - heading "No. 789/TUN/2026/PTUN Bdg" [level=4] [ref=f1e367]
+                    - paragraph [ref=f1e368]: Sidang Kasasi — Sengketa Pajak
+                  - paragraph [ref=f1e370]: Pemeriksaan pokok perkara terkait Sengketa Pajak yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e372]
+                - generic [ref=f1e373]:
+                  - generic [ref=f1e374]:
+                    - generic [ref=f1e375]: Sidang
+                    - generic [ref=f1e378]: 14 September 2026 - 13:00 WIB
+                  - generic [ref=f1e379]:
+                    - generic [ref=f1e380]: Agama
+                    - heading "No. 321/Pdt.G/2026/PA Jkt.Tim" [level=4] [ref=f1e382]
+                    - paragraph [ref=f1e383]: Sidang Kasasi — Pembagian Warisan
+                  - paragraph [ref=f1e385]: Pemeriksaan pokok perkara terkait Pembagian Warisan yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e387]
+                - generic [ref=f1e388]:
+                  - generic [ref=f1e389]:
+                    - generic [ref=f1e390]: Sidang
+                    - generic [ref=f1e393]: 15 September 2026 - 09:00 WIB
+                  - generic [ref=f1e394]:
+                    - generic [ref=f1e395]: Pidana
+                    - heading "No. 654/Pid.Sus/2026/PN Mdn" [level=4] [ref=f1e397]
+                    - paragraph [ref=f1e398]: Sidang Kasasi — Tindak Pidana Pencucian Uang
+                  - paragraph [ref=f1e400]: Pemeriksaan pokok perkara terkait Tindak Pidana Pencucian Uang yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e402]
+                - generic [ref=f1e403]:
+                  - generic [ref=f1e404]:
+                    - generic [ref=f1e405]: Putusan
+                    - generic [ref=f1e408]: 16 September 2026 - 10:00 WIB
+                  - generic [ref=f1e409]:
+                    - generic [ref=f1e410]: Pidana
+                    - heading "No. 300 K/Pid/2026" [level=4] [ref=f1e412]
+                    - paragraph [ref=f1e413]: Pengucapan Putusan — Kasus Narkotika
+                  - paragraph [ref=f1e415]: Pemeriksaan pokok perkara terkait Kasus Narkotika yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e417]
+                - generic [ref=f1e418]:
+                  - generic [ref=f1e419]:
+                    - generic [ref=f1e420]: Pengumuman
+                    - generic [ref=f1e423]: 17 September 2026
+                  - heading "Batas Akhir Pendaftaran Perkara Kasasi Periode September 2026" [level=4] [ref=f1e425]
+                  - paragraph [ref=f1e427]: Pemberitahuan resmi dari Mahkamah Agung terkait kebijakan atau sistem layanan.
+                  - button "Detail" [ref=f1e429]
+                - generic [ref=f1e430]:
+                  - generic [ref=f1e431]:
+                    - generic [ref=f1e432]: Putusan
+                    - generic [ref=f1e435]: 21 September 2026 - 14:00 WIB
+                  - generic [ref=f1e436]:
+                    - generic [ref=f1e437]: TUN
+                    - heading "No. 777 K/TUN/2026" [level=4] [ref=f1e439]
+                    - paragraph [ref=f1e440]: Pengucapan Putusan — Sengketa Izin Tambang
+                  - paragraph [ref=f1e442]: Pemeriksaan pokok perkara terkait Sengketa Izin Tambang yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e444]
+                - generic [ref=f1e445]:
+                  - generic [ref=f1e446]:
+                    - generic [ref=f1e447]: Sidang
+                    - generic [ref=f1e450]: 22 September 2026 - 10:00 WIB
+                  - generic [ref=f1e451]:
+                    - generic [ref=f1e452]: Militer
+                    - heading "No. 654 K/Pid.Mil/2026" [level=4] [ref=f1e454]
+                    - paragraph [ref=f1e455]: Sidang Kasasi — Pelanggaran Disiplin Militer
+                  - paragraph [ref=f1e457]: Pemeriksaan pokok perkara terkait Pelanggaran Disiplin Militer yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e459]
+                - generic [ref=f1e460]:
+                  - generic [ref=f1e461]:
+                    - generic [ref=f1e462]: Sidang
+                    - generic [ref=f1e465]: 22 September 2026 - 13:30 WIB
+                  - generic [ref=f1e466]:
+                    - generic [ref=f1e467]: Perdata
+                    - heading "No. 987 K/Pdt/2026" [level=4] [ref=f1e469]
+                    - paragraph [ref=f1e470]: Sidang Kasasi — Sengketa Kepemilikan Tanah
+                  - paragraph [ref=f1e472]: Pemeriksaan pokok perkara terkait Sengketa Kepemilikan Tanah yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e474]
+                - generic [ref=f1e475]:
+                  - generic [ref=f1e476]:
+                    - generic [ref=f1e477]: Agenda
+                    - generic [ref=f1e480]: 23 September 2026 - 09:00 WIB
+                  - heading "Seminar Nasional — Reformasi Peradilan di Era Digital" [level=4] [ref=f1e482]
+                  - paragraph [ref=f1e484]: Agenda kegiatan internal atau layanan publik Mahkamah Agung.
+                  - button "Detail" [ref=f1e486]
+                - generic [ref=f1e487]:
+                  - generic [ref=f1e488]:
+                    - generic [ref=f1e489]: Sidang
+                    - generic [ref=f1e492]: 23 September 2026 - 13:00 WIB
+                  - generic [ref=f1e493]:
+                    - generic [ref=f1e494]: TUN
+                    - heading "No. 123 K/TUN/2026" [level=4] [ref=f1e496]
+                    - paragraph [ref=f1e497]: Sidang Kasasi — Sengketa Izin Lingkungan
+                  - paragraph [ref=f1e499]: Pemeriksaan pokok perkara terkait Sengketa Izin Lingkungan yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e501]
+                - generic [ref=f1e502]:
+                  - generic [ref=f1e503]:
+                    - generic [ref=f1e504]: Putusan
+                    - generic [ref=f1e507]: 23 September 2026 - 15:00 WIB
+                  - generic [ref=f1e508]:
+                    - generic [ref=f1e509]: Pidana
+                    - heading "No. 456 K/Pid/2026" [level=4] [ref=f1e511]
+                    - paragraph [ref=f1e512]: Pengucapan Putusan — Kasus Penipuan
+                  - paragraph [ref=f1e514]: Pemeriksaan pokok perkara terkait Kasus Penipuan yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e516]
+                - generic [ref=f1e517]:
+                  - generic [ref=f1e518]:
+                    - generic [ref=f1e519]: Putusan
+                    - generic [ref=f1e522]: 24 September 2026 - 09:00 WIB
+                  - generic [ref=f1e523]:
+                    - generic [ref=f1e524]: TUN
+                    - heading "No. 400 K/TUN/2026" [level=4] [ref=f1e526]
+                    - paragraph [ref=f1e527]: Pengucapan Putusan — Sengketa Kepegawaian
+                  - paragraph [ref=f1e529]: Pemeriksaan pokok perkara terkait Sengketa Kepegawaian yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e531]
+                - generic [ref=f1e532]:
+                  - generic [ref=f1e533]:
+                    - generic [ref=f1e534]: Pengumuman
+                    - generic [ref=f1e537]: 28 September 2026
+                  - heading "Pengumuman Seleksi Calon Hakim Agung Gelombang II 2026" [level=4] [ref=f1e539]
+                  - paragraph [ref=f1e541]: Pemberitahuan resmi dari Mahkamah Agung terkait kebijakan atau sistem layanan.
+                  - button "Detail" [ref=f1e543]
+                - generic [ref=f1e544]:
+                  - generic [ref=f1e545]:
+                    - generic [ref=f1e546]: Agenda
+                    - generic [ref=f1e549]: 29 September 2026 - 08:30 WIB
+                  - heading "Senam Pagi Bersama dan Kerja Bakti" [level=4] [ref=f1e551]
+                  - paragraph [ref=f1e553]: Agenda kegiatan internal atau layanan publik Mahkamah Agung.
+                  - button "Detail" [ref=f1e555]
+                - generic [ref=f1e556]:
+                  - generic [ref=f1e557]:
+                    - generic [ref=f1e558]: Sidang
+                    - generic [ref=f1e561]: 30 September 2026 - 09:00 WIB
+                  - generic [ref=f1e562]:
+                    - generic [ref=f1e563]: Pidana
+                    - heading "No. 111 K/Pid/2026" [level=4] [ref=f1e565]
+                    - paragraph [ref=f1e566]: Sidang Kasasi — Penipuan Investasi
+                  - paragraph [ref=f1e568]: Pemeriksaan pokok perkara terkait Penipuan Investasi yang diregistrasi pada Mahkamah Agung.
+                  - button "Detail" [ref=f1e570]
+  - contentinfo [ref=f1e571]:
+    - generic [ref=f1e572]:
+      - generic [ref=f1e573]:
+        - generic [ref=f1e574]:
+          - heading "Mahkamah Agung RI" [level=3] [ref=f1e575]
+          - paragraph [ref=f1e576]: Lembaga tinggi negara yang memegang kekuasaan kehakiman sebagai kekuasaan yang merdeka untuk menyelenggarakan peradilan guna menegakkan hukum dan keadilan.
+          - generic [ref=f1e577]:
+            - link [ref=f1e578] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f1e581] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f1e584] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f1e587] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f1e590]:
+          - heading "Tautan Cepat" [level=3] [ref=f1e591]
+          - list [ref=f1e592]:
+            - listitem [ref=f1e593]:
+              - link "Perkara" [ref=f1e594] [cursor=pointer]:
+                - /url: /perkara
+            - listitem [ref=f1e595]:
+              - link "FAQ & Panduan" [ref=f1e596] [cursor=pointer]:
+                - /url: /faq
+            - listitem [ref=f1e597]:
+              - link "Tentang MA" [ref=f1e598] [cursor=pointer]:
+                - /url: /profil
+            - listitem [ref=f1e599]:
+              - link "Kontak" [ref=f1e600] [cursor=pointer]:
+                - /url: /kontak
+        - generic [ref=f1e601]:
+          - heading "Layanan Digital" [level=3] [ref=f1e602]
+          - list [ref=f1e603]:
+            - listitem [ref=f1e604]:
+              - link "Direktori Putusan" [ref=f1e605] [cursor=pointer]:
+                - /url: https://putusan3.mahkamahagung.go.id
+            - listitem [ref=f1e608]:
+              - link "e-Court" [ref=f1e609] [cursor=pointer]:
+                - /url: https://ecourt.mahkamahagung.go.id
+            - listitem [ref=f1e612]:
+              - link "Cek Status Perkara" [ref=f1e613] [cursor=pointer]:
+                - /url: https://sipp.pn-jakartapusat.go.id
+            - listitem [ref=f1e616]:
+              - link "SIPP" [ref=f1e617] [cursor=pointer]:
+                - /url: https://sipp.mahkamahagung.go.id
+            - listitem [ref=f1e620]:
+              - link "e-Berpadu" [ref=f1e621] [cursor=pointer]:
+                - /url: https://eberpadu.mahkamahagung.go.id
+        - generic [ref=f1e624]:
+          - heading "Kontak Kami" [level=3] [ref=f1e625]
+          - list [ref=f1e626]:
+            - listitem [ref=f1e627]:
+              - generic [ref=f1e630]: Jl. Medan Merdeka Utara No. 9-13Jakarta Pusat 10110
+            - listitem [ref=f1e631]:
+              - generic [ref=f1e634]: (021) 384 3348
+            - listitem [ref=f1e635]:
+              - generic [ref=f1e638]: info@mahkamahagung.go.id
+      - generic [ref=f1e639]:
+        - paragraph [ref=f1e640]: © 2026 Mahkamah Agung Republik Indonesia. Hak Cipta Dilindungi.
+        - generic [ref=f1e641]:
+          - link "Kebijakan Privasi" [ref=f1e642] [cursor=pointer]:
+            - /url: "#"
+          - link "Syarat & Ketentuan" [ref=f1e643] [cursor=pointer]:
+            - /url: "#"

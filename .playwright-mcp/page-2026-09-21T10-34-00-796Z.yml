@@ -1,0 +1,211 @@
+- generic [ref=f8e3]:
+  - generic [ref=f8e4]:
+    - generic [ref=f8e5]: Wireframe Mode
+    - link "Beranda" [ref=f8e6] [cursor=pointer]:
+      - /url: /wireframe
+    - link "Perkara" [ref=f8e7] [cursor=pointer]:
+      - /url: /wireframe/perkara
+    - link "FAQ" [ref=f8e8] [cursor=pointer]:
+      - /url: /wireframe/faq
+    - link "Informasi" [ref=f8e9] [cursor=pointer]:
+      - /url: /wireframe/informasi/berita
+    - link "Subbab Navigasi" [ref=f8e10] [cursor=pointer]:
+      - /url: /wireframe/navbar
+    - link "Lihat Visual Design" [ref=f8e12] [cursor=pointer]:
+      - /url: /perkara
+  - generic [ref=f8e13]:
+    - generic [ref=f8e14]: "[ Logo MA ]"
+    - generic [ref=f8e15]:
+      - generic [ref=f8e16]: Beranda
+      - generic [ref=f8e17]: Perkara
+      - generic [ref=f8e18]: Informasi
+      - generic [ref=f8e19]: FAQ
+      - generic [ref=f8e20]: Layanan Digital
+    - generic [ref=f8e21]: Cari
+  - generic [ref=f8e22]: Beranda Perkara & Jadwal Sidang
+  - generic [ref=f8e23]:
+    - generic [ref=f8e24]:
+      - generic [ref=f8e25]: Section 1 — Page Header / Petunjuk
+      - generic [ref=f8e26]: Informasi Perkara & Jadwal Sidang
+      - generic [ref=f8e27]: Deskripsi fungsi halaman (1–2 kalimat penjelasan)
+      - generic [ref=f8e28]:
+        - generic [ref=f8e29] [cursor=pointer]: Cari Perkara
+        - generic [ref=f8e30] [cursor=pointer]: Lihat Kalender
+    - generic [ref=f8e31]: "[ Ilustrasi / Watermark Ikon Timbangan ]"
+  - generic [ref=f8e32]:
+    - generic [ref=f8e33]: Section 2 — Filter Pencarian Perkara
+    - generic [ref=f8e34]:
+      - generic [ref=f8e35]:
+        - generic [ref=f8e36]: Kata Kunci / Nomor Perkara
+        - generic [ref=f8e37]: Masukkan nomor atau kata kunci...
+      - generic [ref=f8e38]:
+        - generic [ref=f8e39]: Jenis Perkara
+        - generic [ref=f8e40]: Pilih jenis
+      - generic [ref=f8e41]:
+        - generic [ref=f8e42]: Tanggal Dari
+        - generic [ref=f8e43]: dd/mm/yyyy
+      - generic [ref=f8e44]:
+        - generic [ref=f8e45]: Tanggal Sampai
+        - generic [ref=f8e46]: dd/mm/yyyy
+      - generic [ref=f8e47] [cursor=pointer]: Cari Perkara
+      - generic [ref=f8e48] [cursor=pointer]: Reset
+    - generic [ref=f8e49]: Section 3 — Kalender & Agenda
+    - generic [ref=f8e50]:
+      - generic [ref=f8e51]:
+        - generic [ref=f8e52]: Mei 2026
+        - generic [ref=f8e56]:
+          - generic [ref=f8e57]: Min
+          - generic [ref=f8e58]: Sen
+          - generic [ref=f8e59]: Sel
+          - generic [ref=f8e60]: Rab
+          - generic [ref=f8e61]: Kam
+          - generic [ref=f8e62]: Jum
+          - generic [ref=f8e63]: Sab
+        - generic [ref=f8e64]:
+          - generic [ref=f8e68] [cursor=pointer]: "1"
+          - generic [ref=f8e70] [cursor=pointer]: "2"
+          - generic [ref=f8e72] [cursor=pointer]: "3"
+          - generic [ref=f8e75] [cursor=pointer]: "4"
+          - generic [ref=f8e77] [cursor=pointer]: "5"
+          - generic [ref=f8e79] [cursor=pointer]: "6"
+          - generic [ref=f8e81] [cursor=pointer]: "7"
+          - generic [ref=f8e84] [cursor=pointer]: "8"
+          - generic [ref=f8e86] [cursor=pointer]: "9"
+          - generic [ref=f8e88] [cursor=pointer]: "10"
+          - generic [ref=f8e91] [cursor=pointer]: "11"
+          - generic [ref=f8e93] [cursor=pointer]: "12"
+          - generic [ref=f8e96] [cursor=pointer]: "13"
+          - generic [ref=f8e98] [cursor=pointer]: "14"
+          - generic [ref=f8e100] [cursor=pointer]: "15"
+          - generic [ref=f8e103] [cursor=pointer]: "16"
+          - generic [ref=f8e105] [cursor=pointer]: "17"
+          - generic [ref=f8e108] [cursor=pointer]: "18"
+          - generic [ref=f8e110] [cursor=pointer]: "19"
+          - generic [ref=f8e112] [cursor=pointer]: "20"
+          - generic [ref=f8e115] [cursor=pointer]: "21"
+          - generic [ref=f8e117] [cursor=pointer]: "22"
+          - generic [ref=f8e120] [cursor=pointer]: "23"
+          - generic [ref=f8e122] [cursor=pointer]: "24"
+          - generic [ref=f8e124] [cursor=pointer]: "25"
+          - generic [ref=f8e126] [cursor=pointer]: "26"
+          - generic [ref=f8e128] [cursor=pointer]: "27"
+          - generic [ref=f8e130] [cursor=pointer]: "28"
+          - generic [ref=f8e133] [cursor=pointer]: "29"
+          - generic [ref=f8e135] [cursor=pointer]: "30"
+          - generic [ref=f8e137] [cursor=pointer]: "31"
+        - generic [ref=f8e140]:
+          - generic [ref=f8e141]: = Ada agenda
+          - generic [ref=f8e142]: Hari ini
+          - generic [ref=f8e143]: Dipilih
+      - generic [ref=f8e144]:
+        - generic [ref=f8e145]: Filter Kategori Agenda
+        - generic [ref=f8e146]:
+          - generic [ref=f8e147]: Semua
+          - generic [ref=f8e148]: Sidang
+          - generic [ref=f8e149]: Putusan
+          - generic [ref=f8e150]: Pengumuman
+          - generic [ref=f8e151]: Agenda
+          - generic [ref=f8e152]: Libur
+        - generic [ref=f8e153]: Semua Agenda — Mei 2026
+        - generic [ref=f8e154]:
+          - generic [ref=f8e155]:
+            - generic [ref=f8e156]:
+              - generic [ref=f8e157]: Sidang
+              - generic [ref=f8e158]: 3 Mei 2026 · 09.00
+            - generic [ref=f8e159]: No. 123/Pdt.G/2026/MA
+            - generic [ref=f8e160]: Pokok perkara singkat...
+            - generic [ref=f8e161]: Detail
+          - generic [ref=f8e162]:
+            - generic [ref=f8e163]:
+              - generic [ref=f8e164]: Sidang
+              - generic [ref=f8e165]: 7 Mei 2026 · 09.00
+            - generic [ref=f8e166]: No. 123/Pdt.G/2026/MA
+            - generic [ref=f8e167]: Pokok perkara singkat...
+            - generic [ref=f8e168]: Detail
+          - generic [ref=f8e169]:
+            - generic [ref=f8e170]:
+              - generic [ref=f8e171]: Sidang
+              - generic [ref=f8e172]: 10 Mei 2026 · 09.00
+            - generic [ref=f8e173]: No. 123/Pdt.G/2026/MA
+            - generic [ref=f8e174]: Pokok perkara singkat...
+            - generic [ref=f8e175]: Detail
+          - generic [ref=f8e176]:
+            - generic [ref=f8e177]:
+              - generic [ref=f8e178]: Sidang
+              - generic [ref=f8e179]: 15 Mei 2026 · 09.00
+            - generic [ref=f8e180]: No. 123/Pdt.G/2026/MA
+            - generic [ref=f8e181]: Pokok perkara singkat...
+            - generic [ref=f8e182]: Detail
+          - generic [ref=f8e183]:
+            - generic [ref=f8e184]:
+              - generic [ref=f8e185]: Sidang
+              - generic [ref=f8e186]: 20 Mei 2026 · 09.00
+            - generic [ref=f8e187]: No. 123/Pdt.G/2026/MA
+            - generic [ref=f8e188]: Pokok perkara singkat...
+            - generic [ref=f8e189]: Detail
+          - generic [ref=f8e190]:
+            - generic [ref=f8e191]:
+              - generic [ref=f8e192]: Sidang
+              - generic [ref=f8e193]: 22 Mei 2026 · 09.00
+            - generic [ref=f8e194]: No. 123/Pdt.G/2026/MA
+            - generic [ref=f8e195]: Pokok perkara singkat...
+            - generic [ref=f8e196]: Detail
+    - generic [ref=f8e197]: Section 4 — Hasil Pencarian Perkara
+    - generic [ref=f8e198]:
+      - generic [ref=f8e199]:
+        - generic [ref=f8e200]: Hasil Pencarian
+        - text: N hasil ditemukan
+      - generic [ref=f8e201]:
+        - generic [ref=f8e202]: Semua
+        - generic [ref=f8e203]: Perdata
+        - generic [ref=f8e204]: Pidana
+        - generic [ref=f8e205]: TUN
+    - generic [ref=f8e206]:
+      - generic [ref=f8e207]:
+        - generic [ref=f8e208]: No. 123/Pid.B/2026/MA
+        - generic [ref=f8e211]:
+          - generic [ref=f8e212]: Pidana
+          - generic [ref=f8e213]: 15 Mei 2026
+          - generic [ref=f8e214]: PN Jakarta Pusat
+          - generic [ref=f8e215]: Sedang disidangkan
+        - generic [ref=f8e216]: Ringkasan / cuplikan putusan...
+      - generic [ref=f8e217] [cursor=pointer]: Lihat Jadwal di Kalender
+    - generic [ref=f8e218]:
+      - generic [ref=f8e219]:
+        - generic [ref=f8e220]: No. 223/Pid.B/2026/MA
+        - generic [ref=f8e223]:
+          - generic [ref=f8e224]: Pidana
+          - generic [ref=f8e225]: 15 Mei 2026
+          - generic [ref=f8e226]: PN Jakarta Pusat
+          - generic [ref=f8e227]: Sedang disidangkan
+        - generic [ref=f8e228]: Ringkasan / cuplikan putusan...
+      - generic [ref=f8e229] [cursor=pointer]: Lihat Jadwal di Kalender
+    - generic [ref=f8e230]:
+      - generic [ref=f8e231]:
+        - generic [ref=f8e232]: No. 323/Pid.B/2026/MA
+        - generic [ref=f8e235]:
+          - generic [ref=f8e236]: Pidana
+          - generic [ref=f8e237]: 15 Mei 2026
+          - generic [ref=f8e238]: PN Jakarta Pusat
+          - generic [ref=f8e239]: Sedang disidangkan
+        - generic [ref=f8e240]: Ringkasan / cuplikan putusan...
+      - generic [ref=f8e241] [cursor=pointer]: Lihat Jadwal di Kalender
+  - generic [ref=f8e242]:
+    - generic [ref=f8e243]:
+      - generic [ref=f8e244]:
+        - generic [ref=f8e245]: Tentang MA
+        - generic [ref=f8e246]: Logo + Deskripsi
+      - generic [ref=f8e247]:
+        - generic [ref=f8e248]: Tautan Cepat
+        - generic [ref=f8e249]: Beranda
+        - generic [ref=f8e250]: Perkara
+        - generic [ref=f8e251]: FAQ
+      - generic [ref=f8e252]:
+        - generic [ref=f8e253]: Layanan Digital
+        - generic [ref=f8e254]: Direktori Putusan
+        - generic [ref=f8e255]: e-Court
+        - generic [ref=f8e256]: SIPP
+      - generic [ref=f8e257]:
+        - generic [ref=f8e258]: Kontak
+        - generic [ref=f8e259]: Alamat, Telepon, Email
+    - generic [ref=f8e260]: © 2026 Mahkamah Agung Republik Indonesia
